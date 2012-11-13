@@ -1,0 +1,260 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL TPM System Characteristics Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: TPM System Characteristics</li>
+         <li>Version: 5.10 Release Candidate 1</li>
+         <li>Release Date: 7/19/2011 10:15:37 PM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the TPM specific system characteristic
+         items found in Open Vulnerability and Assessment Language (OVAL). Each item is an extension of the standard item element defined
+         in the Core System Characteristic Schema. Through extension, each item inherits a set of elements and attributes that are
+         shared amongst all OVAL Items. Each item is described in detail and should provide the information necessary to understand
+         what each element and attribute represents. This document is intended for developers and assumes some familiarity with XML.
+         A high level description of the interaction between the different tests and their relationship to the Core System Characteristic
+         Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="quotereport_item"></a>&lt; quotereport_item  &gt;
+      </h3>
+      <p align="justify">The quote report item holds information about specific entries that support a TPM quote. It extends the standard ItemType
+         as defined in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mask</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The mask values actually used in the generation of the quote report. There is no significance to the order in which multiple
+                  mask elements appear.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">aikblob</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Contains the AIK blob used to sign the actual TPM Quote.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">nonce</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The nonce value used to create the quote.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">quotetype</td>
+               <td style="font-size: 90%"><a href="#EntityItemQuotetypeType">tpm-sc:EntityItemQuotetypeType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The type of quote (Quote or Quote2).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">signature</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The signature over the quote structure.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcr</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemRecordType">oval-sc:EntityItemRecordType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Holds a record containing the collected PCRs with the name field equal to the PCR index.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcrcomposite</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pcrcomposite element is the pcrcomposite in the quote.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">locality</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The locality element contains the locality information of the Quote. It is only used if the type is Quote2.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="tpminfo_item"></a>&lt; tpminfo_item  &gt;
+      </h3>
+      <p align="justify">This item stores tpm info.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemVersionType">oval-sc:EntityItemVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This reflects the version of the TCG specification that this TPM implements.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">revision</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemVersionType">oval-sc:EntityItemVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the revision of the TCG specification that this TPM implements.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">errata_number</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the errata number of the TCG specification that this TPM implements.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">manufacturer</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the vendor ID of the manufacturer who created this TPM.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">manufacturer_info</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the manufacturer-specific information string associated with this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">command_support_level</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This indicates the level of commands supported by this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcr_count</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the total number of PCRs in this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcr_attributes</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBinaryType">oval-sc:EntityItemBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the attributes associated with PCRs in this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">buffer_size</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the maximum size of the TPM's I/O buffer</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemQuotetypeType"></a>== EntityItemQuotetypeType ==
+      </h3>
+      <p align="justify">The EntityStateQuotetypeType complex type restricts a string value to a either QUOTE or QUOTE2</p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>QUOTE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is a Quote type quote.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>QUOTE2&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is a Quote2 type quote.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

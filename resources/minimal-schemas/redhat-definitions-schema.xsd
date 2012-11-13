@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5"
+            xmlns:red-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#redhat"
+            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+            targetNamespace="http://oval.mitre.org/XMLSchema/oval-definitions-5#redhat"
+            elementFormDefault="qualified"
+            version="5.8">
+   <xsd:import namespace="http://oval.mitre.org/XMLSchema/oval-definitions-5"
+               schemaLocation="oval-definitions-schema.xsd"/>
+</xsd:schema>

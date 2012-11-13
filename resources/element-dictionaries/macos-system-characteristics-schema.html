@@ -1,0 +1,1151 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL MacOS System Characteristics Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: MacOS System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the MacOS specific system characteristic
+         items found in Open Vulnerability and Assessment Language (OVAL). Each item is an extension of the standard test element defined
+         in the Core Definition Schema. Through extension, each test inherits a set of elements and attributes that are shared amongst
+         all OVAL tests. Each test is described in detail and should provide the information necessary to understand what each element
+         and attribute represents. This document is intended for developers and assumes some familiarity with XML. A high level description
+         of the interaction between the different tests and their relationship to the Core Definition Schema is not outlined here.
+      </p>
+      <p align="justify">The MacOS System Characteristics Schema was initially developed by The Center for Internet Security. Many thanks to their
+         contributions to OVAL and the security community.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="accountinfo_item"></a>&lt; accountinfo_item  &gt;
+      </h3>
+      <p align="justify">This item stores sser account information (username, uid, gid, etc.).</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user associated with the information collected.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">password</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Obfuscated (*****) or encrypted password for this user.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The numeric user id, or uid, is the third column of each user's entry in /etc/passwd. This element represents the owner of
+                  the file.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Group ID of this account.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">realname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">User's real name, aka gecos field of /etc/passwd.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">home_dir</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The home directory for this user account.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">login_shell</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The login shell for this user account.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="diskutil_item"></a>&lt; diskutil_item  &gt;
+      </h3>
+      <p align="justify">The diskutil_item holds verification information about an individual disk on a Mac OS system. Each diskutil_item contains
+         a device, filepath, and how the actual permissions differ from the expected permissions. For more information, see diskutil(8).
+         It extends the standard ItemType as defined in the oval-system-characteristics schema and one should refer to the ItemType
+         description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">device</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The device entity is a string that represents the disk on a Mac OS system to verify. Please see diskutil(8) for instructions
+                  on how to specify the device.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The filepath element specifies the absolute path for a file or directory on the specified device.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uread</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user read permission changed from the expected user read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uwrite</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user write permission changed from the expected user write permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uexec</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user exec permission changed from the expected user exec permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gread</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group read permission changed from the expected group read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gwrite</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group write permission changed from the expected group write permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gexec</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group exec permission changed from the expected group exec permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oread</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others read permission changed from the expected others read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">owrite</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others write permission changed from the expected others write permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oexec</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">macos-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others exec permission changed from the expected others exec permission?</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="inetlisteningserver_item"></a>&lt; <span style="text-decoration: line-through;">inetlisteningserver_item</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.10<br><b>Reason: </b>The inetlisteningserver_item has been deprecated and replaced by the inetlisteningserver510_item. The name of an application
+                  cannot be used to uniquely identify an application that is listening on the network. As a result, the inetlisteningserver510_object
+                  utilizes the protocol, local_address, and local_port entities to uniquely identify an application listening on the network.
+                  Please see the inetlisteningserver510_item for additional information.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">An inet listening server item stores the results of checking for network servers currently active on a system.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">program_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the communicating program.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">local_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address of the network interface on which the program listens. Note that the IP address can be IPv4 or IPv6.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">local_full_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address and network port on which the program listens, equivalent to local_address:local_port. Note that the
+                  IP address can be IPv4 or IPv6.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">local_port</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the TCP or UDP port on which the program listens. Note that this is not a list -- if a program listens on multiple
+                  ports, or on a combination of TCP and UDP, each will have its own entry in the table data stored by this item.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">foreign_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address with which the program is communicating, or with which it will communicate, in the case of a listening
+                  server.  Note that the IP address can be IPv4 or IPv6.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">foreign_full_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address and network port to which the program is communicating or will accept communications from, equivalent
+                  to foreign_address:foreign_port. Note that the IP address can be IPv4 or IPv6.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">foreign_port</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the TCP or UDP port to which the program communicates. In the case of a listening program accepting new connections,
+                  this is usually a *.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the process ID of the process. The process in question is that of the program communicating on the network.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">protocol</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the transport-layer protocol, in lowercase: tcp or udp.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">user_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The numeric user id, or uid, is the third column of each user's entry in /etc/passwd. It represents the owner, and thus privilege
+                  level, of the specified program.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="inetlisteningserver510_item"></a>&lt; inetlisteningserver510_item  &gt;
+      </h3>
+      <p align="justify">An inet listening server item stores the results of checking for network servers currently active on a system.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">protocol</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the transport-layer protocol, in lowercase: tcp or udp.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">local_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address of the network interface on which the program listens. Note that the IP address can be IPv4 or IPv6.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">local_port</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the TCP or UDP port on which the program listens. Note that this is not a list -- if a program listens on multiple
+                  ports, or on a combination of TCP and UDP, each will have its own entry in the table data stored by this item.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">local_full_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address and network port on which the program listens, equivalent to local_address:local_port. Note that the
+                  IP address can be IPv4 or IPv6.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">program_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the communicating program.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">foreign_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address with which the program is communicating, or with which it will communicate, in the case of a listening
+                  server.  Note that the IP address can be IPv4 or IPv6.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">foreign_port</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the TCP or UDP port to which the program communicates. In the case of a listening program accepting new connections,
+                  this is usually a *.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">foreign_full_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the IP address and network port to which the program is communicating or will accept communications from, equivalent
+                  to foreign_address:foreign_port. Note that the IP address can be IPv4 or IPv6.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the process ID of the process. The process in question is that of the program communicating on the network.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">user_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The numeric user id, or uid, is the third column of each user's entry in /etc/passwd. It represents the owner, and thus privilege
+                  level, of the specified program.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="nvram_item"></a>&lt; nvram_item  &gt;
+      </h3>
+      <p align="justify">Output of 'nvram -p'</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">nvram_var</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A nvram variabl.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">nvram_value</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the value of the associated nvram variable.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="plist_item"></a>&lt; plist_item  &gt;
+      </h3>
+      <p align="justify">The plist_item holds information about an individual property list preference key found on a system. Each plist_item contains
+         a preference key, application identifier or filepath, type, as well as the preference key's value. It extends the standard
+         ItemType as defined in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">key</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The preference key to check.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">app_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The unique application identifier that specifies the application to use when looking up the preference key (e.g. com.apple.Safari).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The absolute path to a plist file (e.g. ~/Library/Preferences/com.apple.Safari.plist).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">instance</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The instance of the preference key found in the plist. The first instance of a matching preference key is given the instance
+                  value of 1, the second instance of a matching preference key is given the instance value of 2, and so on. Instance values
+                  must be assigned using a depth-first approach. Note that the main purpose of this entity is to provide uniqueness for the
+                  different plist_items that result from multiple instances of a given preference key in the same plist file.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">type</td>
+               <td style="font-size: 90%"><a href="#EntityItemPlistTypeType">macos-sc:EntityItemPlistTypeType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The type of the preference key.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemAnySimpleType">oval-sc:EntityItemAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value of the preference key.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="pwpolicy_item"></a>&lt; <span style="text-decoration: line-through;">pwpolicy_item</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.9<br><b>Reason: </b>Replaced by the pwpolicy59_item. The username, userpass, and directory_node entities in the pwpolicy_item were underspecified
+                  and as a result their meaning was uncertain. A new item was created to resolve this issue. See the pwpolicy59_item.<br><b>Comment: </b>This item has been deprecated and may be removed in a future version of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">Output of 'pwpolicy -getpolicy'. Please see the 'pwpolicy' man page for additional information.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">userpass</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">directory_node</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">maxChars</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Maximum number of characters allowed in a password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">maxFailedLoginAttempts</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Maximum number of failed logins before the account is locked.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">minChars</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Minimum number of characters allowed in a password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">passwordCannotBeName</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password is allowed to be the same as the username or not.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">requiresAlpha</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password must contain an alphabetical character or not.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">requiresNumeric</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password must contain an numeric character or not.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="pwpolicy59_item"></a>&lt; pwpolicy59_item  &gt;
+      </h3>
+      <p align="justify">The pwpolicy59_item holds the password policy information for a particular user specified by the target_user element. Please
+         see the 'pwpolicy' man page for additional information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">target_user</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The target_user element specifies the user whose password policy information was collected.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The username element specifies the username of the authenticator.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">userpass</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The userpass element specifies the password of the authenticator as specified by the username element.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">directory_node</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The directory_node element specifies the directory node that the password policy information was collected from.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">maxChars</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Maximum number of characters allowed in a password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">maxFailedLoginAttempts</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Maximum number of failed logins before the account is locked.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">minChars</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Minimum number of characters allowed in a password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">passwordCannotBeName</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password is allowed to be the same as the username or not.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">requiresAlpha</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password must contain an alphabetical character or not.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">requiresNumeric</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password must contain an numeric character or not.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">maxMinutesUntilChangePassword</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Maximum number of minutes until the password must be changed.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">minMinutesUntilChangePassword</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Minimum number of minutes between password changes.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">requiresMixedCase</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password must contain upper and lower case characters or not.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">requiresSymbol</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Defines if the password must contain a symbol character or not.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">minutesUntilFailedLoginReset</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Number of minutes after login has been disabled due to too many failed login attempts to wait before reenabling login.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">usingHistory</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">0 = user can reuse the current pass-word, 1 = user cannot reuse the current password, 2-15 = user cannot reuse the last n
+                  passwords.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">canModifyPasswordforSelf</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">If true, the user can change the password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">usingExpirationDate</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">If true, user is required to change password on the date in expirationDateGMT</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">usingHardExpirationDate</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">If true, user's account is disabled on the date in hardExpireDateGMT</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">expirationDateGMT</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Date for the password to expire, format is: mm/dd/yyyy. NOTE: The pwpolicy command returns the year as a two digit value,
+                  but OVAL uses four digit years; the pwpolicy value is converted to an OVAL compatible value.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">hardExpireDateGMT</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Date for the user's account to be disabled, format is: mm/dd/yyyy. NOTE: The pwpolicy command returns the year as a two digit
+                  value, but OVAL uses four digit years; the pwpolicy value is converted to an OVAL compatible value.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">maxMinutesUntilDisabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">User's account is disabled after this interval</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">maxMinutesOfNonUse</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">User's account is disabled if it is not accessed by this interval</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">newPasswordRequired</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">If true, the user will be prompted for a new password at the next authentication.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">notGuessablePattern</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemPermissionCompareType"></a>== EntityItemPermissionCompareType ==
+      </h3>
+      <p align="justify">The EntityItemPermissionCompareType complex type restricts a string value to more, less, or same which specifies if an actual
+         permission is different than the expected permission (more or less restrictive) or if the permission is the same. The empty
+         string is also allowed to support empty elements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>more&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is more restrictive than the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>less&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is less restrictive than the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>same&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is the same as the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemPlistTypeType"></a>== EntityItemPlistTypeType ==
+      </h3>
+      <p align="justify">The EntityItemPlistTypeType complex type restricts a string value to the seven values CFString, CFNumber, CFBoolean, CFDate,
+         CFData, CFArray, and CFDictionary that specify the type of the value associated with a property list preference key. The empty
+         string is also allowed to support empty elements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CFString&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The CFString type is used to describe a preference key that has a string value. The OVAL string datatype should be used to
+                     represent CFString values.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CFNumber&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The CFNumber type is used to describe a preference key that has a integer or float value. The OVAL int and float datatypes
+                     should be used, as appropriate, to represent CFNumber values.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CFBoolean&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The CFBoolean type is used to describe a preference key that has a boolean value. The OVAL boolean datatype should be used
+                     to represent CFBoolean values.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CFDate&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The CFDate type is used to describe a preference key that has a date value. The OVAL string datatype should be used to represent
+                     CFDate values.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CFData&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The CFData type is used to describe a preference key that has a base64-encoded binary value. The OVAL string datatype should
+                     be used to represent CFData values.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CFArray&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The CFArray type is used to describe a preference key that has a collection of values. This is represented as multiple value
+                     entities.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CFDictionary&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The CFDictionary type is used to describe a preference key that has a collection of key-value pairs. Note that the collection
+                     of CFDictionary values is not supported. If an attempt is made to collect a CFDictionary value, an error should be reported.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

@@ -1,0 +1,265 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL PixOS Definition Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: PixOS Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the PIX specific tests found in Open Vulnerability
+         and Assessment Language (OVAL). Each test is an extension of the standard test element defined in the Core Definition Schema.
+         Through extension, each test inherits a set of elements and attributes that are shared amongst all OVAL tests. Each test is
+         described in detail and should provide the information necessary to understand what each element and attribute represents.
+         This document is intended for developers and assumes some familiarity with XML. A high level description of the interaction
+         between the different tests and their relationship to the Core Definition Schema is not outlined here.
+      </p>
+      <p align="justify">This schema was originally developed by Yuzheng Zhou and Eric Grey at Hewlett-Packard. The OVAL Schema is maintained by The
+         MITRE Corporation and developed by the public OVAL Community. For more information, including how to get involved in the project
+         and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="line_test"></a>&lt; line_test  &gt;
+      </h3>
+      <p align="justify">The line_test is used to check the properties of specific output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It
+         extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for
+         more information. The required object element references a line_object and the optional state element specifies the data to
+         check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="line_object"></a>&lt; line_object  &gt;
+      </h3>
+      <p align="justify">The line_object element is used by a line_test to define the object to be evaluated. Each object extends the standard ObjectType
+         as defined in the oval-definitions-schema and one should refer to the ObjectType description for more information. The common
+         set element allows complex objects to be created using filters and set logic. Again, please refer to the description of the
+         set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A line object consists of a show_subcommand entity that is the name of a SHOW sub-command to be tested.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">show_subcommand</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of a SHOW sub-command.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="line_state"></a>&lt; line_state  &gt;
+      </h3>
+      <p align="justify">The line_state element defines the different information that can be used to evaluate the result of a specific SHOW sub-command.
+         This includes the name of ths sub-command and the corresponding config line. Please refer to the individual elements in the
+         schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">show_subcommand</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the SHOW sub-command.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">config_line</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value returned from by the specified SHOW sub-command.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="version_test"></a>&lt; version_test  &gt;
+      </h3>
+      <p align="justify">The version test is used to check the version of the PIX operating system. It is based off of the SHOW VERSION command.  It
+         extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for
+         more information. The required object element references a version_object and the optional state element specifies the data
+         to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="version_object"></a>&lt; version_object  &gt;
+      </h3>
+      <p align="justify">The version_object element is used by a version test to define the different version information associated with a PIX system.
+         There is actually only one object relating to version and this is the system as a whole. Therefore, there are no child entities
+         defined. Any OVAL Test written to check version will reference the same version_object which is basically an empty object
+         element.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p><br><h3><a name="version_state"></a>&lt; version_state  &gt;
+      </h3>
+      <p align="justify">The version_state element defines the version information held within a Cisco PIX software release. The pix_release element
+         specifies the whole PIX version information.  The pix_major_release, pix_minor_release and pix_build elements specify seperated
+         parts of PIX software version information. For instance, if the PIX version is 7.1(2.3)49, then pix_release is 7.1(2.3)49,
+         pix_major_release is 7.1, pix_minor_release is 2.3 and pix_build is 49.  See the SHOW VERSION command within PIX for more
+         information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pix_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pix_release element specifies the whole PIX version information.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pix_major_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pix_major_release is the dotted version that starts a version string. For example the pix_release 7.1(2.3)49 has a pix_major_release
+                  of 7.1.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pix_minor_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pix_minor_release is the dotted version that starts a version string. For example the pix_release 7.1(2.3)49 has a pix_minor_release
+                  of 2.3.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pix_build</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pix_build is an integer. For example the pix_release 7.1(2.3)49 has a pix_build of 49.</td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

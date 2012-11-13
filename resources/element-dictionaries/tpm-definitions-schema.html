@@ -1,0 +1,495 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL TPM Definition Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: TPM Definition</li>
+         <li>Version: 5.10 Release Candidate 1</li>
+         <li>Release Date: 7/19/2011 10:15:37 PM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the tests found in Open Vulnerability and
+         Assessment Language (OVAL) that are used to interact with the Trusted Computing Group's (TCG) Trusted Platform Module (TPM).
+         These structures are operating-system independent. Each test is described in detail and should provide the information necessary
+         to understand what each element and attribute represents. This document is intended for developers and assumes some familiarity
+         with XML. A high level description of the interaction between the different tests and their relationship to the Core Definition
+         Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="quotereport_test"></a>&lt; quotereport_test  &gt;
+      </h3>
+      <p align="justify">The quote report test is used to check a TPM Quote and associated information (such as individual PCR values). It extends
+         the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more
+         information. The required object element references a quotereport_object and the optional quotereport_state element specifies
+         the different information to check. As any platform should only have a single TPM, the check attribute that is inherited from
+         the TestType is not relevant and should be ignored.
+      </p>
+      <p align="justify">If the TPM is disabled or deactivated, attempts to use this test will result in an error.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="quotereport_object"></a>&lt; quotereport_object  &gt;
+      </h3>
+      <p align="justify">The quotereport_object element is used by a quote report test to define those objects to evaluated based on a specified state.
+         Each request for a quote must include a PCR mask to identify what PCRs it should cover. 
+      </p>
+      <p align="justify">Each request for a quote must also include an AIK blob. The AIK blob consists of a binary encoding of a public key and an
+         encrypted private key. It is this key pair that the TPM will use to sign the Quote. Each AIK is associated with a single TPM.
+         As such, the value of this field will be different for every machine assessed. The TPM will only provide a quote if it is
+         able to unlock the encrypted private key in the blob. For this reason, the aikblob is optional in the schema. However, the
+         field must exist and be filled in before the probe is able to collect system information. It is recommended that, at some
+         level of the assessment infrastructure, this field is filled in using a database associating each targeted platform with an
+         AIK its TPM can decrypt.
+      </p>
+      <p align="justify">Each request for a quote must also include a nonce value. However, it is extremely important that the same nonce is never
+         used more than once. For this reason, the nonce field is optional in the quotereport_object. However, all tools must provide
+         a value for this field before the probe is able to collect system information. It is strongly recommended that the entity
+         responsible for verifying the TPM Quote also be the one responsible for filling in a missing nonce field as this is the only
+         way to prevent replay attacks.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mask</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectIntType">oval-def:EntityObjectIntType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The mask element(s) identify one or more PCR registers to include in the TPM Quote. Each mask element identifies a single
+                  register. Since most uses will want to have multiple PCRs in a Quote, there will usually be multiple instances of the mask
+                  field. The order of values in the mask field is not significant. Not all TPM have the same number of registers so it is possible
+                  that fewer registers will be returned than identified in the mask fields. (I.e. there will be no entry in the output for a
+                  non-existent PCR even if the mask requested that PCR.) Empty mask entries and multiple mask entries with the same value are
+                  ignored.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">quotetype</td>
+               <td style="font-size: 90%"><a href="#EntityObjectQuotetypeType">tpm-def:EntityObjectQuotetypeType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The quotetype element specifies the type of quote record being requested for evaluation.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">aikblob</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectBinaryType">oval-def:EntityObjectBinaryType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Holds the AIK blob including the encrypted private AIK that will be used to sign the Quote. Since each AIK is associated with
+                  a single TPM, this field will be different for every machine assessed. Authors may wish to use an external variable in order
+                  to support this, although this is not required.An external variable could, in theory, provide multiple aikblobs. If this occurs, tools should select the first aikblob that
+                  the TPM on the assessed machine is able to extract, ignoring all others. (For this reason, if an external variable is used,
+                  we require the var_check field to be "at least one".) Authors might wish to send multiple aikblobs to a target to preserve
+                  some level of privacy regarding the associations between a particular aikblob and a TPM.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">nonce</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectBinaryType">oval-def:EntityObjectBinaryType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The nonce element specifies the nonce used to create the quote. This consists of a single binary value. It is strongly recommended
+                  that no two requests for a quote report use the same value in their nonce field as this can lead to replay of TPM information.
+                  For this reason, the nonce element requires the use of a @var_ref to an external value. The actual nonce value can be added
+                  dynamically by assessment tools prior to collecting the actual quote report, preferably by the same entity that will be evaluating
+                  the returned quote report. It is an error for the external variable to provide more than one nonce value.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="quotereport_state"></a>&lt; quotereport_state  &gt;
+      </h3>
+      <p align="justify">The quotereport_state element contains entities that are used to check the validity of a TPM Quote as well as the values of
+         specific information contained in a quote report.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mask</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The mask values actually used in the generation of the quote report. This field exists for consistency with the associated
+                  Object only. It should NOT actually appear in a State and should not be used to evaluate an Item. To test whether desired
+                  PCRs were returned, us the pcr field.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">aikblob</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Compares against the AIK use to sign the quote. Note that, the process of validating the signature should discover any detectable
+                  anomalies in this field. As such, in most cases, there is no need to measure this field in the State. It is present here only
+                  to preserve consistency with the corresponding Object.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">nonce</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Compares nonce value reported in the quote. Note that, the process of validating the signature should discover any detectable
+                  anomalies in this field. As such, in most cases, there is no need to measure this field in the State. It is present here only
+                  to preserve consistency with the corresponding Object.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">quotetype</td>
+               <td style="font-size: 90%"><a href="#EntityStateQuotetypeType">tpm-def:EntityStateQuotetypeType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Compares type of quote (Quote or Quote2) reported. Note that, the process of validating the signature should discover any
+                  detectable anomalies in this field. As such, in most cases, there is no need to measure this field in the State. It is present
+                  here only to preserve consistency with the corresponding Object.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">signature</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Compares against the signature over the quote structure. There should be no way to know the correct value of this field ahead
+                  of time so this field should never be included. It is present here only to preserve consistency with the corresponding Item.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcr</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateRecordType">oval-def:EntityStateRecordType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A record containing the PCR fields with their index number as their name. Used to compare against the reported PCRs</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcrcomposite</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Compares against the pcrcomposite in the quote. This field exists to provide consistency with the corresponding Item. In most
+                  cases, attempting to evaluate this field in a State will be impractical due to the range of acceptable values. As such, this
+                  field should be absent in most States.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">locality</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The locality element compares against the locality information of the quote. It is only relevant if the type is Quote2.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="tpminfo_test"></a>&lt; tpminfo_test  &gt;
+      </h3>
+      <p align="justify">The tpm info test is used to test the permanent, inherent characteristics of a TPM. These include the chip's version, manufacturer,
+         and some of the inherent processing capabilities. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references a tpminfo_object
+         and the optional state element specifies the data to check.
+      </p>
+      <p align="justify">Unlike most other TPM tests, this test should be usable even if the TPM is disabled or deactivated.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="tpminfo_object"></a>&lt; tpminfo_object  &gt;
+      </h3>
+      <p align="justify">The tpminfo_object element is used by a tpm info test to define the object to be evaluated. Each object extends the standard
+         ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more information.
+         The common set element allows complex objects to be created using filters and set logic. Again, please refer to the description
+         of the set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A tpminfo_object contains no fields, reflecting the fact that there is only one TPM on a system and that the tpminfo_object
+         only collects generic information about the TPM.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p><br><h3><a name="tpminfo_state"></a>&lt; tpminfo_state  &gt;
+      </h3>
+      <p align="justify">The tpminfo_state element defines the different information that can be used to evaluate the TPM. This includes the manufacturer,
+         some inherent capabilities, and version numbers. Please refer to the individual elements in the schema for more details about
+         what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This reflects the version of the TCG specification that this TPM implements.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">revision</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the manufacturer's revision of the TPM used in the current TPM chip. It's meaning is manufacturer dependant.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">errata_number</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the errata number of the TCG specification that this TPM implements.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">manufacturer</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the vendor ID of the manufacturer who created this TPM.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">manufacturer_info</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the manufacturer-specific information blob associated with this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">command_support_level</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This indicates the level of commands supported by this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcr_count</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the total number of PCRs in this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pcr_attributes</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBinaryType">oval-def:EntityStateBinaryType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the attributes associated with PCRs in this TPM</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">buffer_size</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the maximum size of the TPM's I/O buffer</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityObjectQuotetypeType"></a>== EntityObjectQuotetypeType ==
+      </h3>
+      <p align="justify">The EntityObjectQuotetypeType complex type restricts a string value to a either QUOTE or QUOTE2</p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>QUOTE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is a Quote type quote.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>QUOTE2&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is a Quote2 type quote.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityStateQuotetypeType"></a>== EntityStateQuotetypeType ==
+      </h3>
+      <p align="justify">The EntityStateQuotetypeType complex type restricts a string value to a either QUOTE or QUOTE2</p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>QUOTE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is a Quote type quote.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>QUOTE2&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is a Quote2 type quote.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

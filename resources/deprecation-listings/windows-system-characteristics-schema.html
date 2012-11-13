@@ -1,0 +1,177 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Windows System Characteristics Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: Windows System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="fileauditedpermissions_item"></a><a href="../documentation/windows-system-characteristics-schema.html#fileauditedpermissions_item">&lt; fileauditedpermissions_item  &gt;</a></h3>
+      <p class="documentation">This item stores the audited access rights of a file that a system access control list (SACL) structure grants to a specified
+         trustee. The trustee's audited access rights are determined checking all access control entries (ACEs) in the SACL. For help
+         with this test see the GetAuditedPermissionsFromAcl() api.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>trustee_name
+                  <p class="documentation">This element specifies the trustee name associated with this particular SACL.  A trustee can be a user, group, or program
+                     (such as a Windows service). In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive
+                     operations are used for this entity. In a domain environment, trustee names should be identified in the form:  "domain\trustee
+                     name". For local trustee names use: "computer name\trustee name". For built-in accounts on the system, use the trustee name
+                     without a domain.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the trustee_sid entity. This entity uses trustee names for identifying trustees. Trustee names are not unique,
+                     and a new entity was created to use trustee SIDs, which are unique. See the trustee_sid.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br><hr class="thick">
+      <h3><a name="fileeffectiverights_item"></a><a href="../documentation/windows-system-characteristics-schema.html#fileeffectiverights_item">&lt; fileeffectiverights_item  &gt;</a></h3>
+      <p class="documentation">This item stores the effective rights of a file that a discretionary access control list (DACL) structure grants to a specified
+         trustee. The trustee's effective rights are determined checking all access-allowed and access-denied access control entries
+         (ACEs) in the DACL. For help with this test see the GetEffectiveRightsFromAcl() api.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>trustee_name
+                  <p class="documentation">This element specifies the trustee name associated with this particular DACL.  A trustee can be a user, group, or program
+                     (such as a Windows service). In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive
+                     operations are used for this entity. In a domain environment, trustee names should be identified in the form: "domain\trustee
+                     name". For local trustee names use: "computer name\trustee name". For built-in accounts on the system, use the trustee name
+                     without a domain.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the trustee_sid entity. This entity uses trustee names for identifying trustees. Trustee names are not unique,
+                     and a new entity was created to use trustee SIDs, which are unique. See the trustee_sid.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br><hr class="thick">
+      <h3><a name="regkeyauditedpermissions_item"></a><a href="../documentation/windows-system-characteristics-schema.html#regkeyauditedpermissions_item">&lt; regkeyauditedpermissions_item  &gt;</a></h3>
+      <p class="documentation">This item stores the audited access rights of a registry key that a system access control list (SACL) structure grants to
+         a specified trustee. The trustee's audited access rights are determined checking all access control entries (ACEs) in the
+         SACL. For help with this test see the GetAuditedPermissionsFromAcl() api.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>trustee_name
+                  <p class="documentation">This element specifies the trustee name associated with this particular DACL.  A trustee can be a user, group, or program
+                     (such as a Windows service). In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive
+                     operations are used for this entity. In a domain environment, trustee names should be identified in the form: "domain\trustee
+                     name". For local trustee names use: "computer name\trustee name". For built-in accounts on the system, use the trustee name
+                     without a domain.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the trustee_sid entity. This entity uses trustee names for identifying trustees. Trustee names are not unique,
+                     and a new entity was created to use trustee SIDs, which are unique. See the trustee_sid.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td>standard_synchronize
+                  <p class="documentation">The right to use the object for synchronization. This enables a thread to wait until the object is in the signaled state.
+                     Some object types do not support this access right.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>This entity has been deprecated because registry keys do not support the SYNCHRONIZE standard access right.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br><hr class="thick">
+      <h3><a name="regkeyeffectiverights_item"></a><a href="../documentation/windows-system-characteristics-schema.html#regkeyeffectiverights_item">&lt; regkeyeffectiverights_item  &gt;</a></h3>
+      <p class="documentation">This item stores the effective rights of a registry key that a discretionary access control list (DACL) structure grants to
+         a specified trustee. The trustee's effective rights are determined checking all access-allowed and access-denied access control
+         entries (ACEs) in the DACL. For help with this test see the GetEffectiveRightsFromAcl() api.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>trustee_name
+                  <p class="documentation">This element specifies the trustee name associated with this particular DACL.  A trustee can be a user, group, or program
+                     (such as a Windows service). In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive
+                     operations are used for this entity. In a domain environment, trustee names should be identified in the form: "domain\trustee
+                     name". For local trustee names use: "computer name\trustee name". For built-in accounts on the system, use the trustee name
+                     without a domain.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the trustee_sid entity. This entity uses trustee names for identifying trustees. Trustee names are not unique,
+                     and a new entity was created to use trustee SIDs, which are unique. See the trustee_sid.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td>standard_synchronize
+                  <p class="documentation">The right to use the object for synchronization. This enables a thread to wait until the object is in the signaled state.
+                     Some object types do not support this access right.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>This entity has been deprecated because registry keys do not support the SYNCHRONIZE standard access right.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br><hr class="thick">
+      <h3><a name="wmi_item"></a><a href="../documentation/windows-system-characteristics-schema.html#wmi_item">&lt; wmi_item  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.7<br><strong>Reason: </strong>Replaced by the wmi57_item. This item allows for single fields to be selected from WMI. A new item was created to allow more
+         than one field to be selected in one statement. See the wmi57_item.<br><strong>Comment: </strong>This object has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">The wmi_item outlines information to be checked through Microsoft's WMI interface.</p><br></body>
+</html>

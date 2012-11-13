@@ -1,0 +1,61 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL HP-UX Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: HP-UX Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="patch_test"></a><a href="../documentation/hpux-definitions-schema.html#patch_test">&lt; patch_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the patch53_test. The patch_name entity was removed from the patch_object element, and replaced with the swtype,
+         area_patched, and patch_base entities, because the patch_name element can be constructed from the swtype, area_patched, and
+         patch_base entities. Likewise, the patch_name entity was removed from the patch_state element for the same reason. Also, a
+         behaviors entity was added to the patch_object to allow the object to match both the original patch and any superseding patches.
+         A new test was created to reflect these changes. See the patch53_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">From /usr/sbin/swlist -l patch PHxx_yyyyy. See swlist manpage for specific fields</p><br><hr class="thick">
+      <h3><a name="patch_object"></a><a href="../documentation/hpux-definitions-schema.html#patch_object">&lt; patch_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the patch53_object. The patch_name entity was removed from the patch_object element, and replaced with the swtype,
+         area_patched, and patch_base entities, because the patch_name element can be constructed from the swtype, area_patched, and
+         patch_base entities. Also, a behaviors entity was added to the patch_object to allow the object to match both the original
+         patch and any superseding patches. A new object was created to reflect these changes. See the patch53_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div><br><hr class="thick">
+      <h3><a name="patch_state"></a><a href="../documentation/hpux-definitions-schema.html#patch_state">&lt; patch_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the patch53_state. The patch_name entity was removed from the patch_state element, and replaced with the swtype,
+         area_patched, and patch_base entities, because the patch_name element can be constructed from the swtype, area_patched, and
+         patch_base entities. A new state was created to reflect these changes. See the patch53_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div><br></body>
+</html>

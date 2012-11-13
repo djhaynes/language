@@ -1,0 +1,383 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL IOS System Characteristics Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: IOS System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the IOS specific system characteristic
+         items found in Open Vulnerability and Assessment Language (OVAL). Each item is an extension of the standard item element defined
+         in the Core System Characteristic Schema. Through extension, each item inherits a set of elements and attributes that are
+         shared amongst all OVAL Items. Each item is described in detail and should provide the information necessary to understand
+         what each element and attribute represents. This document is intended for developers and assumes some familiarity with XML.
+         A high level description of the interaction between the different tests and their relationship to the Core System Characteristic
+         Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="global_item"></a>&lt; global_item  &gt;
+      </h3>
+      <p align="justify">Sotres information about the existence of a particular line in the ios config file under the global context</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">global_command</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="interface_item"></a>&lt; interface_item  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">ip_directed_broadcast_command</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">no_ip_directed_broadcast_command</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">proxy_arp_command</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">shutdown_command</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="line_item"></a>&lt; line_item  &gt;
+      </h3>
+      <p align="justify">Stores the properties of specific lines in the ios config file.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">show_subcommand</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the SHOW sub-command.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">config_line</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value returned from by the specified SHOW sub-command.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="snmp_item"></a>&lt; snmp_item  &gt;
+      </h3>
+      <p align="justify">Stores results from collecting lines under the global context associated with snmp.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">access_list</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">community_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="tclsh_item"></a>&lt; tclsh_item  &gt;
+      </h3>
+      <p align="justify">The tclsh item holds information about the availability of tcl on the IOS operating system. It extends the standard ItemType
+         as defined in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">available</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This boolean entity describes whether TCLSH is available on the system. A value of true means that TCLSH is available. Per
+                  Cisco documentation, the accepted way to see if the device supports tcl functionality is to enter the tcl shell. If the attempt
+                  results in a tcl prompt then the device supports tclsh and has it enabled.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="version_item"></a>&lt; version_item  &gt;
+      </h3>
+      <p align="justify">The version_item holds information about the version of the IOS operating system. It extends the standard ItemType as defined
+         in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr style="text-decoration: line-through;">
+               <td rowspan="2" style="vertical-align: top;">major_release</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The major_release is a combination of train and rebuild information and is used by Cisco advisories to identify major releases.</td>
+            </tr>
+            <tr style="text-decoration: line-through;">
+               <td rowspan="2" style="vertical-align: top;">train_number</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The train number is the dotted version that starts a version string. For example the version string 12.2(3)T has a train number
+                  of 12.2.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">major_version</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The major_version entity specifies the major version piece of the version string.  The value is an integer and in the example
+                  12.4(9)T0a the major version is '12'.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">minor_version</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The minor_version entity specifies the minor version piece of the version string.  The value is an integer and in the example
+                  12.4(9)T0a the minor version is '4'.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">release</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The release entity specifies the release piece of the version string.  The value is an integer and in the example 12.4(9)T0a
+                  the release is '9'.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">train_identifier</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The train identifier is the type of Train. For example the version string 12.2(3)T has a train identifier of T. Please see
+                  the EntityItemTrainIdentifierType for more information about the different train identifiers.The train_identifier entity specifies the type of train represented in the version string.  The value is a string and in the
+                  example 12.4(9)T0a the train identifier is 'T'.  The following explaination from Wikipedia should help explain the different
+                  train identifiers. Cisco IOS releases are split into several "trains", each containing a different set of features. Trains
+                  more or less map onto distinct markets or groups of customers that Cisco is targeting.  The 'mainline' train is designed to
+                  be the most stable release the company can offer, and its feature set never expands during its lifetime. Updates are released
+                  only to address bugs in the product. The previous technology train becomes the source for the current mainline train--for
+                  example, the 12.1T train becomes the basis for the 12.2 mainline. Therefore, to determine the features available in a particular
+                  mainline release, look at the previous T train release.  The 'T' (Technology) train, gets new features and bug fixes throughout
+                  its life, and is therefore less stable than the mainline. (In releases prior to Cisco IOS Release 12.0, the P train served
+                  as the Technology train.)  The 'S' (Service Provider) train, runs only on the company's core router products and is heavily
+                  customized for Service Provider customers.  The 'E' (Enterprise) train, is customized for implementation in enterprise environments.
+                  The 'B' (broadband) train, support internet based broadband features.  The 'XA', 'Xb' ... (special functionality) train, needs
+                  to be documented.  There are other trains from time to time, designed for specific needs -- for example, the 12.0AA train
+                  contained new code required for Cisco's AS5800 product.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">rebuild</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The rebuild entity specifies the rebuild piece of the version string  The value is an integer and in the example 12.4(9)T0a
+                  the rebuild is '0'.  Often a rebuild is compiled to fix a single specific problem or vulnerability for a given IOS version.
+                  For example, 12.1(8)E14 is a Rebuild, the 14 denoting the 14th rebuild of 12.1(8)E. Rebuilds are produced to either quickly
+                  repair a defect, or to satisfy customers who do not want to upgrade to a later major revision because they may be running
+                  critical infrastructure on their devices, and hence prefer to minimise change and risk.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">subrebuild</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The subrebuild entity specifies the subrebuild piece of the version string.  The value is a string and in the example 12.4(9)T0a
+                  the subrebuild is 'a'.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mainline_rebuild</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The mainline_rebuild entity specifies the mainline rebuild piece of the version string.  The mainline rebuild is just a regular
+                  rebuild release against the mainline operating system release (e.g. the branch of development that would typically be called
+                  "the trunk" that isn't associated with a train). Since there is no train identifier to stick the rebuild release after, they
+                  stick a alphabetic character inside the parens holding the maintenance release number. For example, 12.4(5b) is the second
+                  rebuild of the 12.4(5) maintenance release.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version_string</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIOSVersionType">oval-sc:EntityItemIOSVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The version entity holds the raw string output of a 'show version' command.</td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

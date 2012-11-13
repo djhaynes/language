@@ -1,0 +1,79 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL VMware ESX server Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: VMware ESX server Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="patch_test"></a><a href="../documentation/esx-definitions-schema.html#patch_test">&lt; patch_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>Replaced by the patch56_test. The deprecated patch_test has a bug where the patch name entity is defined as a string in the
+         object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The patch test reveals the installation status of a specific patch in the VMware ESX server. This information can be retrieved
+         by the "esxupdate query | grep ESX-xxxxxxx" command. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references a patch_object
+         and the optional state element specifies the metadata to check.
+      </p><br><hr class="thick">
+      <h3><a name="patch_object"></a><a href="../documentation/esx-definitions-schema.html#patch_object">&lt; patch_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>Replaced by the patch56_object. The deprecated patch_test has a bug where the patch name entity is defined as a string in
+         the object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The patch_object element is used by a patch test to define those objects to be evaluated based on a specified state. Each
+         object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p class="documentation">A patch_object consists of a single patch_number entity that identifies the patch to be checked.</p><br><hr class="thick">
+      <h3><a name="patch_state"></a><a href="../documentation/esx-definitions-schema.html#patch_state">&lt; patch_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>Replaced by the patch56_state. The deprecated patch_test has a bug where the patch name entity is defined as a string in the
+         object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The patch_state element defines the information about a specific patch. The patch_number element identifies this patch, and
+         the status element reveals the installation status of this patch in the VMware ESX server. For instance, after the "esxupdate
+         query | grep ESX-2559638" command is run, the result is either a string similar to "ESX-2559638 15:27:17 04/05/07 Update info
+         rpm for ESX 3.0.1." or empty.
+      </p><br><hr class="thick">
+      <h3><a name="PatchBehaviors"></a><a href="../documentation/esx-definitions-schema.html#PatchBehaviors">== PatchBehaviors ==</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>Replaced by Patch56Behaviors. The deprecated patch_test has a bug where the patch name entity is defined as a string in the
+         object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><strong>Comment: </strong>These behaviors have been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The PatchBehaviors complex type defines a number of behaviors that allow a more detailed definition of the patch_object being
+         specified. Note that using these behaviors may result in some unique results. For example, a double negative type condition
+         might be created where an object entity says include everything except a specific item, but a behavior is used that might
+         then add that item back in.
+      </p>
+   </body>
+</html>

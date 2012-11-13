@@ -1,0 +1,758 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Solaris System Characteristics Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: Solaris System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the Solaris specific system characteristic
+         items found in Open Vulnerability and Assessment Language (OVAL). Each item is an extension of the standard test element defined
+         in the Core Definition Schema. Through extension, each test inherits a set of elements and attributes that are shared amongst
+         all OVAL tests. Each test is described in detail and should provide the information necessary to understand what each element
+         and attribute represents. This document is intended for developers and assumes some familiarity with XML. A high level description
+         of the interaction between the different tests and their relationship to the Core Definition Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="isainfo_item"></a>&lt; isainfo_item  &gt;
+      </h3>
+      <p align="justify">Information about the instruction set architectures. This information can be retrieved by the isainfo command.</p>
+      <p align="justify">The isainfo_item was originally developed by Robert L. Hollis at ThreatGuard, Inc. Many thanks for their support of the OVAL
+         project.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">bits</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the number of bits in the address space of the native instruction set (isainfo -b).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">kernel_isa</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the instruction set used by kernel components (isainfo -k).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">application_isa</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the instruction set used by portable applications (isainfo -n).</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="ndd_item"></a>&lt; ndd_item  &gt;
+      </h3>
+      <p align="justify">This item represents data collected by the ndd command.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">device</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the device for which the parameter was collected.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">instance</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The instance of the device to examine. Certain devices may have multiple instances on a system. If multiple instances exist,
+                  this entity should be populated with its respective instance value. If only a single instance exists, this entity should not
+                  be collected.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">parameter</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of a parameter for example, ip_forwarding</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemAnySimpleType">oval-sc:EntityItemAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The observed value of the named parameter.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="package_item"></a>&lt; package_item  &gt;
+      </h3>
+      <p align="justify">Output of /usr/bin/pkginfo. See pkginfo(1).</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pkginst</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">category</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">vendor</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">description</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="packagecheck_item"></a>&lt; packagecheck_item  &gt;
+      </h3>
+      <p align="justify">The packagecheck_item holds verification information about an individual file that is part of a installed package. Each packagecheck_item
+         contains a package designation, filepath, whether the checksum differs, whether the size differs, whether the modfication
+         time differs, and how the actual permissions differ from the expected permissions. For more information, see pkgchk(1M). 
+         It extends the standard ItemType as defined in the oval-system-characteristics schema and one should refer to the ItemType
+         description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pkginst</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pkginst entity is a string that represents a package designation by its instance. An instance can be the package abbreviation
+                  or a specific instance (for example, inst.1 or inst.2).
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The filepath element specifies the absolute path for a file or directory in the specified package..</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">checksum_differs</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the file's checksum changed? A value of true indicates that the file's checksum has changed. A value of false indicates
+                  that the file's checksum has not changed.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">size_differs</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the file's size changed? A value of true indicates that the file's size has changed. A value of false indicates that the
+                  file's size has not changed.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mtime_differs</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the file's modified time changed? A value of true indicates that the file's modified time has changed. A value of false
+                  indicates that the file's modified time has not changed.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uread</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user read permission changed from the expected user read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uwrite</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user write permission changed from the expected user write permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uexec</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user exec permission changed from the expected user exec permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gread</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group read permission changed from the expected group read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gwrite</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group write permission changed from the expected group write permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gexec</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group exec permission changed from the expected group exec permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oread</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others read permission changed from the expected others read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">owrite</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others read permission changed from the expected others read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oexec</td>
+               <td style="font-size: 90%"><a href="#EntityItemPermissionCompareType">sol-sc:EntityItemPermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others read permission changed from the expected others read permission?</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="patch_item"></a>&lt; patch_item  &gt;
+      </h3>
+      <p align="justify">Patches are identified by unique alphanumeric strings, with the patch base code first, a hyphen, and a number that represents
+         the patch revision number. The information can be obtained using /usr/bin/showrev -p. Please see showrev(1M).
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">base</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The base entity reresents a patch base code found before the hyphen.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The version entity represents a patch version number found after the hyphen.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="smf_item"></a>&lt; smf_item  &gt;
+      </h3>
+      <p align="justify">The smf_item is used to hold information related to service management facility controlled services</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">fmri</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The FMRI (Fault Managed Resource Identifier) entity holds the identifier associated with a service.  Services managed by SMF
+                  are assigned FMRI URIs prefixed with the scheme name "svc".  FMRIs used by SMF can be expressed in three ways: first as an
+                  absolute path including a location path such as "localhost"  (eg svc://localhost/system/system-log:default), second as a path
+                  relative to the local machine (eg svc:/system/system-log:default), and third as simply the service identifier with the string
+                  prefixes implied (eg system/system-log:default).  For OVAL, the absolute path version (first choice) should be used.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">service_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The service_name entity is usually an abbreviated form of the FMRI.  In the example svc://localhost/system/system-log:default,
+                  the name would be system-log.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">service_state</td>
+               <td style="font-size: 90%"><a href="#EntityItemSmfServiceStateType">sol-sc:EntityItemSmfServiceStateType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The service_state entity describes the state that the service is in.  Each service instance is always in a well-defined state
+                  based on its dependencies, the results of the execution of its methods, and its potential receipt of events from the contracts
+                  filesystem.  The service_state values are UNINITIALIZED, OFFLINE, ONLINE, DEGRADED, MAINTENANCE, DISABLED, and LEGACY-RUN.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">protocol</td>
+               <td style="font-size: 90%"><a href="#EntityItemSmfProtocolType">sol-sc:EntityItemSmfProtocolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The protocol entity describes the protocol supported by the service.  Possible values are tcp, tcp6, tcp6only, udp, udp6,
+                  and udp6only
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server_executable</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The entity server_executable is a string representing the listening daemon on the server side.  An example being 'svcprop
+                  ftp' which might show 'inetd/start/exec astring /usr/sbin/in.ftpd\ -a'
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server_arguements</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The server_arguments entity describes the parameters that are passed to the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exec_as_user</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The exec_as_user entity is a string pulled from svcprop in the following format:  inetd_start/user astring root</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemPermissionCompareType"></a>== EntityItemPermissionCompareType ==
+      </h3>
+      <p align="justify">The EntityItemPermissionCompareType complex type restricts a string value to more, less, or same which specifies if an actual
+         permission is different than the expected permission (more or less restrictive) or if the permission is the same. The empty
+         string is also allowed to support empty elements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>more&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is more restrictive than the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>less&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is less restrictive than the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>same&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is the same as the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemSmfProtocolType"></a>== EntityItemSmfProtocolType ==
+      </h3>
+      <p align="justify">The EntityItemSmfProtocolType defines the different values that are valid for the protocol entity of a smf_item.  The empty
+         string is also allowed as a valid value to support empty emlements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>tcp&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>tcp6&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>tcp6only&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Request that service listen only for and pass on true IPv6 requests (not IPv4 mapped ones).</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>udp&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>udp6&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>udp6only&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Request that service listen only for and pass on true IPv6 requests (not IPv4 mapped ones).</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemSmfServiceStateType"></a>== EntityItemSmfServiceStateType ==
+      </h3>
+      <p align="justify">The EntityItemSmfServiceStateType defines the different values that are valid for the service_state entity of a smf_item.
+         The empty string is also allowed as a valid value to support empty emlements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DEGRADED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled and running or available to run. The instance, however, is functioning at a limited capacity in comparison
+                     to normal operation.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DISABLED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is disabled.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>MAINTENANCE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled, but not able to run.  Administrative action is required to restore the instance to offline and subsequent
+                     states.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>LEGACY-RUN&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This state represents a legacy instance that is not managed by the service management facility.  Instances in this state have
+                     been started at some point, but might or might not be running.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>OFFLINE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled, but not yet running or available to run.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ONLINE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled and running or is available to run.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>UNINITIALIZED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is the initial state for all service instances.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

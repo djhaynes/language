@@ -1,0 +1,82 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Linux Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: Linux Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="rpmverify_test"></a><a href="../documentation/linux-definitions-schema.html#rpmverify_test">&lt; rpmverify_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the rpmverifyfile_test and the rpmverifypackage_test. The rpmverify_test was split into two tests to distinguish
+         between the verification of the files in an rpm and the verification of an rpm as a whole. By making this distinction, content
+         authoring is simplified and information is no longer duplicated across items. See the rpmverifyfile_test and rpmverifypackage_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The rpmverify_test is used to verify the integrity of installed RPMs. This test aligns with the rpm -V command for verifying
+         RPMs. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description
+         for more information. The required object element references a rpmverify_object and the optional state element specifies the
+         data to check.
+      </p><br><hr class="thick">
+      <h3><a name="rpmverify_object"></a><a href="../documentation/linux-definitions-schema.html#rpmverify_object">&lt; rpmverify_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the rpmverifyfile_object and rpmverifypackage_object. The rpmverify_test was split into two tests to distinguish
+         between the verification of the files in an rpm and the verification of an rpm as a whole. By making this distinction, content
+         authoring is simplified and information is no longer duplicated across items. See the rpmverifyfile_object and rpmverifypackage_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The rpmverify_object element is used by a rpmverity_test to define a set of files within a set of RPMs to verify. Each object
+         extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p><br><hr class="thick">
+      <h3><a name="rpmverify_state"></a><a href="../documentation/linux-definitions-schema.html#rpmverify_state">&lt; rpmverify_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the rpmverifyfile_state and rpmverifypackage_state. The rpmverify_test was split into two tests to distinguish
+         between the verification of the files in an rpm and the verification of an rpm as a whole. By making this distinction, content
+         authoring is simplified and information is no longer duplicated across items. See the rpmverifyfile_state and rpmverifypackage_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The rpmverify_state element defines the different information that can be used to evaluate the specified rpm. This includes
+         the architecture, epoch number, and version numbers. Most of this information can be obtained through the rpm function. Please
+         refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="RpmVerifyBehaviors"></a><a href="../documentation/linux-definitions-schema.html#RpmVerifyBehaviors">== RpmVerifyBehaviors ==</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the RpmVerifyFileBehaviors and the RpmVerifyPackageBehaviors. The RpmVerifyBehaviors complex type is used by the
+         rpmverify_test which was split into two tests to distinguish between the verification of the files in an rpm and the verification
+         of an rpm as a whole. By making this distinction, content authoring is simplified and information is no longer duplicated
+         across items. The new tests utilize the RpmVerifyFileBehaviors and RpmVerifyPackageBehaviors complex types, and as a result,
+         the RpmVerifyBehaviors complex type is no longer needed.<br><strong>Comment: </strong>This complex type has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The RpmVerifyBehaviors complex type defines a set of behaviors that for controlling how installed rpms are verified. These
+         behaviors align with the verify-options of the rpm command with the addition of two behaviors that will indicate that a file
+         with a given attribute marker should not be collected.
+      </p>
+   </body>
+</html>

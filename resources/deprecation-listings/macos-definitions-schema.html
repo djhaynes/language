@@ -1,0 +1,118 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL MacOS Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: MacOS Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="inetlisteningservers_test"></a><a href="../documentation/macos-definitions-schema.html#inetlisteningservers_test">&lt; inetlisteningservers_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test. The name of an application
+         cannot be used to uniquely identify an application that is listening on the network. As a result, the inetlisteningserver510_object
+         utilizes the protocol, local_address, and local_port entities to uniquely identify an application listening on the network.
+         Please see the inetlisteningserver510_test for additional information.<br></div>
+      <p class="documentation">This test's purpose is generally used to check if an application is listening on the network, either for a new connection
+         or as part of an ongoing connection. This is limited to applications that are listening for connections that use the TCP or
+         UDP protocols and have addresses represented as IPv4 or IPv6 addresses (AF_INET or AF_INET6). It is generally speaking the
+         parsed output of running the command netstat -tuwlnpe with root privilege.
+      </p><br><hr class="thick">
+      <h3><a name="inetlisteningservers_object"></a><a href="../documentation/macos-definitions-schema.html#inetlisteningservers_object">&lt; inetlisteningservers_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The inetlisteningservers_object has been deprecated and replaced by the inetlisteningserver510_object. The name of an application
+         cannot be used to uniquely identify an application that is listening on the network. As a result, the inetlisteningserver510_object
+         utilizes the protocol, local_address, and local_port entities to uniquely identify an application listening on the network.
+         Please see the inetlisteningserver510_object for additional information.<br></div>
+      <p class="documentation">The inetlisteningservers_object element is used by an inetlisteningserver test to define the object to be evaluated. Each
+         object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p><br><hr class="thick">
+      <h3><a name="inetlisteningservers_state"></a><a href="../documentation/macos-definitions-schema.html#inetlisteningservers_state">&lt; inetlisteningservers_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The inetlisteningservers_state has been deprecated and replaced by the inetlisteningserver510_state. The name of an application
+         cannot be used to uniquely identify an application that is listening on the network. As a result, the inetlisteningserver510_object
+         utilizes the protocol, local_address, and local_port entities to uniquely identify an application listening on the network.
+         Please see the inetlisteningserver510_state for additional information.<br></div>
+      <p class="documentation">The inetlisteningservers_state element defines the different information that can be used to evaluate the specified inet listening
+         server. This includes the local address, foreign address, port information, and process id. Please refer to the individual
+         elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="plist_test"></a><a href="../documentation/macos-definitions-schema.html#plist_test">&lt; plist_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the plist510_test. This test references the plist_object which does not contain an instance entity. As a result,
+         it is not possible to differentiate between two preference keys that have the same name using the plist_object. The plist510_test
+         was added to address this deficiency. See the plist510_test.<br><strong>Comment: </strong>This test has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">The plist_test is used to check the value(s) associated with property list preference keys. It extends the standard TestType
+         as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required
+         object element references a plist_object and the optional plist_state element specifies the data to check.
+      </p><br><hr class="thick">
+      <h3><a name="plist_object"></a><a href="../documentation/macos-definitions-schema.html#plist_object">&lt; plist_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the plist510_object. This object does not contain an instance entity. As a result, it is not possible to differentiate
+         between two preference keys that have the same name using this object. The plist510_object was added to address this deficiency.
+         See the plist510_object.<br><strong>Comment: </strong>This object has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">The plist_object element is used by a plist_test to define the preference keys to collect and where to look for them. Each
+         object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p><br><hr class="thick">
+      <h3><a name="plist_state"></a><a href="../documentation/macos-definitions-schema.html#plist_state">&lt; plist_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the plist510_state. This state is used in conjunction with the plist_object which does not contain an instance
+         entity. As a result, it is not possible to differentiate between two preference keys that have the same name using the plist_object.
+         The plist510_state was added to address this deficiency. See the plist510_state.<br><strong>Comment: </strong>This object has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">The plist_state element defines the different information that can be used to evaluate the specified property list preference
+         key. This includes the preference key, application identifier, filepath, type, as well as the preference key's value. Please
+         refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="pwpolicy_test"></a><a href="../documentation/macos-definitions-schema.html#pwpolicy_test">&lt; pwpolicy_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.9<br><strong>Reason: </strong>Replaced by the pwpolicy59_test. The username, userpass, and directory_node entities in the pwpolicy_object, pwpolicy_state,
+         and pwpolicy_item were underspecified and as a result their meaning was uncertain. A new test was created to resolve this
+         issue. See the pwpolicy59_test.<br><strong>Comment: </strong>This test has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">This test pulls data from the 'pwpolicy -getpolicy' output. The actual values get stored under /var/db/netinfo/local.nidb/
+         in a Store.# file. Is this test actually needed, or can the text file content test be used instead?
+      </p><br><hr class="thick">
+      <h3><a name="pwpolicy_object"></a><a href="../documentation/macos-definitions-schema.html#pwpolicy_object">&lt; pwpolicy_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.9<br><strong>Reason: </strong>Replaced by the pwpolicy59_object. The username, userpass, and directory_node entities in the pwpolicy_object were underspecified
+         and as a result their meaning was uncertain. A new object was created to resolve this issue. See the pwpolicy59_object.<br><strong>Comment: </strong>This object has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">The pwpolicy_object element is used by a pwpolicy_test to define the object to be evaluated. Each object extends the standard
+         ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more information.
+         The common set element allows complex objects to be created using filters and set logic. Again, please refer to the description
+         of the set element in the oval-definitions-schema.
+      </p><br><hr class="thick">
+      <h3><a name="pwpolicy_state"></a><a href="../documentation/macos-definitions-schema.html#pwpolicy_state">&lt; pwpolicy_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.9<br><strong>Reason: </strong>Replaced by the pwpolicy59_state. The username, userpass, and directory_node entities in the pwpolicy_state were underspecified
+         and as a result their meaning was uncertain. A new state was created to resolve this issue. See the pwpolicy59_state.<br><strong>Comment: </strong>This state has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation"></p><br></body>
+</html>

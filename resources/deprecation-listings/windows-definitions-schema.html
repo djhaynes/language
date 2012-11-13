@@ -1,0 +1,596 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Windows Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: Windows Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="AccesstokenBehaviors"></a><a href="../documentation/windows-definitions-schema.html#AccesstokenBehaviors">== AccesstokenBehaviors ==</a></h3>
+      <p class="documentation">The AccesstokenBehaviors complex type defines a number of behaviors that allow a more detailed definition of the accesstoken_object
+         being specified.  Note that using these behaviors may result in some unique results.  For example, a double negative type
+         condition might be created where an object entity says include everything except a specific item, but a behavior is used that
+         might then add that item back in.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#FFFFFF;" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="7">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <th colspan="7" style="text-align: left">Attributes:</th>
+            </tr>
+            <tr>
+               <th colspan="7">
+                  <hr>
+               </th>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td>include_group</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td><span class="smaller">(optional -- default='true')</span></td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The 'include_group' behavior has been deprecated in favor of using variables to reference more efficient objects for expanding
+                     groups.<br><strong>Comment: </strong>Consider using a sid_object or similar to include the members of a group.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td>resolve_group</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td><span class="smaller">(optional -- default='false')</span></td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>The 'resolve_group' behavior has been deprecated in favor of using variables to reference more efficient objects for expanding
+                     groups.<br><strong>Comment: </strong>Consider using a sid_object or similar to resolve the members of a group.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <hr class="thick">
+      <h3><a name="FileAuditPermissions53Behaviors"></a><a href="../documentation/windows-definitions-schema.html#FileAuditPermissions53Behaviors">== FileAuditPermissions53Behaviors ==</a></h3>
+      <p class="documentation">The FileAuditPermissions53Behaviors complex type defines a number of behaviors that allow a more detailed definition of the
+         fileauditpermissions53_object being specified.  Note that using these behaviors may result in some unique results.  For example,
+         a double negative type condition might be created where an object entity says include everything except a specific item, but
+         a behavior is used that might then add that item back in.
+      </p>
+      <p class="documentation">It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to
+         the 'filepath' element, only to the 'path' and 'filename' elements.  This is because the 'filepath' element represents an
+         absolute path to a particular file and it is not possible to recurse over a file.
+      </p>
+      <p class="documentation">The FileAuditPermissions53Behaviors extend the win-def:FileBehaviors and therefore include the behaviors defined by that type.</p>
+      <hr class="thick">
+      <h3><a name="fileauditedpermissions_test"></a><a href="../documentation/windows-definitions-schema.html#fileauditedpermissions_test">&lt; fileauditedpermissions_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the fileauditedpermissions53_test. This test uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new test was created to use trustee SIDs, which are unique. See the fileauditedpermissions53_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The file audited permissions test is used to check the audit permissions associated with Windows files. Note that the trustee's
+         audited permissions are the audit permissons that the SACL grants to the trustee or to any groups of which the trustee is
+         a member. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType
+         description for more information. The required object element references a fileauditedpermissions_object, and the optional
+         state element references a fileauditedpermissions_state that specifies the metadata to check.
+      </p><br><hr class="thick">
+      <h3><a name="fileauditedpermissions_object"></a><a href="../documentation/windows-definitions-schema.html#fileauditedpermissions_object">&lt; fileauditedpermissions_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the fileauditedpermissions53_object. This object uses a trustee_name element for identifying trustees. Trustee
+         names are not unique, and a new object was created to use trustee SIDs, which are unique. See the fileauditedpermissions53_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The fileauditedpermissions_object element is used by a file audited permissions test to define the objects used to evalutate
+         against the specified state. The fileauditedpermissions_object will collect directories and all Windows file types (FILE_TYPE_CHAR,
+         FILE_TYPE_DISK, FILE_TYPE_PIPE, FILE_TYPE_REMOTE, and FILE_TYPE_UNKNOWN). Each object extends the standard ObjectType as defined
+         in the oval-definitions-schema and one should refer to the ObjectType description for more information. The common set element
+         allows complex objects to be created using filters and set logic.
+      </p>
+      <p class="documentation">A fileauditedpermissions_object is defined as a combination of a Windows file and trustee name. The file represents the file
+         to be evaluated while the trustee name represents the account (SID) to check audited permissions of. If multiple files or
+         SIDs are matched by either reference, then each possible combination of file and SID is a matching file audited permissions
+         object. In addition, a number of behaviors may be provided that help guide the collection of objects. Please refer to the
+         FileAuditPermissionsBehaviors complex type for more information about specific behaviors.
+      </p><br><hr class="thick">
+      <h3><a name="fileauditedpermissions_state"></a><a href="../documentation/windows-definitions-schema.html#fileauditedpermissions_state">&lt; fileauditedpermissions_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the fileauditedpermissions53_state. This state uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new state was created to use trustee SIDs, which are unique. See the fileauditedpermissions53_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The fileauditedpermissions_state element defines the different audit permissions that can be associated with a given fileauditedpermissions_object.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="FileAuditPermissionsBehaviors"></a><a href="../documentation/windows-definitions-schema.html#FileAuditPermissionsBehaviors">== FileAuditPermissionsBehaviors ==</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the FileAuditPermissionsBehaviors53. The FileAuditPermissionsBehaviors complex type is used by the fileauditedpermissions_test
+         which uses a trustee_name element for identifying trustees. Trustee names are not unique, and a new test was created to use
+         trustee SIDs, which are unique. This new test utilizes the FileAuditPermissionsBehaviors53 complex type, and as a result,
+         the FileAuditPermissionsBehaviors complex type is no longer needed.<br><strong>Comment: </strong>This complex type has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The FileAuditPermissionsBehaviors complex type defines a number of behaviors that allow a more detailed definition of the
+         fileauditpermissions_object being specified.  Note that using these behaviors may result in some unique results.  For example,
+         a double negative type condition might be created where an object entity says include everything except a specific item, but
+         a behavior is used that might then add that item back in.
+      </p>
+      <p class="documentation">The FileAuditPermissionsBehaviors extend the win-def:FileBehaviors and therefore include the behaviors defined by that type.</p>
+      <hr class="thick">
+      <h3><a name="FileEffectiveRights53Behaviors"></a><a href="../documentation/windows-definitions-schema.html#FileEffectiveRights53Behaviors">== FileEffectiveRights53Behaviors ==</a></h3>
+      <p class="documentation">The FileEffectiveRights53Behaviors complex type defines a number of behaviors that allow a more detailed definition of the
+         fileeffectiverights53_object being specified.  Note that using these behaviors may result in some unique results.  For example,
+         a double negative type condition might be created where an object entity says include everything except a specific item, but
+         a behavior is used that might then add that item back in.
+      </p>
+      <p class="documentation">It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to
+         the 'filepath' element, only to the 'path' and 'filename' elements.  This is because the 'filepath' element represents an
+         absolute path to a particular file and it is not possible to recurse over a file.
+      </p>
+      <p class="documentation">The FileEffectiveRights53Behaviors extend the win-def:FileBehaviors and therefore include the behaviors defined by that type.</p>
+      <hr class="thick">
+      <h3><a name="fileeffectiverights_test"></a><a href="../documentation/windows-definitions-schema.html#fileeffectiverights_test">&lt; fileeffectiverights_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the fileeffectiverights53_test. This test uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new test was created to use trustee SIDs, which are unique. See the fileeffectiverights53_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The file effective rights test is used to check the effective rights associated with Windows files. Note that the trustee's
+         effective access rights are the access rights that the DACL grants to the trustee or to any groups of which the trustee is
+         a member. The fileeffectiverights_test element extends the standard TestType as defined in the oval-definitions-schema and
+         one should refer to the TestType description for more information. The required object element references a fileeffectiverights_object
+         and the optional state element specifies the metadata to check.
+      </p><br><hr class="thick">
+      <h3><a name="fileeffectiverights_object"></a><a href="../documentation/windows-definitions-schema.html#fileeffectiverights_object">&lt; fileeffectiverights_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the fileeffectiverights_object. This object uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new object was created to use trustee SIDs, which are unique. See the fileeffectiverights53_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The fileeffectiverights_object element is used by a file effective rights test to define the objects used to evalutate against
+         the specified state. The fileeffectiverights_object will collect directories and all Windows file types (FILE_TYPE_CHAR, FILE_TYPE_DISK,
+         FILE_TYPE_PIPE, FILE_TYPE_REMOTE, and FILE_TYPE_UNKNOWN). Each object extends the standard ObjectType as defined in the oval-definitions-schema
+         and one should refer to the ObjectType description for more information. The common set element allows complex objects to
+         be created using filters and set logic.
+      </p>
+      <p class="documentation">A fileeffectiverights_object is defined as a combination of a Windows file and trustee name. The file represents the file
+         to be evaluated while the trustee name represents the account (SID) to check effective rights of. If multiple files or SIDs
+         are matched by either reference, then each possible combination of file and SID is a matching file effective rights object.
+         In addition, a number of behaviors may be provided that help guide the collection of objects. Please refer to the FileEffectiveRightsBehaviors
+         complex type for more information about specific behaviors.
+      </p><br><hr class="thick">
+      <h3><a name="fileeffectiverights_state"></a><a href="../documentation/windows-definitions-schema.html#fileeffectiverights_state">&lt; fileeffectiverights_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the fileeffectiverights53_state. This state uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new state was created to use trustee SIDs, which are unique. See the fileeffectiverights53_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The fileeffectiverights_state element defines the different rights that can be associated with a given fileeffectiverights_object.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="FileEffectiveRightsBehaviors"></a><a href="../documentation/windows-definitions-schema.html#FileEffectiveRightsBehaviors">== FileEffectiveRightsBehaviors ==</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the FileEffectiveRightsBehaviors53. The FileEffectiveRightsBehaviors complex type is used by the fileeffectiverights_test
+         which uses a trustee_name element for identifying trustees. Trustee names are not unique, and a new test was created to use
+         trustee SIDs, which are unique. This new test utilizes the FileEffectiveRightsBehaviors53 complex type, and as a result, the
+         FileEffectiveRightsBehaviors complex type is no longer needed.<br><strong>Comment: </strong>This complex type has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The FileEffectiveRightsBehaviors complex type defines a number of behaviors that allow a more detailed definition of the fileeffectiverights_object
+         being specified.  Note that using these behaviors may result in some unique results.  For example, a double negative type
+         condition might be created where an object entity says include everything except a specific item, but a behavior is used that
+         might then add that item back in.
+      </p>
+      <p class="documentation">The FileEffectiveRightsBehaviors extend the win-def:FileBehaviors and therefore include the behaviors defined by that type.</p>
+      <hr class="thick">
+      <h3><a name="PrinterEffectiveRightsBehaviors"></a><a href="../documentation/windows-definitions-schema.html#PrinterEffectiveRightsBehaviors">== PrinterEffectiveRightsBehaviors ==</a></h3>
+      <p class="documentation">The PrinterEffectiveRightsBehaviors complex type defines a number of behaviors that allow a more detailed definition of the
+         pritnereffectiverights_object being specified.  Note that using these behaviors may result in some unique results.  For example,
+         a double negative type condition might be created where an object entity says include everything except a specific item, but
+         a behavior is used that might then add that item back in.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#FFFFFF;" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="7">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <th colspan="7" style="text-align: left">Attributes:</th>
+            </tr>
+            <tr>
+               <th colspan="7">
+                  <hr>
+               </th>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td>include_group</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td><span class="smaller">(optional -- default='true')</span></td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The 'include_group' behavior has been deprecated in favor of using variables to reference more efficient objects for expanding
+                     groups.<br><strong>Comment: </strong>Consider using a sid_sid_object or similar to include the members of a group.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td>resolve_group</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td><span class="smaller">(optional -- default='false')</span></td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>The 'resolve_group' behavior has been deprecated in favor of using variables to reference more efficient objects for expanding
+                     groups.<br><strong>Comment: </strong>Consider using a sid_sid_object or similar to resolve the members of a group.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <hr class="thick">
+      <h3><a name="process_test"></a><a href="../documentation/windows-definitions-schema.html#process_test">&lt; process_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>The process_test has been deprecated and replaced by the process58_test. The command line of a process cannot be used to uniquely
+         identify a process. As a result, the pid entity was added to the process58_object. Please see the process58_test for additional
+         information.<br></div>
+      <p class="documentation">The process_test is used to check information found in the Windows processes. It extends the standard TestType as defined
+         in the oval-definitions-schema and one should refer to the TestType description for more information. The required object
+         element references a process_object and the optional state element references a process_state element that specifies the process
+         information to check.
+      </p><br><hr class="thick">
+      <h3><a name="process_object"></a><a href="../documentation/windows-definitions-schema.html#process_object">&lt; process_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>The process_object has been deprecated and replaced by the process58_object. The command line of a process cannot be used
+         to uniquely identify a process. As a result, the pid entity was added to the process58_object. Please see the process58_object
+         for additional information.<br></div>
+      <p class="documentation">The process_object element is used by a process test to define the specific process(es) to be evaluated. Each object extends
+         the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more
+         information. The common set element allows complex objects to be created using filters and set logic. Again, please refer
+         to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p class="documentation">A process_object defines the command line used to start the process(es).</p><br><hr class="thick">
+      <h3><a name="process_state"></a><a href="../documentation/windows-definitions-schema.html#process_state">&lt; process_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>The process_state has been deprecated and replaced by the process58_state. The command line of a process cannot be used to
+         uniquely identify a process. As a result, the pid entity was added to the process58_object. Please see the process58_state
+         for additional information.<br></div>
+      <p class="documentation">The process_state element defines the different metadata associate with a Windows process. This includes the command line,
+         pid, ppid, image path, and current directory. Please refer to the individual elements in the schema for more details about
+         what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="regkeyauditedpermissions53_state"></a><a href="../documentation/windows-definitions-schema.html#regkeyauditedpermissions53_state">&lt; regkeyauditedpermissions53_state  &gt;</a></h3>
+      <p class="documentation">The regkeyauditedpermissions53_state element defines the different audit permissions that can be associated with a given regkeyauditedpermissions53_object.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>standard_synchronize
+                  <p class="documentation">The right to use the object for synchronization. This enables a thread to wait until the object is in the signaled state.
+                     Some object types do not support this access right.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>This entity has been deprecated because registry keys do not support the SYNCHRONIZE standard access right.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br><hr class="thick">
+      <h3><a name="RegkeyAuditPermissions53Behaviors"></a><a href="../documentation/windows-definitions-schema.html#RegkeyAuditPermissions53Behaviors">== RegkeyAuditPermissions53Behaviors ==</a></h3>
+      <p class="documentation">The RegkeyAuditPermissions53Behaviors complex type defines a number of behaviors that allow a more detailed definition of
+         the registrykeyauditedpermissions53_object being specified.  Note that using these behaviors may result in some unique results.
+         For example, a double negative type condition might be created where an object entity says include everything except a specific
+         item, but a behavior is used that might then add that item back in.
+      </p>
+      <p class="documentation">The RegkeyAuditPermissions53Behaviors extend the win-def:RegistryBehaviors and therefore include the behaviors defined by
+         that type.
+      </p>
+      <hr class="thick">
+      <h3><a name="regkeyauditedpermissions_test"></a><a href="../documentation/windows-definitions-schema.html#regkeyauditedpermissions_test">&lt; regkeyauditedpermissions_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the regkeyauditedpermissions53_test. This test uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new test was created to use trustee SIDs, which are unique. See the regkeyauditedpermissions53_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The registry key audited permissions test is used to check the audit permissions associated with Windows registry keys. Note
+         that the trustee's audited permissions are the audit permissons that the SACL grants to the trustee or to any groups of which
+         the trustee is a member. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to
+         the TestType description for more information. The required object element references a regkeyauditedpermissions_object and
+         the optional state element specifies the metadata to check.
+      </p><br><hr class="thick">
+      <h3><a name="regkeyauditedpermissions_object"></a><a href="../documentation/windows-definitions-schema.html#regkeyauditedpermissions_object">&lt; regkeyauditedpermissions_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the regkeyauditedpermissions53_object. This object uses a trustee_name element for identifying trustees. Trustee
+         names are not unique, and a new object was created to use trustee SIDs, which are unique. See the regkeyauditedpermissions53_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The regkeyauditedpermissions_object element is used by a registry key audited permissions test to define the objects used
+         to evalutate against the specified state. Each object extends the standard ObjectType as defined in the oval-definitions-schema
+         and one should refer to the ObjectType description for more information. The common set element allows complex objects to
+         be created using filters and set logic.
+      </p>
+      <p class="documentation">A regkeyauditedpermissions_object is defined as a combination of a Windows registry key and trustee name. The hive and key
+         elements represents the registry key to be evaluated while the trustee name represents the account (SID) to check audited
+         permissions of. If multiple keys or SIDs are matched by either reference, then each possible combination of file and SID is
+         a matching file audited permissions object. In addition, a number of behaviors may be provided that help guide the collection
+         of objects. Please refer to the RegkeyAuditPermissionsBehaviors complex type for more information about specific behaviors.
+      </p><br><hr class="thick">
+      <h3><a name="regkeyauditedpermissions_state"></a><a href="../documentation/windows-definitions-schema.html#regkeyauditedpermissions_state">&lt; regkeyauditedpermissions_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the regkeyauditedpermissions53_state. This state uses a trustee_name element for identifying trustees. Trustee
+         names are not unique, and a new state was created to use trustee SIDs, which are unique. See the regkeyauditedpermissions53_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The regkeyauditedpermissions_state element defines the different audit permissions that can be associated with a given regkeyauditedpermissions_object.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="RegkeyAuditPermissionsBehaviors"></a><a href="../documentation/windows-definitions-schema.html#RegkeyAuditPermissionsBehaviors">== RegkeyAuditPermissionsBehaviors ==</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the RegkeyAuditPermissionsBehaviors53. The RegkeyAuditPermissionsBehaviors complex type is used by the regkeyauditedpermissions_test
+         which uses a trustee_name element for identifying trustees. Trustee names are not unique, and a new test was created to use
+         trustee SIDs, which are unique. This new test utilizes the RegkeyAuditPermissionsBehaviors53 complex type, and as a result,
+         the RegkeyAuditPermissionsBehaviors complex type is no longer needed.<br><strong>Comment: </strong>This complex type has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The RegkeyAuditPermissionsBehaviors complex type defines a number of behaviors that allow a more detailed definition of the
+         registrykeyauditedpermissions_object being specified.  Note that using these behaviors may result in some unique results.
+         For example, a double negative type condition might be created where an object entity says include everything except a specific
+         item, but a behavior is used that might then add that item back in.
+      </p>
+      <p class="documentation">The RegkeyAuditPermissionsBehaviors extend the win-def:RegistryBehaviors and therefore include the behaviors defined by that
+         type.
+      </p>
+      <hr class="thick">
+      <h3><a name="regkeyeffectiverights53_state"></a><a href="../documentation/windows-definitions-schema.html#regkeyeffectiverights53_state">&lt; regkeyeffectiverights53_state  &gt;</a></h3>
+      <p class="documentation">The regkeyeffectiverights53_state element defines the different rights that can be associated with a given regkeyeffectiverights53_object.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>standard_synchronize
+                  <p class="documentation">The right to use the object for synchronization. This enables a thread to wait until the object is in the signaled state.
+                     Some object types do not support this access right.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>This entity has been deprecated because registry keys do not support the SYNCHRONIZE standard access right.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br><hr class="thick">
+      <h3><a name="RegkeyEffectiveRights53Behaviors"></a><a href="../documentation/windows-definitions-schema.html#RegkeyEffectiveRights53Behaviors">== RegkeyEffectiveRights53Behaviors ==</a></h3>
+      <p class="documentation">The RegkeyEffectiveRights53Behaviors complex type defines a number of behaviors that allow a more detailed definition of the
+         registrykeyeffectiverights53_object being specified.  Note that using these behaviors may result in some unique results. 
+         For example, a double negative type condition might be created where an object entity says include everything except a specific
+         item, but a behavior is used that might then add that item back in.
+      </p>
+      <p class="documentation">The RegkeyEffectiveRights53Behaviors extend the win-def:RegistryBehaviors and therefore include the behaviors defined by that
+         type.
+      </p>
+      <hr class="thick">
+      <h3><a name="regkeyeffectiverights_test"></a><a href="../documentation/windows-definitions-schema.html#regkeyeffectiverights_test">&lt; regkeyeffectiverights_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the regkeyeffectiverights53_test. This test uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new test was created to use trustee SIDs, which are unique. See the regkeyeffectiverights53_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The registry key effective rights test is used to check the effective rights associated with Windows files. Note that the
+         trustee's effective access rights are the access rights that the DACL grants to the trustee or to any groups of which the
+         trustee is a member. The regkeyeffectiverights_test element extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references a regkeyeffectiverights_object
+         and the optional state element specifies the metadata to check.
+      </p><br><hr class="thick">
+      <h3><a name="regkeyeffectiverights_object"></a><a href="../documentation/windows-definitions-schema.html#regkeyeffectiverights_object">&lt; regkeyeffectiverights_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the regkeyeffectiverights53_object. This object uses a trustee_name element for identifying trustees. Trustee
+         names are not unique, and a new object was created to use trustee SIDs, which are unique. See the regkeyeffectiverights53_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div><br><hr class="thick">
+      <h3><a name="regkeyeffectiverights_state"></a><a href="../documentation/windows-definitions-schema.html#regkeyeffectiverights_state">&lt; regkeyeffectiverights_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the regkeyeffectiverights53_state. This state uses a trustee_name element for identifying trustees. Trustee names
+         are not unique, and a new state was created to use trustee SIDs, which are unique. See the regkeyeffectiverights53_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The regkeyeffectiverights_state element defines the different rights that can be associated with a given regkeyeffectiverights_object.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="RegkeyEffectiveRightsBehaviors"></a><a href="../documentation/windows-definitions-schema.html#RegkeyEffectiveRightsBehaviors">== RegkeyEffectiveRightsBehaviors ==</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.3<br><strong>Reason: </strong>Replaced by the RegkeyEffectiveRightsBehaviors53. The RegkeyEffectiveRightsBehaviors complex type is used by the regkeyeffectiverights_test
+         which uses a trustee_name element for identifying trustees. Trustee names are not unique, and a new test was created to use
+         trustee SIDs, which are unique. This new test utilizes the RegkeyEffectiveRightsBehaviors53 complex type, and as a result,
+         the RegkeyEffectiveRightsBehaviors complex type is no longer needed.<br><strong>Comment: </strong>This complex type has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The RegkeyEffectiveRightsBehaviors complex type defines a number of behaviors that allow a more detailed definition of the
+         registrykeyeffectiverights_object being specified.  Note that using these behaviors may result in some unique results.  For
+         example, a double negative type condition might be created where an object entity says include everything except a specific
+         item, but a behavior is used that might then add that item back in.
+      </p>
+      <p class="documentation">The RegkeyEffectiveRightsBehaviors extend the win-def:RegistryBehaviors and therefore include the behaviors defined by that
+         type.
+      </p>
+      <hr class="thick">
+      <h3><a name="SharedResourceAuditedPermissionsBehaviors"></a><a href="../documentation/windows-definitions-schema.html#SharedResourceAuditedPermissionsBehaviors">== SharedResourceAuditedPermissionsBehaviors ==</a></h3>
+      <p class="documentation">The SharedResourceAuditedPermissionsBehaviors complex type defines a behavior that allows for a more detailed definition of
+         the sharedresourceauditedpermissions_object being specified.  Note that using this behavior may result in some unique results.
+         For example, a double negative type condition might be created where an object entity says include everything except a specific
+         item, but a behavior is used that might then add that item back in.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#FFFFFF;" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="7">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <th colspan="7" style="text-align: left">Attributes:</th>
+            </tr>
+            <tr>
+               <th colspan="7">
+                  <hr>
+               </th>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td>include_group</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td><span class="smaller">(optional -- default='true')</span></td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10.1<br><strong>Reason: </strong>The 'include_group' behavior has been deprecated in favor of using variables to reference more efficient objects for expanding
+                     groups.<br><strong>Comment: </strong>Consider using a sid_sid_object or similar to include the members of a group.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <hr class="thick">
+      <h3><a name="SharedResourceEffectiveRightsBehaviors"></a><a href="../documentation/windows-definitions-schema.html#SharedResourceEffectiveRightsBehaviors">== SharedResourceEffectiveRightsBehaviors ==</a></h3>
+      <p class="documentation">The SharedResourceEffectiveRightsBehaviors complex type defines a behavior that allows for a more detailed definition of the
+         sharedresourceeffectiverights_object being specified.  Note that using this behavior may result in some unique results.  For
+         example, a double negative type condition might be created where an object entity says include everything except a specific
+         item, but a behavior is used that might then add that item back in.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#FFFFFF;" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="7">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <th colspan="7" style="text-align: left">Attributes:</th>
+            </tr>
+            <tr>
+               <th colspan="7">
+                  <hr>
+               </th>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td>include_group</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td><span class="smaller">(optional -- default='true')</span></td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10.1<br><strong>Reason: </strong>The 'include_group' behavior has been deprecated in favor of using variables to reference more efficient objects for expanding
+                     groups.<br><strong>Comment: </strong>Consider using a sid_sid_object or similar to include the members of a group.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <hr class="thick">
+      <h3><a name="user_sid_test"></a><a href="../documentation/windows-definitions-schema.html#user_sid_test">&lt; user_sid_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the user_sid55_test. This test uses user and group elements that are incorrectly named. A new test was created
+         to change the element names to their correct values which are user_sid and group_sid. See the user_sid55_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The user_sid_test is used to check information about Windows users. When the user_sid_test collects the user SIDs on the system,
+         it should only include the local and built-in user SIDs and not domain user SIDs.  However, it is important to note that domain
+         user SIDs can still be looked up. Also, note that the collection of groups, for which a user is a member, is not recursive.
+         The only groups that will be collected are those for which the user is a direct member. For example, if a user is a member
+         of group A, and group A is a member of group B, the only group that will be collected is group A. It extends the standard
+         TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information.
+         The required object element references a user_sid_object and the optional state element specifies the metadata to check.
+      </p><br><hr class="thick">
+      <h3><a name="user_sid_object"></a><a href="../documentation/windows-definitions-schema.html#user_sid_object">&lt; user_sid_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the user_sid55_object. This object uses a user element that is incorrectly named. A new object was created to
+         change the element name to its correct value which is user_sid. See the user_sid55_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The user_sid_object represents a set of users on a Windows system.  This set (which might contain only one user) is identified
+         by a SID.
+      </p><br><hr class="thick">
+      <h3><a name="user_sid_state"></a><a href="../documentation/windows-definitions-schema.html#user_sid_state">&lt; user_sid_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the user_sid55_state. This state uses user and group elements that are incorrectly named. A new state was created
+         to change the element names to their correct values which are user_sid and group_sid. See the user_sid55_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The user_sid_state element enumerates the different groups (identified by SID) that a Windows user might belong to. Please
+         refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="wmi_test"></a><a href="../documentation/windows-definitions-schema.html#wmi_test">&lt; wmi_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.7<br><strong>Reason: </strong>Replaced by the wmi57_test. This test only allows for single fields to be selected from WMI. A new test was created to allow
+         more than one field to be selected in one statement. See the wmi57_test.<br><strong>Comment: </strong>This test has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">The wmi test is used to check information accessed by WMI. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references a wmi_object
+         and the optional state element specifies the metadata to check.
+      </p><br><hr class="thick">
+      <h3><a name="wmi_object"></a><a href="../documentation/windows-definitions-schema.html#wmi_object">&lt; wmi_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.7<br><strong>Reason: </strong>Replaced by the wmi57_object. This object allows for single fields to be selected from WMI. A new object was created to allow
+         more than one field to be selected in one statement. See the wmi57_object.<br><strong>Comment: </strong>This object has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation"></p><br><hr class="thick">
+      <h3><a name="wmi_state"></a><a href="../documentation/windows-definitions-schema.html#wmi_state">&lt; wmi_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.7<br><strong>Reason: </strong>Replaced by the wmi57_state. This object allows for single fields to be selected from WMI. A new state was created to allow
+         more than one field to be selected in one statement. See the wmi57_state.<br><strong>Comment: </strong>This state has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation"></p><br><hr class="thick">
+      <h3><a name="EntityStateSharedResourceTypeType"></a><a href="../documentation/windows-definitions-schema.html#EntityStateSharedResourceTypeType">== EntityStateSharedResourceTypeType ==</a></h3>
+      <p class="documentation">The EntityStateSharedResourceTypeType complex type defines the different values that are valid for the type entity of a shared
+         resource state. Note that the Windows API returns a DWORD value and OVAL uses the constant name that is normally defined for
+         these return values. This is done to increase readability and maintainability of OVAL Definitions. The empty string is also
+         allowed as a valid value to support an empty element that is found when a variable reference is used within the type entity.
+         Note that when using pattern matches and variables care must be taken to ensure that the regular expression and variable values
+         align with the enumerated values.
+      </p>
+      <p class="documentation">It is also important to note that special shared resources are those reserved for remote administration, interprocess communication,
+         and administrative shares.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed" border="1" cellpadding="5" cellspacing="0">
+            <colgroup span="3">
+               <col width="250">
+               <col width="*">
+               <col width="*">
+            </colgroup>
+            <tr style="background-color:#F0F0F0;">
+               <th>Value</th>
+               <th>Description</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>STYPE_SPECIAL</td>
+               <td>
+                  <p class="documentation">The STYPE_SPECIAL type means that this is a special share reserved for interprocess communication (IPC$) or remote administration
+                     of the server (ADMIN$). Can also refer to administrative shares such as C$, D$, E$, and so forth. The DWORD value that this
+                     corresponds to is 0x40000000.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>In version 5.6 of the OVAL Language, the EntityStateSharedResourceTypeType was changed to include all of the different shared
+                     resource types as specified in Microsoft's documentation of the shi2_type member of the SHARE_INFO_2 structure. As a result,
+                     the STYPE_SPECIAL value by itself is no longer valid because it would actually be equal to the value STYPE_DISKTREE_SPECIAL
+                     (0x80000000) which is STYPE_DISKTREE (0x00000000) OR'd with STYPE_SPECIAL (0x80000000).<br><strong>Comment: </strong>This value has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td>STYPE_TEMPORARY</td>
+               <td>
+                  <p class="documentation">The STYPE_TEMPORARY type means that the shared resource is a temporary share. The DWORD value that this corresponds to is
+                     0x80000000.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.6<br><strong>Reason: </strong>In version 5.6 of the OVAL Language, the EntityStateSharedResourceTypeType was changed to include all of the different shared
+                     resource types as specified in Microsoft's documentation of the shi2_type member of the SHARE_INFO_2 structure. As a result,
+                     the STYPE_TEMPORARY value by itself is no longer valid because it would actually be equal to the value STYPE_DISKTREE_TEMPORARY
+                     (0x40000000) which is STYPE_DISKTREE (0x00000000) OR'd with STYPE_TEMPORARY (0x40000000).<br><strong>Comment: </strong>This value has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

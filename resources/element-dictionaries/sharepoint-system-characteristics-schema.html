@@ -1,0 +1,2054 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL SharePoint System Characteristics Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: SharePoint System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the SharePoint specific system characteristic
+         items found in Open Vulnerability and Assessment Language (OVAL). Each item is an extension of the standard item element defined
+         in the Core System Characteristic Schema. Through extension, each item inherits a set of elements and attributes that are
+         shared amongst all OVAL Items. Each item is described in detail and should provide the information necessary to understand
+         what each element and attribute represents. This document is intended for developers and assumes some familiarity with XML.
+         A high level description of the interaction between the different tests and their relationship to the Core System Characteristic
+         Schema is not outlined here.
+      </p>
+      <p align="justify">The SharePoint Component Schema is based on the SharePoint Object Model (Windows SharePoint Services 3.0)</p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spwebapplication_item"></a>&lt; spwebapplication_item  &gt;
+      </h3>
+      <p align="justify">This spwebapplication item stores information for security related features and permissions related to each web application.
+         See the defintion of the SPWebApplication class in the SharePoint object model documentation. 
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">webapplicationurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the url that identifies the web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">allowparttopartcommunication</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if a user can create connections between Web Parts.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">allowaccesstowebpartcatalog</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if a user can create connections to Online Web Part Galleries.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">blockedfileextention</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A single blockedfileextention for the application. An applicaiton may have zero or more blocked file extensions.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">defaultquotatemplate</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the default quota template for the web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">externalworkflowparticipantsenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if a user is allowed to participate in workflow by sending them a copy of the document.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">recyclebinenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the recycle bin is enabled or disabled.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">automaticallydeleteunusedsitecollections</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the site can be automatically deleted.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">selfservicesitecreationenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if a self service site can be created.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">secondstagerecyclebinquota</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Size of the second stage recycle bin quota.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">recyclebinretentionperiod</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The recyclebinretentionperiod is the retention period for the recyle bin.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">outboundmailserverinstance</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The string name of the outboundmailserver.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">outboundmailsenderaddress</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The from address that is used when sending email.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">outboundmailreplytoaddress</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The reply to address that is used when sending email.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">secvalexpires</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if a security validation can expire.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">timeout</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The timeout is the amount of time before security validation expires in seconds.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">isadministrationwebapplication</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that specifies whether the current web application is the Central Administration web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">applicationpoolname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string that represents the application pool name.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">applicationpoolusername</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string that represents the application pool username.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">openitems</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to view the source of documents with server-side file handlers is available to
+                  the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">addlistitems</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to add items to lists, add documents to document libraries, and add Web discussion
+                  comments to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">approveitems</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to approve a minor version of a list item or document is available to the Web
+                  application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">deletelistitems</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to delete items from a list, documents from a document library, and Web discussion
+                  comments in documents is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">deleteversions</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to delete past versions of a list item or document is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">editlistitems</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if edit items in lists, edit documents in document libraries, edit Web discussion comments in documents,
+                  and customize Web Part Pages in document libraries is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">managelists</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to create and delete lists, add or remove columns in a list, and add or remove
+                  public views of a list is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">viewversions</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to view past versions of a list item or document is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">viewlistitems</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to view items in lists, documents in document libraries, and view Web discussion
+                  commentsis available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">cancelcheckout</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to discard or check in a document which is checked out to another user is available
+                  to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">createalerts</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to Create e-mail alerts is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">viewformpages</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to view forms, views, and application pages, and enumerate lists is available
+                  to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">viewpages</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to view pages in a Web site is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">addandcustomizepages</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">applystylesheets</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to Apply a style sheet (.css file) to the Web site is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">applythemeandborder</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to apply a theme or borders to the entire Web site is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">browsedirectories</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to enumerate files and folders in a Web site using Microsoft Office SharePoint
+                  Designer and WebDAV interfaces is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">browseuserinfo</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to view information about users of the Web site is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">creategroups</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to create a group of users that can be used anywhere within the site collection
+                  is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">createsscsite</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to create a Web site using Self-Service Site Creation is available to the Web
+                  application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">editmyuserinfo</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to allows a user to change his or her user information, such as adding a picture
+                  is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">enumeratepermissions</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to enumerate permissions on the Web site, list, folder, document, or list itemis
+                  is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">managealerts</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to manage alerts for all users of the Web site is available for the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">managepermissions</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to create and change permission levels on the Web site and assign permissions
+                  to users and groups is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">managesubwebs</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to create subsites such as team sites, Meeting Workspace sites, and Document Workspace
+                  sites is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">manageweb</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to perform all administration tasks for the Web site as well as manage content
+                  is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">open</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to allow users to open a Web site, list, or folder to access items inside that
+                  containeris available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">useclientintegration</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to use features that launch client applications; otherwise, users must work on
+                  documents locally and upload changesis is available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">useremoteapis</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to use SOAP, WebDAV, or Microsoft Office SharePoint Designer interfaces to access
+                  the Web siteis available to the Web application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">viewusagedata</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to view reports on Web site usage in documents is available to the Web application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">managepersonalviews</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to Create, change, and delete personal views of lists is available to the Web
+                  application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">adddelprivatewebparts</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to add or remove personal Web Parts on a Web Part Page is available to the Web
+                  application.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">updatepersonalwebparts</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the permission to update Web Parts to display personalized informationis available to the Web
+                  application.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spgroup_item"></a>&lt; spgroup_item  &gt;
+      </h3>
+      <p align="justify">This spgroup item stores information for security related features related to site groups </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sitecollectionurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the url that identifies the site collection.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the name of a group in a site collection.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">autoacceptrequesttojoinleave</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if sites can automatically accepts requests.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">allowmemberseditmembership</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if owners other than the group owner can edit the membership of groups.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">onlyallowmembersviewmembership</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if owners other than the group owner can edit the membership of groups.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spweb_item"></a>&lt; spweb_item  &gt;
+      </h3>
+      <p align="justify">This spweb item stores information for security related features related to site collections. </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">webcollectionurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the Web application url.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sitecollectionurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the sitecollection url.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">secondarysitecolladmin</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the secondarysitecolladmin.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">secondsitecolladminenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if the secondsitecolladmin is enabled.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">allowanonymousaccess</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that represents if a anonymous access is allowed to the web site.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="splist_item"></a>&lt; splist_item  &gt;
+      </h3>
+      <p align="justify">An SPList represents a list of content on a Sharepoint web site. It consists of items or rows and columns or fields that contain
+         data.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">spsiteurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The url that identifies the website.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">irmenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The irmenabled attribute tests to see if documents that leave the Sharepoint environment are protected.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">enableversioning</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The enableversioning attribute specifies whether backup copies of files should be created and managed in the Sharepoint system.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">nocrawl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The nocrawl attribute indicates that this site should not be among those crawled and indexed.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spantivirussettings_item"></a>&lt; spantivirussettings_item  &gt;
+      </h3>
+      <p align="justify">An SPAntivirusSettings Item represents the set of antivirus-related security settings on a Sharepoint server.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">spwebservicename</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the SP Web Service for which to retrieve the antivirus settings or * for all web services. The default value is
+                  * which checks all SP Web services
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">spfarmname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The Farm in which the SP Web Service resides.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">allowdownload</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether SharePoint users can download documents that are found to be infected.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">cleaningenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether or not the virus scanner should attempt to cure infected files.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">downloadscanenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether files are scanned when they are downloaded.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">numberofthreads</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies the number of threads that the virus scanner may use to perform virus scans.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">skipsearchcrawl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether to skip document virus scanning during a search crawl.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">timeout</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The amount of time before the virus scanner times out in seconds.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uploadscanenabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether files are scanned for viruses when they are uploaded.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">vendorupdatecount</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The current increment of the number of times the vendor has been updated.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spsiteadministration_item"></a>&lt; spsiteadministration_item  &gt;
+      </h3>
+      <p align="justify">This spsiteadministration item stores information for security related features and permissions related to each top-level
+         web sites. See the defintion of the SPSiteAdministration class in the SharePoint object model documentation. 
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sitecollectionurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the url that identifies the sitecollection application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">storagemaxlevel</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The storagemaxlevel is the maximum storage allowed for the site.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">storagewarninglevel</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">When the storagewarninglevel is reached a site collection receive advance notice before available storage is expended.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spsite_item"></a>&lt; spsite_item  &gt;
+      </h3>
+      <p align="justify">This spsite item stores information for security related features for sites. See the defintion of the SPSite class in the
+         SharePoint object model documentation. 
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sitecollectionurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string the represents the url that identifies the sitecollection application.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">quotaname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The string that represents the name of the quota for a specific site collection.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">url</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spcrawlrule_item"></a>&lt; spcrawlrule_item  &gt;
+      </h3>
+      <p align="justify">The spcrawlrule_item specifies rules that the SharePoint system follows when it crawls the content of sites stored within
+         it.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">spsiteurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A URL that represents the resource (eg. sites, documents,etc.) on which the crawlrule tests should be run or * if the check
+                  should be run on all sites/documents on the server.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">crawlashttp</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether the crawler should crawl content from a hierarchical content source, such as HTTP content.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">enabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether a particular crawl rule is enabled.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">followcomplexurls</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether the indexer should crawl websites that contain the question mark (?) character.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">path</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The path to which a particular crawl rule applies.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">priority</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The priority setting for a particular crawl rule.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">suppressindexing</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether the crawler should exclude the content of items that this rule applies to from the content index.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">accountname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string containing the account name for the crawl rule.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spjobdefinition_item"></a>&lt; <span style="text-decoration: line-through;">spjobdefinition_item</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.10<br><b>Reason: </b>Replaced by the spjobdefinition510_item. This item does not uniquely identify a single job definition. A new state was created
+                  to use displaynames, which are unique. See the spjobdefinition510_item.<br><b>Comment: </b>This item has been deprecated and may be removed in a future version of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">This represents the set of Job Definitions that are scheduled to run on each SharePoint Web Application</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">webappuri</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The URI that represents the web application for which the IIS Settings should be checked.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">displayname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the job as displayed in the SharePoint Central Administration site.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">isdisabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Determines whether or not the job definition is enabled.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">retry</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Determines whether the job definition should be retried if it ends abnormally.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">title</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The title of a job as displayed in the SharePoint Central Administration site.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spjobdefinition510_item"></a>&lt; spjobdefinition510_item  &gt;
+      </h3>
+      <p align="justify">This represents the set of Job Definitions that are scheduled to run on each SharePoint Web Application</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">webappuri</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The URI that represents the web application for which the IIS Settings should be checked.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">displayname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the job as displayed in the SharePoint Central Administration site.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">isdisabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Determines whether or not the job definition is enabled.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">retry</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Determines whether the job definition should be retried if it ends abnormally.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">title</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The title of a job as displayed in the SharePoint Central Administration site.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="bestbet_item"></a>&lt; bestbet_item  &gt;
+      </h3>
+      <p align="justify">This represents the set of Best Bets for a site collection.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sitecollectionurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The sitecollectionurl represents the URL for the site.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">bestbeturl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The bestbeturl represents the URL for the best bet.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">title</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The title of the Best Bet.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">description</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The description of the Best Bet.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="infopolicycoll_item"></a>&lt; infopolicycoll_item  &gt;
+      </h3>
+      <p align="justify">This represents the set of Information Policies for a site collection.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sitecollectionurl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The sitecollectionurl represents the URL for the site.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The id of the sitecollection poilicy.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the sitecollection poilicy.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">description</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The description of the Information Policy.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">longdescription</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The long description of  an Information Policy.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spdiagnosticsservice_item"></a>&lt; spdiagnosticsservice_item  &gt;
+      </h3>
+      <p align="justify">This represents the set of diagnostic capabilities for Windows Sharepoint Services.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">farmname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The farm whose diagnostic capabilities should be checked. Use .* for all farms or SPFarm.Local for the local farm.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">displayname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the diagnostic service as shown in the Sharepoint Central Administration site.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">logcutinterval</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The number of minutes to capture events to a single log file. This value lies in the range 0 to 1440. The default value is
+                  30.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">loglocation</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The path to the file system directory where log files are created and stored.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">logstokeep</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value that indicates the number of log files to create. This lies in the range 0 to 1024 with a default of 96.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">required</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The required property specifies whether an instance of the spdiagnosticsservice must be running on the farm.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">typename</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The friendly name for the service as displayed in the Central Administration and in logs. This should be "Windows Sharepoint
+                  Diagnostics Service" by default.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="spdiagnosticslevel_item"></a>&lt; spdiagnosticslevel_item  &gt;
+      </h3>
+      <p align="justify">The diagnostics level associated with a particular instance of a diagnostics service on a Sharepoint farm.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">farmname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The farm whose diagnostics levels should be checked. Use .* for all farms or SPFarm.Local for the local farm.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">eventseverity</td>
+               <td style="font-size: 90%"><a href="#EntityItemEventSeverityType">sp-sc:EntityItemEventSeverityType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The event severity setting for a particular diagnostic level category.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">hidden</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether the trace log category is hidden in the Windows Sharepoint Services Central Administration interface.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">levelid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A string that represents the ID of the trace log category. This is its English language name.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">levelname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the trace log category. This represents the localized name for the category.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">traceseverity</td>
+               <td style="font-size: 90%"><a href="#EntityItemTraceSeverityType">sp-sc:EntityItemTraceSeverityType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The trace severity setting for a particular diagnostic level category.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="sppolicyfeature_item"></a>&lt; sppolicyfeature_item  &gt;
+      </h3>
+      <p align="justify">This represents a policy feature that is installed on the Sharepoint server farm.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">farmname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The farm whose policy features should be checked. Use .* for all farms or SPFarm.Local for the local farm.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">configpage</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The URL to a web control used to edit policy instance-level settings.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">defaultcustomdata</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The default values for any policy instance-level settings for a policy feature.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">description</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The short description of the policy feature and of the service it provides.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">globalconfigpage</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The URL to a web control used to edit server farm-level settings for this policy feature.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">globalcustomdata</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The default settings for any server farm-level settings for this policy feature.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">group</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The policy feature group to which a policy feature belongs.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name to display in the Microsoft Office Sharepoint Server 2007 interface for an information policy feature.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">publisher</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the creator of the policy feature as it is displayed in the Microsoft Office Sharepoint Server 2007 user interface.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="#EntityItemPolicyFeatureStateType">sp-sc:EntityItemPolicyFeatureStateType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether the policy feature is hidden or visible.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="sppolicy_item"></a>&lt; sppolicy_item  &gt;
+      </h3>
+      <p align="justify">This represents a policy on the Sharepoint system.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">webappuri</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The URI that represents the web application for which policies should be checked.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">urlzone</td>
+               <td style="font-size: 90%"><a href="#EntityItemUrlZoneType">sp-sc:EntityItemUrlZoneType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The zone for which policies should be checked.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">displayname</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user or group display name for a policy. This defaults to the user name if the display name cannot be resolved through
+                  Active Directory.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">issystemuser</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies whether the user identified by a particular policy is visible only as a System account within the Windows Sharepoint
+                  Services user interface.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user name of the user or group that is associated with policy.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">policyroletype</td>
+               <td style="font-size: 90%"><a href="#EntityItemPolicyRoleType">sp-sc:EntityItemPolicyRoleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The policy role type to apply globally in a Sharepoint web application to a user or group.</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemUrlZoneType"></a>== EntityItemUrlZoneType ==
+      </h3>
+      <p align="justify">The EntityItemUrlZoneType restricts a string value to a set of values that describe the different IIS Url Zones. The empty
+         string is also allowed to support empty element associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Custom&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Default&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Extranet&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Intranet&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Internet&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemEventSeverityType"></a>== EntityItemEventSeverityType ==
+      </h3>
+      <p align="justify">The EntityItemEventSeverityType restricts a string value to a set of values that describe the different states that can be
+         configured for a diagnostics level  event severity level property of the diagnostics service.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Error&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ErrorCritical&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ErrorSecurityBreach&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ErrorServiceUnavailable&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>FailureAudit&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Information&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>None&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Success&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>SuccessAudit&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Warning&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemTraceSeverityType"></a>== EntityItemTraceSeverityType ==
+      </h3>
+      <p align="justify">The EntityItemTraceSeverityType restricts a string value to a set of values that describe the different states that can be
+         configured for a diagnostics level trace severity level property of the diagnostics service.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>High&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Medium&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Monitorable&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>None&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Unexpected&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Verbose&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemPolicyFeatureStateType"></a>== EntityItemPolicyFeatureStateType ==
+      </h3>
+      <p align="justify">The EntityItemPolicyFeatureStateType restricts a string value to a set of values that describe the different states that can
+         be configured for a policy feature.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Hidden&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Specifies that the policy feature is hidden from the Sharepoint Central Administration user interface.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Visible&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Specifies that the policy feature is visible from the Sharepoint Central Administration user interface.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemPolicyRoleType"></a>== EntityItemPolicyRoleType ==
+      </h3>
+      <p align="justify">The EntityItemPolicyRoleType restricts a string value to a set of values that describe the different Policy settings for Access
+         Control that are available for users.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DenyAll&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Deny all rights.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DenyWrite&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Deny write permissions.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>FullControl&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Grant full control.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>FullRead&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Grant full read permissions.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>None&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>No role type assigned.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

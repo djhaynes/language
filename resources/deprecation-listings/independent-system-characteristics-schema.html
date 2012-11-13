@@ -1,0 +1,111 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Independent System Characteristics Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: Independent System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="filehash_item"></a><a href="../documentation/independent-system-characteristics-schema.html#filehash_item">&lt; filehash_item  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>Replaced by the filehash58_item which allows the hash algorithm to be specified when collecting data. See the filehash58_item.<br><strong>Comment: </strong>This item has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">This element stores the different hash values associated with a specific file.</p><br><hr class="thick">
+      <h3><a name="environmentvariable_item"></a><a href="../documentation/independent-system-characteristics-schema.html#environmentvariable_item">&lt; environmentvariable_item  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>Replaced by the environmentvariable58_item. This item allows the hash algorithm to be specified. See the filehash58_item.<br><strong>Comment: </strong>This object has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">This item stores information about environment variables and their values.</p><br><hr class="thick">
+      <h3><a name="sql_item"></a><a href="../documentation/independent-system-characteristics-schema.html#sql_item">&lt; sql_item  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.7<br><strong>Reason: </strong>Replaced by the sql57_item. This item allows for single fields to be selected from a database. A new item was created to allow
+         more than one field to be selected in one statement. See the sql57_item.<br><strong>Comment: </strong>This object has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">The sql_item outlines information collected from a database via an SQL query.</p><br><hr class="thick">
+      <h3><a name="textfilecontent_item"></a><a href="../documentation/independent-system-characteristics-schema.html#textfilecontent_item">&lt; textfilecontent_item  &gt;</a></h3>
+      <p class="documentation">The textfilecontent_item looks at the contents of a text file (aka a configuration file) by looking at individual lines.</p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>line
+                  <p class="documentation">The line element represents a line in the file and is represented using a regular expression.</p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.4<br><strong>Reason: </strong>Due to the fact that the TextFileContent54_test supports multi-line pattern matching, the line entity is no longer needed.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br><hr class="thick">
+      <h3><a name="EntityItemLdaptypeType"></a><a href="../documentation/independent-system-characteristics-schema.html#EntityItemLdaptypeType">== EntityItemLdaptypeType ==</a></h3>
+      <p class="documentation">The EntityItemLdaptypeType complex type restricts a string value to a specific set of values that specify the different types
+         of information that an ldap attribute can represent. The empty string value is permitted here to allow for detailed error
+         reporting.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed" border="1" cellpadding="5" cellspacing="0">
+            <colgroup span="3">
+               <col width="250">
+               <col width="*">
+               <col width="*">
+            </colgroup>
+            <tr style="background-color:#F0F0F0;">
+               <th>Value</th>
+               <th>Description</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>LDAPTYPE_TIMESTAMP</td>
+               <td>
+                  <p class="documentation">The data is of a time stamp in seconds.</p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.7<br><strong>Reason: </strong>This value was accidently carried over from the win-sc:EntityItemAdstypeType as it was used as a template for the ind-sc:EntityItemLdaptypeType.<br><strong>Comment: </strong>This value has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td>LDAPTYPE_EMAIL</td>
+               <td>
+                  <p class="documentation">The data is of an e-mail message.</p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.7<br><strong>Reason: </strong>This value was accidently carried over from the win-sc:EntityItemAdstypeType as it was used as a template for the ind-sc:EntityItemLdaptypeType.<br><strong>Comment: </strong>This value has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

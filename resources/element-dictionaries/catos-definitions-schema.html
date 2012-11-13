@@ -1,0 +1,604 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL CatOS Definition Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: CatOS Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the Cisco CatOS specific tests found in
+         Open Vulnerability and Assessment Language (OVAL). Each test is an extension of the standard test element defined in the Core
+         Definition Schema. Through extension, each test inherits a set of elements and attributes that are shared amongst all OVAL
+         tests. Each test is described in detail and should provide the information necessary to understand what each element and attribute
+         represents. This document is intended for developers and assumes some familiarity with XML. A high level description of the
+         interaction between the different tests and their relationship to the Core Definition Schema is not outlined here
+      </p>
+      <p align="justify">This schema was originally developed by Yuzheng Zhou and Eric Grey at Hewlett-Packard. The OVAL Schema is maintained by The
+         MITRE Corporation and developed by the public OVAL Community. For more information, including how to get involved in the project
+         and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="line_test"></a>&lt; line_test  &gt;
+      </h3>
+      <p align="justify">The line_test is used to check the properties of specific output lines from a SHOW command, such as show running-config. It
+         extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for
+         more information. The required object element references a line_object and the optional state element specifies the data to
+         check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="line_object"></a>&lt; line_object  &gt;
+      </h3>
+      <p align="justify">The line_object element is used by a line_test to define the object to be evaluated. Each object extends the standard ObjectType
+         as defined in the oval-definitions-schema and one should refer to the ObjectType description for more information. The common
+         set element allows complex objects to be created using filters and set logic. Again, please refer to the description of the
+         set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A line_object consists of a show_subcommand entity that is the name of a SHOW sub-command to be tested.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">show_subcommand</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of a SHOW sub-command.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="line_state"></a>&lt; line_state  &gt;
+      </h3>
+      <p align="justify">The line_state element defines the different information that can be used to evaluate the result of a specific SHOW sub-command.
+         This includes the name of ths sub-command and the corresponding config line. Please refer to the individual elements in the
+         schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">show_subcommand</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the SHOW sub-command.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">config_line</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value returned from by the specified SHOW sub-command.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="module_test"></a>&lt; module_test  &gt;
+      </h3>
+      <p align="justify">The module test reveals module information in Cisco Catalyst switches. It extends the standard TestType as defined in the
+         oval-definitions-schema and one should refer to the TestType description for more information. The required object element
+         references a module_object and the optional state element specifies the metadata to check.
+      </p>
+      <p align="justify">The module_test is based off the SHOW MODULE command. Having a separate module_test, as opposed to a general command_test,
+         enables running an evaluation based on OVAL without having interactive command access to the device.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="module_object"></a>&lt; module_object  &gt;
+      </h3>
+      <p align="justify">The module_object element is used by a module test to specify the module to be evaluated. Each object extends the standard
+         ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more information.
+         The common set element allows complex objects to be created using filters and set logic. Again, please refer to the description
+         of the set element in the oval-definitions schema.
+      </p>
+      <p align="justify">A module object consists of a single module_number entity that identifies the module to be used.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">module_number</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectIntType">oval-def:EntityObjectIntType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A number that identifies the a specific module.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="module_state"></a>&lt; module_state  &gt;
+      </h3>
+      <p align="justify">The module_state element defines the module information held within a Cisco Catalyst switch. The module_number, type, and
+         model element specifies the number, type and model of the module respectively. The software_major_release, software_individual_release
+         and software_version_id elements specify the software version information of the module. For instance, if the software version
+         is 8.5(4c)GLX, then software_major_release is 8.5GLX, software_individual_release is 4 and software_version_id is c. Similarly,
+         the hardware_major_release, hardware_individual_release, firmware_major_release and firmware_individual_release elements reveal
+         the hardware and firmware version information of the module.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">module_number</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A number that identifies the a specific module.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">type</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The type of module.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">model</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The model of a module.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">software_major_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The major relase of the software of a module to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">software_individual_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The individual release of the software of the module to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">software_version_id</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The vesion id of the software of a module to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">hardware_major_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The hardware major release of a module to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">hardware_individual_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The hardware individual release of a module to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">firmware_major_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The major release of the firmware of a module to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">firmware_individual_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The individual release of the firmware of a module to check for.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="version55_test"></a>&lt; version55_test  &gt;
+      </h3>
+      <p align="justify">The version55_test is used to check the version of the Cisco CatOS operating system. It extends the standard TestType as defined
+         in the oval-definitions-schema and one should refer to the TestType description for more information. The required object
+         element references a version_object and the optional state element specifies the data to check.
+      </p>
+      <p align="justify">The required information of version55_test can be got via a SHOW VERSION command. The separated version55_test enables an
+         evaluation based on OVAL without having interactive command access to the device.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="version55_object"></a>&lt; version55_object  &gt;
+      </h3>
+      <p align="justify">The version55_object element is used by a version55_test to define the different version information associated with a Cisco
+         CatOS system. There is actually only one object relating to version and this is the system as a whole. Therefore, there are
+         no child entities defined. Any OVAL Test written to check version will reference the same version5_object which is basically
+         an empty object element.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p><br><h3><a name="version55_state"></a>&lt; version55_state  &gt;
+      </h3>
+      <p align="justify">The version55_state element defines the version information held within a Cisco CatOS software release. The switch_series
+         element specifies the Catalyst switch series. The image_name element specifies the name of the CatOS image. The catos_release
+         element specifies the software version information of the module.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">switch_series</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The switch_series entity defines a target Catalyst switch series to check for.  Each version of CatOS traditionally has target
+                  a specific Catalyst series of switches.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">image_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The image_name entity defines a name of a CatOS image to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">catos_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The catos_release entity defines a release version of CatOS to check for.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="version_test"></a>&lt; <span style="text-decoration: line-through;">version_test</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.5<br><b>Reason: </b>Replaced by the version55_test. Due to the fact it's not clear on how to separate the CatOS version, it was decided that the
+                  catos_major_release, catos_individual_release, and catos_version_id entities would be combined into a new single entity catos_release.
+                  A new test was created to reflect these changes. See the version55_test.<br><b>Comment: </b>This test has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The version test is used to check the version of the Cisco CatOS operating system. It extends the standard TestType as defined
+         in the oval-definitions-schema and one should refer to the TestType description for more information. The required object
+         element references a version_object and the optional state element specifies the data to check.
+      </p>
+      <p align="justify">The required information of version_test can be got via a SHOW VERSION command. The separated version_test enables an evaluation
+         based on OVAL without having interactive command access to the device.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="version_object"></a>&lt; <span style="text-decoration: line-through;">version_object</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.5<br><b>Reason: </b>Replaced by the version55_object. Due to the fact it's not clear on how to separate the CatOS version, it was decided that
+                  the catos_major_release, catos_individual_release, and catos_version_id entities would be combined into a new single entity
+                  catos_release. A new object was created to reflect these changes. See the version55_object.<br><b>Comment: </b>This object has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The version_object element is used by a version test to define the different version information associated with a Cisco CatOS
+         system. There is actually only one object relating to version and this is the system as a whole. Therefore, there are no child
+         entities defined. Any OVAL Test written to check version will reference the same version_object which is basically an empty
+         object element.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p><br><h3><a name="version_state"></a>&lt; <span style="text-decoration: line-through;">version_state</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.5<br><b>Reason: </b>Replaced by the version55_state. Due to the fact it's not clear on how to separate the CatOS version, it was decided that
+                  the catos_major_release, catos_individual_release, and catos_version_id entities would be combined into a new single entity
+                  catos_release. A new state was created to reflect these changes. See the version55_state.<br><b>Comment: </b>This state has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The version_state element defines the version information held within a Cisco CatOS software release. The swtich_series element
+         specifies the Catalyst switch series. The image_name element specifies the name of the CatOS image. The catos_major_release,
+         catos_individual_release and catos_version_id elements specify the software version information of the module. For instance,
+         if the CatOS version is 8.5(4c)GLX, then catos_major_release is 8.5GLX, catos_individual_release is 4 and catos_version_id
+         is c.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">switch_series</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A Catalyst switch series to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">image_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of a CatOS image to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">catos_major_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The major release of CatOS to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">catos_individual_release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The individual release of CatOS to check for.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">catos_version_id</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The version id of Cat OS to check for.</td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

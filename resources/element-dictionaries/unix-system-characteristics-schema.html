@@ -1,0 +1,2927 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Unix System Characteristics Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: Unix System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the UNIX specific system characteristic
+         items found in Open Vulnerability and Assessment Language (OVAL). Each item is an extension of the standard item element defined
+         in the Core System Characteristic Schema. Through extension, each item inherits a set of elements and attributes that are
+         shared amongst all OVAL Items. Each item is described in detail and should provide the information necessary to understand
+         what each element and attribute represents. This document is intended for developers and assumes some familiarity with XML.
+         A high level description of the interaction between the different tests and their relationship to the Core System Characteristic
+         Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="dnscache_item"></a>&lt; dnscache_item  &gt;
+      </h3>
+      <p align="justify">The dnscache_item stores information retrieved from the DNS cache about a domain name, its time to live, and its corresponding
+         IP addresses.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">domain_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The domain_name element contains a string that represents a domain name that was collected from the DNS cache on the local
+                  system.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">ttl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The ttl element contains an integer that represents the time to live in seconds of the DNS cache entry.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">ip_address</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The ip_address element contains a string that represents an IP address associated with the specified domain name. Note that
+                  the IP address can be IPv4 or IPv6.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="file_item"></a>&lt; file_item  &gt;
+      </h3>
+      <p align="justify">The file item holds information about the individual files found on a system. Each file item contains path and filename information
+         as well as its type, associated user and group ids, relevant dates, and the privialeges granted. It extends the standard ItemType
+         as defined in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The filepath element specifies the absolute path for a file on the machine. A directory cannot be specified as a filepath.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">path</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The path element specifies the directory component of the absolute path to a file on the machine.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filename</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the file. If the xsi:nil attribute is set to true, then the item being represented is the higher directory represented
+                  by the path entity.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">type</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the file's type: regular file (regular), directory, named pipe (fifo), symbolic link, socket or block special.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">group_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the group owner of the file, by group number.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">user_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The numeric user id, or uid, is the third column of each user's entry in /etc/passwd. This element represents the owner of
+                  the file.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">a_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the time that the file was last accessed, in seconds since the Unix epoch. The Unix epoch is the time 00:00:00 UTC
+                  on January 1, 1970.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">c_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the time of the last change to the file's inode, in seconds since the Unix epoch. The Unix epoch is the time 00:00:00
+                  UTC on January 1, 1970. An inode is a Unix data structure that stores all of the information about a particular file.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">m_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the time of the last change to the file's contents, in seconds since the Unix epoch. The Unix epoch is the time 00:00:00
+                  UTC on January 1, 1970.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">size</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the size of the file in bytes.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">suid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Does the program run with the uid (thus privileges) of the file's owner, rather than the calling user?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sgid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Does the program run with the gid (thus privileges) of the file's group owner, rather than the calling user's group?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sticky</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can users delete each other's files in this directory, when said directory is writable by those users?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uread</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the owner (user owner) of the file read this file or, if a directory, read the directory contents?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uwrite</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the owner (user owner) of the file write to this file or, if a directory, write to the directory?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uexec</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the owner (user owner) of the file execute it or, if a directory, change into the directory?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gread</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the group owner of the file read this file or, if a directory, read the directory contents?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gwrite</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the group owner of the file write to this file, or if a directory, write to the directory?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gexec</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the group owner of the file execute it or, if a directory, change into the directory?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oread</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can all other users read this file or, if a directory, read the directory contents?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">owrite</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the other users write to this file, or if a directory, write to the directory?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oexec</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Can the other users execute this file or, if a directory, change into the directory?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">has_extended_acl</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Does the file or directory have ACL permissions applied to it? If the file or directory doesn't have an ACL, or it matches
+                  the standard UNIX permissions, the value will be 'false'. Otherwise, if a file or directory has an ACL, the value will be
+                  'true'. If the system does not support ACLs, the status will be 'does not exist' and if the system supports ACLs, the status
+                  will be 'exists'.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="fileextendedattribute_item"></a>&lt; fileextendedattribute_item  &gt;
+      </h3>
+      <p align="justify">The file extended attribute item holds information about the individual file extended attributes found on a system. Each file
+         extended attribute item contains path, filename, and attribute name information as well as the attribute's value. It extends
+         the standard ItemType as defined in the oval-system-characteristics schema and one should refer to the ItemType description
+         for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The filepath element specifies the absolute path for a file on the machine. A directory cannot be specified as a filepath.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">path</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The path element specifies the directory component of the absolute path to a file on the machine.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filename</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the file. If the xsi:nil attribute is set to true, then the item being represented is the higher directory represented
+                  by the path entity.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">attribute_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the extended attribute's name, identifier or key.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemAnySimpleType">oval-sc:EntityItemAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the extended attribute's value or contents.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="gconf_item"></a>&lt; gconf_item  &gt;
+      </h3>
+      <p align="justify">The gconf_item holds information about an individual GConf preference key found on a system. Each gconf_item contains a preference
+         key, source, type, whether it's writable, the user who last modified it, the time it was last modified, whether it's the default
+         value, as well as the preference key's value. It extends the standard ItemType as defined in the oval-system-characteristics
+         schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">key</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The preference key to check.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">source</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The source used to look up the preference key.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">type</td>
+               <td style="font-size: 90%"><a href="#EntityItemGconfTypeType">unix-sc:EntityItemGconfTypeType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The type of the preference key.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">is_writable</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Is the preference key writable? If true, the preference key is writable. If false, the preference key is not writable.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mod_user</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user who last modified the preference key.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mod_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The time the preference key was last modified in seconds since the Unix epoch. The Unix epoch is the time 00:00:00 UTC on
+                  January 1, 1970.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">is_default</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Is the preference key value the default value. If true, the preference key value is the default value. If false, the preference
+                  key value is not the default value.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemAnySimpleType">oval-sc:EntityItemAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value of the preference key.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="inetd_item"></a>&lt; inetd_item  &gt;
+      </h3>
+      <p align="justify">The inetd item holds information associated with different Internet services. It extends the standard ItemType as defined
+         in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">protocol</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A recognized protocol listed in the file /etc/inet/protocols.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">service_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of a valid service listed in the services file. For RPC services, the value of the service-name field consists of
+                  the RPC service name or program number, followed by a '/' (slash) and either a version number or a range of version numbers
+                  (for example, rstatd/2-4).
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server_program</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Either the pathname of a server program to be invoked by inetd to perform the requested service, or the value internal if
+                  inetd itself provides the service.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server_arguments</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">endpoint_type</td>
+               <td style="font-size: 90%"><a href="#EntityItemEndpointType">unix-sc:EntityItemEndpointType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exec_as_user</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">wait_status</td>
+               <td style="font-size: 90%"><a href="#EntityItemWaitStatusType">unix-sc:EntityItemWaitStatusType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This field has values wait or nowait. This entry specifies whether the server that is invoked by inetd will take over the
+                  listening socket associated with the service, and whether once launched, inetd will wait for that server to exit, if ever,
+                  before it resumes listening for new service requests.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="interface_item"></a>&lt; interface_item  &gt;
+      </h3>
+      <p align="justify">The interface item holds information about the interfaces on a system. Each interface item contains name and address information
+         as well as any associated flags. It extends the standard ItemType as defined in the oval-system-characteristics schema and
+         one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name entity is the actual name of the specific interface. Examples might be eth0, eth1, fwo, etc.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">type</td>
+               <td style="font-size: 90%"><a href="#EntityItemInterfaceType">unix-sc:EntityItemInterfaceType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This element specifies the type of interface.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">hardware_addr</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The hardware_addr entity is the hardware or MAC address of the physical network card. MAC addresses should be formatted according
+                  to the IEEE 802-2001 standard which states that a MAC address is a sequence of six octet values, separated by hyphens, where
+                  each octet is represented by two hexadecimal digits.  Uppercase letters should also be used to represent the hexadecimal digits
+                  A through F.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">inet_addr</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The inet_addr entity is the IP address of the specific interface. Note that the IP address can be IPv4 or IPv6. If the IP
+                  address is an IPv6 address, this entity should be expressed as an IPv6 address prefix using CIDR notation and the netmask
+                  entity should not be collected.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">broadcast_addr</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The broadcast_addr entity is the broadcast IP address for this interface's network. Note that the IP address can be IPv4 or
+                  IPv6.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">netmask</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the bitmask used to calculate the interface's IP network. The network number is calculated by bitwise-ANDing this
+                  with the IP address. The host number on that network is calculated by bitwise-XORing this with the IP address. Note that if
+                  the inet_addr entity contains an IPv6 address prefix, this entity should not be collected.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">flag</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the interface flag line, which generally contains flags like "UP" to denote an active interface, "PROMISC" to note
+                  that the interface is listening for Ethernet frames not specifically addressed to it, and others.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="password_item"></a>&lt; password_item  &gt;
+      </h3>
+      <p align="justify">/etc/passwd. See passwd(4).</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the user for which data was gathered.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">password</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the encrypted version of the user's password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">user_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The numeric user id, or uid, is the third column of each user's entry in /etc/passwd.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">group_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The id of the primary UNIX group the user belongs to.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gcos</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The GECOS (or GCOS) field from /etc/passwd; typically contains the user's full name.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">home_dir</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user's home directory.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">login_shell</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user's shell program.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">last_login</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The date and time when the last login occurred. This value is stored as the number of seconds that have elapsed since 00:00:00,
+                  January 1, 1970, UTC.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="process_item"></a>&lt; <span style="text-decoration: line-through;">process_item</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.8<br><b>Reason: </b>The process_item has been deprecated and replaced by the process58_item. The entity 'command' was changed to 'command_line'
+                  in the process58_item to accurately describe what information is collected. Please see the process58_item for additional information.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">Output of /usr/bin/ps. See ps(1).</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">command</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This specifies the command/program name about which data has has been collected.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exec_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the cumulative CPU time, formatted in [DD-]HH:MM:SS where DD is the number of days when execution time is 24 hours
+                  or more.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the process ID of the process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">ppid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the process ID of the process's parent process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">priority</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the scheduling priority with which the process runs. This can be adjusted with the nice command or nice() system call.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">ruid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the real user id which represents the user who has created the process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">scheduling_class</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A platform specific characteristic maintained by the scheduler: RT (real-time), TS (timeshare), FF (fifo), SYS (system), etc.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">start_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the time of day the process started formatted in HH:MM:SS if the same day the process started or formatted as MMM_DD
+                  (Ex.: Feb_5) if process started the previous day or further in the past.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">tty</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the TTY on which the process was started, if applicable.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">user_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the effective user id which represents the actual privileges of the process.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="process58_item"></a>&lt; process58_item  &gt;
+      </h3>
+      <p align="justify">Output of /usr/bin/ps. See ps(1).</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">command_line</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the string used to start the process. This includes any parameters that are part of the command line.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exec_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the cumulative CPU time, formatted in [DD-]HH:MM:SS where DD is the number of days when execution time is 24 hours
+                  or more.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the process ID of the process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">ppid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the process ID of the process's parent process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">priority</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the scheduling priority with which the process runs. This can be adjusted with the nice command or nice() system call.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">ruid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the real user id which represents the user who has created the process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">scheduling_class</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A platform specific characteristic maintained by the scheduler: RT (real-time), TS (timeshare), FF (fifo), SYS (system), etc.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">start_time</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the time of day the process started formatted in HH:MM:SS if the same day the process started or formatted as MMM_DD
+                  (Ex.: Feb_5) if process started the previous day or further in the past.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">tty</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the TTY on which the process was started, if applicable.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">user_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the effective user id which represents the actual privileges of the process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exec_shield</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">A boolean that when true would indicates that ExecShield is enabled for the process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">loginuid</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The loginuid shows which account a user gained access to the system with. The /proc/XXXX/loginuid shows this value.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">posix_capability</td>
+               <td style="font-size: 90%"><a href="#EntityItemCapabilityType">unix-sc:EntityItemCapabilityType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">An effective capability associated with the process. See linux/include/linux/capability.h for more information.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">selinux_domain_label</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">An selinux domain label associated with the process.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">session_id</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The session ID of the process.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="routingtable_item"></a>&lt; routingtable_item  &gt;
+      </h3>
+      <p align="justify">The routingtable_item holds information about an individual routing table entry found in a system's primary routing table.
+         Each routingtable_item contains a destination IP address, gateway, netmask, flags, and the name of the interface associated
+         with it. It is important to note that only numerical addresses will be collected and that their symbolic representations will
+         not be resolved. This equivalent to using the '-n' option with route(8) or netstat(8). It extends the standard ItemType as
+         defined in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">destination</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressType">oval-sc:EntityItemIPAddressType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The destination IP address prefix of the routing table entry. This is the destination IP address and netmask/prefix-length
+                  expressed using CIDR notation.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gateway</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressType">oval-sc:EntityItemIPAddressType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The gateway of the specified routing table entry.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">flags</td>
+               <td style="font-size: 90%"><a href="#EntityItemRoutingTableFlagsType">unix-sc:EntityItemRoutingTableFlagsType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The flags associated with the specified routing table entry.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">interface_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the interface associated with the routing table entry.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="runlevel_item"></a>&lt; runlevel_item  &gt;
+      </h3>
+      <p align="justify">The runlevel item holds information about the start or kill state of a specified service at a given runlevel. Each runlevel
+         item contains service name and runlevel information as well as start and kill information. It extends the standard ItemType
+         as defined in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">service_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The service_name entity is the actual name of the specific service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">runlevel</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The runlevel entity specifies the system runlevel associated with a service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">start</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The start entity specifies whether the service is scheduled to start at the runlevel.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">kill</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The kill entity specifies whether the service is scheduled to be killed at the runlevel.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="sccs_item"></a>&lt; <span style="text-decoration: line-through;">sccs_item</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.10<br><b>Reason: </b>The sccs_item has been deprecated because the Source Code Control System (SCCS) is obsolete.  The sccs_item may be removed
+                  in a future version of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies the absolute path to an SCCS file. A directory cannot be specified as a filepath.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">path</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The path element specifies the directory component of the absolute path to an SCCS file.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filename</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of an SCCS file.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">module_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">module_type</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">release</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">level</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">branch</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">sequence</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">what_string</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="shadow_item"></a>&lt; shadow_item  &gt;
+      </h3>
+      <p align="justify">/etc/shadow. See shadow(4).</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the user for which data was gathered.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">password</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the encrypted version of the user's password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">chg_lst</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the date of the last password change in days since 1/1/1970.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">chg_allow</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This specifies how often in days a user may change their password. It can also be thought of as the minimum age of a password.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">chg_req</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This describes how long a user can keep a password before the system forces her to change it.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exp_warn</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This describes how long before password expiration the system begins warning the user. The system will warn the user at each
+                  login.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exp_inact</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This describes how many days of account inactivity the system will wait after a password expires before locking the account?
+                  This window, usually only set to a few days, gives users who are logging in very seldomly a bit of extra time to receive the
+                  password expiration warning and change their password.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exp_date</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This specifies when will the account's password expire, in days since 1/1/1970.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">flag</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is a reserved field that the shadow file may use in the future.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">encrypt_method</td>
+               <td style="font-size: 90%"><a href="#EntityItemEncryptMethodType">unix-sc:EntityItemEncryptMethodType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The encrypt_method entity describes method that is used for hashing passwords.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="sysctl_item"></a>&lt; sysctl_item  &gt;
+      </h3>
+      <p align="justify">The sysctl_item stores information retrieved from the local system about a kernel parameter and its respective value(s).</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name element contains a string that represents the name of a kernel parameter that was collected from the local system.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemAnySimpleType">oval-sc:EntityItemAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value element contains a string that represents the current value(s) for the specified kernel parameter on the local system.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="uname_item"></a>&lt; uname_item  &gt;
+      </h3>
+      <p align="justify">Information about the hardware the machine is running on. This information is the parsed equivalent of uname -a.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">machine_class</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This entity specifies the machine hardware name.  This corresponds to the command uname -m.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">node_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This entity specifies the host name.  This corresponds to the command uname -n.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">os_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This entity specifies the operating system name.  This corresponds to the command uname -s.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">os_release</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This entity specifies the build version.  This corresponds to the command uname -r.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">os_version</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This entity specifies the operating system version.  This corresponds to the command uname -v.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">processor_type</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This entity specifies the processor type.  This corresponds to the command uname -p.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="xinetd_item"></a>&lt; xinetd_item  &gt;
+      </h3>
+      <p align="justify">The xinetd item holds information associated with different Internet services. It extends the standard ItemType as defined
+         in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-system-characteristics-schema.html#ItemType">oval-sc:ItemType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">protocol</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The protocol entity specifies the protocol that is used by the service. The list of valid protocols can be found in /etc/protocols.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">service_name</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The service_name entity specifies the name of the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">flags</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The flags entity specifies miscellaneous settings associated with the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">no_access</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The no_access entity specifies the remote hosts to which the service is unavailable.  Please see the xinetd.conf(5) man page
+                  for information on the different formats that can be used to describe a host.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">only_from</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIPAddressStringType">oval-sc:EntityItemIPAddressStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The only_from entity specifies the remote hosts to which the service is available.  Please see the xinetd.conf(5) man page
+                  for information on the different formats that can be used to describe a host.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">port</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemIntType">oval-sc:EntityItemIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The port entity specifies the port used by the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The server entity specifies the executable that is used to launch the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server_arguments</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The server_arguments entity specifies the arguments that are passed to the executable when launching the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">socket_type</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The socket_type entity specifies the type of socket that is used by the service.  Possible values include: stream, dgram,
+                  raw, or seqpacket.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">type</td>
+               <td style="font-size: 90%"><a href="#EntityItemXinetdTypeStatusType">unix-sc:EntityItemXinetdTypeStatusType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The type entity specifies the type of the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">user</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user entity specifies the user identifier of the process that is running the service.  The user identifier may be expressed
+                  as a numerical value or as a user name that exists in /etc/passwd.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">wait</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The wait entity specifies whether or not the service is single-threaded or multi-threaded and whether or not xinetd accepts
+                  the connection or the service accepts the connection.  A value of 'true' indicates that the service is single-threaded and
+                  the service will accept the connection.  A value of 'false' indicates that the service is multi-threaded and xinetd will accept
+                  the connection.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">disabled</td>
+               <td style="font-size: 90%"><a href="oval-system-characteristics-schema.html#EntityItemBoolType">oval-sc:EntityItemBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The disabled entity specifies whether or not the service is disabled.  A value of 'true' indicates that the service is disabled
+                  and will not start.  A value of 'false' indicates that the service is not disabled.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemCapabilityType"></a>== EntityItemCapabilityType ==
+      </h3>
+      <p align="justify">The EntityItemCapabilityType complex type restricts a string value to a specific set of values that describe POSIX capability
+         types associated with a process service. This list is based off the values defined in linux/include/linux/capability.h. Documentation
+         on each allowed value can be found in capability.h.  The empty string is also allowed to support empty elements associated
+         with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_CHOWN&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_DAC_OVERRIDE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_DAC_READ_SEARCH&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_FOWNER&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_FSETID&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_KILL&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SETGID&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SETUID&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SETPCAP&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_LINUX_IMMUTABLE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_NET_BIND_SERVICE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_NET_BROADCAST&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_NET_ADMIN&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_NET_RAW&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_IPC_LOCK&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_IPC_OWNER&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_MODULE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_RAWIO&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_CHROOT&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_PTRACE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_ADMIN&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_BOOT&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_NICE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_RESOURCE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_TIME&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SYS_TTY_CONFIG&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_MKNOD&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_LEASE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_AUDIT_WRITE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_AUDIT_CONTROL&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_SETFCAP&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_MAC_OVERRIDE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CAP_MAC_ADMIN&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for empty elements associated with variable references.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="EntityItemEndpointType"></a>== EntityItemEndpointType ==
+      </h3>
+      <p align="justify">The EntityItemEndpointType complex type restricts a string value to a specific set of values that describe endpoint types
+         associated with an Internet service. The empty string is also allowed to support empty elements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>stream&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The stream value is used to describe a stream socket.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>dgram&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The dgram value is used to describe a datagram socket.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>raw&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The raw value is used to describe a raw socket.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>seqpacket&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The seqpacket value is used to describe a sequenced packet socket.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>tli&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The tli value is used to describe all TLI endpoints.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemGconfTypeType"></a>== EntityItemGconfTypeType ==
+      </h3>
+      <p align="justify">The EntityItemGconfTypeType complex type restricts a string value to the seven values GCONF_VALUE_STRING, GCONF_VALUE_INT,
+         GCONF_VALUE_FLOAT, GCONF_VALUE_BOOL, GCONF_VALUE_SCHEMA, GCONF_VALUE_LIST, and GCONF_VALUE_PAIR that specify the type of the
+         value associated with a GConf preference key. The empty string is also allowed to support empty elements associated with error
+         conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GCONF_VALUE_STRING&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The GCONF_VALUE_STRING type is used to describe a preference key that has a string value.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GCONF_VALUE_INT&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The GCONF_VALUE_INT type is used to describe a preference key that has a integer value.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GCONF_VALUE_FLOAT&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The GCONF_VALUE_FLOAT type is used to describe a preference key that has a float value.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GCONF_VALUE_BOOL&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The GCONF_VALUE_BOOL type is used to describe a preference key that has a boolean value.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GCONF_VALUE_SCHEMA&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The GCONF_VALUE_SCHEMA type is used to describe a preference key that has a schema value. The actual value will be the default
+                     value as specified in the GConf schema.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GCONF_VALUE_LIST&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The GCONF_VALUE_LIST type is used to describe a preference key that has a list of values. The actual values will be one of
+                     the primitive GConf datatypes GCONF_VALUE_STRING, GCONF_VALUE_INT, GCONF_VALUE_FLOAT, GCONF_VALUE_BOOL, and GCONF_VALUE_SCHEMA.
+                     Note that all of the values associated with a GCONF_VALUE_LIST are required to have the same type.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GCONF_VALUE_PAIR&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The GCONF_VALUE_PAIR type is used to describe a preference key that has a pair of values. The actual values will consist of
+                     the primitive GConf datatypes GCONF_VALUE_STRING, GCONF_VALUE_INT, GCONF_VALUE_FLOAT, GCONF_VALUE_BOOL, and GCONF_VALUE_SCHEMA.
+                     Note that the values associated with a GCONF_VALUE_PAIR are not required to have the same type.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemRoutingTableFlagsType"></a>== EntityItemRoutingTableFlagsType ==
+      </h3>
+      <p align="justify">The EntityItemRoutingTableFlagsType complex type restricts a string value to a specific set of values that describe the flags
+         associated with a routing table entry. This list is based off the values defined in the man pages of various platforms. For
+         Linux, please see route(8). For Solaris, please see netstat(1M). For HP-UX, please see netstat(1). For Mac OS, please see
+         netstat(1). For FreeBSD, please see netstat(1). Documentation on each allowed value can be found in the previously listed
+         man pages. The empty string is also allowed to support empty elements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>UP&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>GATEWAY&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>HOST&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>REINSTATE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DYNAMIC&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>MODIFIED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ADDRCONF&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CACHE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>REJECT&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>REDUNDANT&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>SETSRC&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>BROADCAST&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>LOCAL&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>PROTOCOL_1&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>PROTOCOL_2&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>PROTOCOL_3&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>BLACK_HOLE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>CLONING&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>PROTOCOL_CLONING&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>INTERFACE_SCOPE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>LINK_LAYER&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>MULTICAST&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>STATIC&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>WAS_CLONED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>XRESOLVE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>USABLE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>PINNED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ACTIVE_DEAD_GATEWAY_DETECTION&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote>
+      <p align="justify">The following table is a mapping between the generic flag enumeration values and the actual flag values found on the various
+         platforms. If the flag value is not specified, for a particular generic flag enumeration value, the flag value is not defined
+         for that platform.
+      </p>
+      <blockquote>
+         <table align="center" bgcolor="#FCFCFC" border="5" cellpadding="5" cellspacing="0">
+            <tr>
+               <td><br><pre>&#xD;
+Name                           Linux    Solaris    HPUX    Mac OS    FreeBSD &nbsp; &nbsp;AIX&#xD;
+UP                             U        U          U       U         U &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;U&#xD;
+GATEWAY                        G        G          G       G         G &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;G&#xD;
+HOST                           H        H          H       H         H &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;H&#xD;
+REINSTATE                      R                                      &#xD;
+DYNAMIC                        D        D                  D         D &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;D&#xD;
+MODIFIED                       M                           M         M &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;M&#xD;
+ADDRCONF                       A        A                             &#xD;
+CACHE                          C &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e&#xD;
+REJECT                         !                           R         R &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;R&#xD;
+REDUNDANT                               M (&gt;=9)                                      &#xD;
+SETSRC                                  S                             &#xD;
+BROADCAST                               B                  b         b &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b&#xD;
+LOCAL                                   L                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; l&#xD;
+PROTOCOL_1                                                 1         1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1&#xD;
+PROTOCOL_2                                                 2         2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2&#xD;
+PROTOCOL_3                                                 3         3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3&#xD;
+BLACK_HOLE                                                 B         B&#xD;
+CLONING                                                    C         C &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;c&#xD;
+PROTOCOL_CLONING                                           c         c&#xD;
+INTERFACE_SCOPE                                            I          &#xD;
+LINK_LAYER                                                 L         L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;L&#xD;
+MULTICAST                                                  m           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;m&#xD;
+STATIC                                                     S         S &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;S&#xD;
+WAS_CLONED                                                 W         W &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;W&#xD;
+XRESOLVE                                                   X         X&#xD;
+USABLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u &#xD;
+PINNED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P &#xD;
+ACTIVE_DEAD_GATEWAY_DETECTION &nbsp; &nbsp;    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    A (&gt;=5.1) &#xD;
+               </pre></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemXinetdTypeStatusType"></a>== EntityItemXinetdTypeStatusType ==
+      </h3>
+      <p align="justify">The EntityItemXinetdTypeStatusType complex type restricts a string value to five values, either RPC, INTERNAL, UNLISTED, TCPMUX,
+         or TCPMUXPLUS that specify the type of service registered in xinetd. The empty string is also allowed to support empty elements
+         associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>INTERNAL&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The INTERNAL type is used to describe services like echo, chargen, and others whose functionality is supplied by xinetd itself.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>RPC&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The RPC type is used to describe services that use remote procedure call ala NFS.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>UNLISTED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The UNLISTED type is used to describe services that aren't listed in /etc/protocols or /etc/rpc.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>TCPMUX&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The TCPMUX type is used to describe services that conform to RFC 1078. This type indiciates that the service is responsible
+                     for handling the protocol handshake.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>TCPMUXPLUS&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The TCPMUXPLUS type is used to describe services that conform to RFC 1078. This type indicates that xinetd is responsible
+                     for handling the protocol handshake.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemWaitStatusType"></a>== EntityItemWaitStatusType ==
+      </h3>
+      <p align="justify">The EntityItemWaitStatusType complex type restricts a string value to two values, either wait or nowait, that specify whether
+         the server that is invoked by inetd will take over the listening socket associated with the service, and whether once launched,
+         inetd will wait for that server to exit, if ever, before it resumes listening for new service requests. The empty string is
+         also allowed to support empty elements associated with error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>wait&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The value of 'wait' specifies that the server that is invoked by inetd will take over the listening socket associated with
+                     the service, and once launched, inetd will wait for that server to exit, if ever, before it resumes listening for new service
+                     requests.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>nowait&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The value of 'nowait' specifies that the server that is invoked by inetd will not wait for any existing server to finish before
+                     taking over the listening socket associated with the service.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemEncryptMethodType"></a>== EntityItemEncryptMethodType ==
+      </h3>
+      <p align="justify">The EntityItemEncryptMethodType complex type restricts a string value to a set that corresponds to the allowed encrypt methods
+         used for protected passwords in a shadow file. The empty string is also allowed to support empty elements associated with
+         error conditions.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DES&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The DES method corresponds to the (none) prefix.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>BSDi&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The BSDi method corresponds to BSDi modified DES or the '_' prefix. </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>MD5&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The MD5 method corresponds to MD5 for Linux/BSD or the $1$ prefix.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Blowfish&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The Blowfish method corresponds to Blowfish (OpenBSD) or the $2$ or $2a$ prefixes.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>Sun MD5&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The Sun MD5 method corresponds to the $md5$ prefix.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>SHA-256&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The SHA-256 method corresponds to the $5$ prefix.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>SHA-512&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The SHA-512 method corresponds to the $6$ prefix.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for empty elements associated with variable references.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityItemInterfaceType"></a>== EntityItemInterfaceType ==
+      </h3>
+      <p align="justify">The EntityItemInterfaceType complex type restricts a string value to a specific set of values. These values describe the different
+         interface types which are defined in 'if_arp.h'. The empty string is also allowed to support empty element associated with
+         variable references. Note that when using pattern matches and variables care must be taken to ensure that the regular expression
+         and variable values align with the enumerated values.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-system-characteristics-schema.html#EntityItemStringType">oval-sc:EntityItemStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ARPHRD_ETHER&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The ARPHRD_ETHER type is used to describe ethernet interfaces.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ARPHRD_FDDI&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The ARPHRD_FDDI type is used to describe fiber distributed data interfaces (FDDI).</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ARPHRD_LOOPBACK&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The ARPHRD_LOOPBACK type is used to describe loopback interfaces.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ARPHRD_VOID&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The ARPHRD_VOID type is used to describe unknown interfaces.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ARPHRD_PPP&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The ARPHRD_PPP type is used to describe point-to-point protocol interfaces (PPP).</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ARPHRD_SLIP&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The ARPHRD_SLIP type is used to describe serial line internet protocol interfaces (SLIP).</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ARPHRD_PRONET&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The ARPHRD_PRONET type is used to describe PROnet token ring interfaces.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for detailed error reporting.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

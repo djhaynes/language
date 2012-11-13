@@ -1,0 +1,159 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Apache Definition Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: Apache Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the Apache specific tests found in Open
+         Vulnerability and Assessment Language (OVAL). Each test is an extension of the standard test element defined in the Core Definition
+         Schema. Through extension, each test inherits a set of elements and attributes that are shared amongst all OVAL tests. Each
+         test is described in detail and should provide the information necessary to understand what each element and attribute represents.
+         This document is intended for developers and assumes some familiarity with XML. A high level description of the interaction
+         between the different tests and their relationship to the Core Definition Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="httpd_test"></a>&lt; <span style="text-decoration: line-through;">httpd_test</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.8<br><b>Reason: </b>The httpd_test does not specify how to detect instances of httpd and cannot be reasonably specified to allow for products
+                  to detect all instances of httpd across platforms, packaging systems, and typical user compiled and configured installations.
+                  Without a proper definition of how to identify instances of httpd products will not reliably produce consistent assessment
+                  results because they will naturally utilize different approaches to locating instances of httpd which will lead to differences
+                  in the set of collected instances of https.<br><b>Comment: </b>This test has been deprecated and may be removed in a future version of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The httpd test is used to check the version of an installed httpd binary. It extends the standard TestType as defined in the
+         oval-definitions-schema and one should refer to the TestType description for more information. The required object element
+         references an httpd_test and the optional state element specifies the data to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="httpd_object"></a>&lt; <span style="text-decoration: line-through;">httpd_object</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.8<br><b>Reason: </b>The httpd_object does not specify how to detect instances of httpd and cannot be reasonably specified to allow for products
+                  to detect all instances of httpd across platforms, packaging systems, and typical user compiled and configured installations.
+                  Without a proper definition of how to identify instances of httpd products will not reliably produce consistent assessment
+                  results because they will naturally utilize different approaches to locating instances of httpd which will lead to differences
+                  in the set of collected instances of https.<br><b>Comment: </b>This object has been deprecated and may be removed in a future version of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The httpd_object element is used by a httpd test to define the different httpd binary installed on a system. There is actually
+         only one object relating to this and it is the collection of all httpd binaries. Therefore, there are no child entities defined.
+         Any OVAL Test written to check version will reference the same httpd_object which is basically an empty object element. A
+         tool that implements the httpd_test and collects the httpd_object must know how to find all the httpd binaries on the system
+         and verify that they are in fact httpd binaries.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p><br><h3><a name="httpd_state"></a>&lt; <span style="text-decoration: line-through;">httpd_state</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.8<br><b>Reason: </b>The httpd_state does not specify how to detect instances of httpd and cannot be reasonably specified to allow for products
+                  to detect all instances of httpd across platforms, packaging systems, and typical user compiled and configured installations.
+                  Without a proper definition of how to identify instances of httpd products will not reliably produce consistent assessment
+                  results because they will naturally utilize different approaches to locating instances of httpd which will lead to differences
+                  in the set of collected instances of https.<br><b>Comment: </b>This state has been deprecated and may be removed in a future version of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The httpd_state element defines information associated with a specific httpd binary.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">path</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The path element specifies the directory component of the absolute path to a httpd binary on the system.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">binary_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The binary_name element specifies the name of the file. If the xsi:nil attribute is set to true, then the object being specified
+                  is the higher level path. In this case, the binary_name element should not be collected or used in analysis. Setting xsi:nil
+                  equal to true is different than using a .* pattern match, says to collect every file under a given path.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The version entity is used to check the version of the httpd binary. The datatype for the version entity is 'version' which
+                  means the value should be a delimited set of numbers. It is obtained by running 'httpd -v'.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

@@ -1,0 +1,1163 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL HP-UX Definition Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: HP-UX Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the HP-UX specific tests found in Open
+         Vulnerability and Assessment Language (OVAL). Each test is an extension of the standard test element defined in the Core Definition
+         Schema. Through extension, each test inherits a set of elements and attributes that are shared amongst all OVAL tests. Each
+         test is described in detail and should provide the information necessary to understand what each element and attribute represents.
+         This document is intended for developers and assumes some familiarity with XML. A high level description of the interaction
+         between the different tests and their relationship to the Core Definition Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="getconf_test"></a>&lt; getconf_test  &gt;
+      </h3>
+      <p align="justify">From /usr/bin/getconf. See getconf manpage for specific fields</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="getconf_object"></a>&lt; getconf_object  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">parameter_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the parameter name to check.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pathname</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the pathname to check. Note that pathname is optional in the getconf call. A nil pathname ( empty wth attribute xsi:nil='true')
+                  in OVAL should be interpreted as if it was not supplied to the getconf call.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="getconf_state"></a>&lt; getconf_state  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">parameter_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the parameter name to check</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pathname</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the pathname to check. Note that pathname is optional in the getconf call. A nil pathname in OVAL should be interpreted
+                  as if it was not supplied to the getconf call.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">output</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateAnySimpleType">oval-def:EntityStateAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The output produced by the getconf command.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="ndd_test"></a>&lt; ndd_test  &gt;
+      </h3>
+      <p align="justify">From /usr/bin/ndd. See ndd manpage for specific fields</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="ndd_object"></a>&lt; ndd_object  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">device</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the device to examine.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">parameter</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the parameter, For example, ip_forwarding.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="ndd_state"></a>&lt; ndd_state  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">device</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the device to examine.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">parameter</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the parameter, For example, ip_forwarding.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateAnySimpleType">oval-def:EntityStateAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value of the named parameter.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="patch53_test"></a>&lt; patch53_test  &gt;
+      </h3>
+      <p align="justify">From /usr/sbin/swlist -l patch PHxx_yyyyy. See swlist manpage for specific fields</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch53_object"></a>&lt; patch53_object  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">behaviors</td>
+               <td style="font-size: 90%"><a href="#Patch53Behaviors">hpux-def:Patch53Behaviors</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">swtype</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">HP-UX patch names begin with 'PH'</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">area_patched</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The third and fourth characters in HP-UX patch names indicate the area of software being patched. CO - General HP-UX commands
+                  KL - Kernel patches NE - Network specific patches SS - All other subsystems (X11, starbase, etc.) 
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_base</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The sixth through tenth characters in HP-UX patch names represent a unique numeric identifier for the patch</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch53_state"></a>&lt; patch53_state  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">swtype</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">HP-UX patch names begin with 'PH'</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">area_patched</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The third and fourth characters in HP-UX patch names indicate the area of software being patched. CO - General HP-UX commands
+                  KL - Kernel patches NE - Network specific patches SS - All other subsystems (X11, starbase, etc.)
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_base</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The sixth through tenth characters in HP-UX patch names represent a unique numeric identifier for the patch</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="Patch53Behaviors"></a>== Patch53Behaviors ==
+      </h3>
+      <p align="justify">The Patch53Behaviors complex type defines a number of behaviors that allow a more detailed definition of the patch53_object
+         being specified.  Note that using these behaviors may result in some unique results.  For example, a double negative type
+         condition might be created where an object entity says include everything except a specific item, but a behavior is used that
+         might then add that item back in.
+      </p>
+      <blockquote>
+         <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="6">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <td colspan="6"><b>Attributes:</b></td>
+            </tr>
+            <tr>
+               <td colspan="6">
+                  <hr>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">supersedence</td>
+               <td width="30"></td>
+               <td>Restriction of xsd:boolean</td>
+               <td width="30"></td>
+               <td>(optional -- default='false')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">'supersedence' specifies that the object should also match any superseding patches to the one being specified. In other words,
+                  if set to True the resulting object set would be the original patch specified plus any superseding patches. The default value
+                  is 'false' meaning the object should only match the specified patch.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="patch_test"></a>&lt; <span style="text-decoration: line-through;">patch_test</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.3<br><b>Reason: </b>Replaced by the patch53_test. The patch_name entity was removed from the patch_object element, and replaced with the swtype,
+                  area_patched, and patch_base entities, because the patch_name element can be constructed from the swtype, area_patched, and
+                  patch_base entities. Likewise, the patch_name entity was removed from the patch_state element for the same reason. Also, a
+                  behaviors entity was added to the patch_object to allow the object to match both the original patch and any superseding patches.
+                  A new test was created to reflect these changes. See the patch53_test.<br><b>Comment: </b>This test has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">From /usr/sbin/swlist -l patch PHxx_yyyyy. See swlist manpage for specific fields</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch_object"></a>&lt; <span style="text-decoration: line-through;">patch_object</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.3<br><b>Reason: </b>Replaced by the patch53_object. The patch_name entity was removed from the patch_object element, and replaced with the swtype,
+                  area_patched, and patch_base entities, because the patch_name element can be constructed from the swtype, area_patched, and
+                  patch_base entities. Also, a behaviors entity was added to the patch_object to allow the object to match both the original
+                  patch and any superseding patches. A new object was created to reflect these changes. See the patch53_object.<br><b>Comment: </b>This object has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the patch name to check.</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch_state"></a>&lt; <span style="text-decoration: line-through;">patch_state</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.3<br><b>Reason: </b>Replaced by the patch53_state. The patch_name entity was removed from the patch_state element, and replaced with the swtype,
+                  area_patched, and patch_base entities, because the patch_name element can be constructed from the swtype, area_patched, and
+                  patch_base entities. A new state was created to reflect these changes. See the patch53_state.<br><b>Comment: </b>This state has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the patch name to check</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">swtype</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">HP-UX patch names begin with 'PH'</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">area_patched</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The third and fourth characters in HP-UX patch names indicate the area of software being patched. CO - General HP-UX commands
+                  KL - Kernel patches NE - Network specific patches SS - All other subsystems (X11, starbase, etc.) 
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_base</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The sixth through tenth characters in HP-UX patch names represent a unique numeric identifier for the patch</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="swlist_test"></a>&lt; swlist_test  &gt;
+      </h3>
+      <p align="justify">Output of /usr/sbin/swlist command. Note: A quick way to check for the installation of a specific fileset is to use the command
+         'swlist -a version -l fileset filesetname'. See manpage for swlist for explanation of additional command options.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="swlist_object"></a>&lt; swlist_object  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">swlist</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the bundle or fileset to check.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="swlist_state"></a>&lt; swlist_state  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">swlist</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the bundle or fileset to check.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">bundle</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">fileset</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%">Restriction of <a href="oval-definitions-schema.html#EntityStateAnySimpleType">oval-def:EntityStateAnySimpleType</a>. See schema for details.
+               </td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">title</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">vendor</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="trusted_test"></a>&lt; trusted_test  &gt;
+      </h3>
+      <p align="justify">This test allows for analysis of account settings in trusted HP-UX installations</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="trusted_object"></a>&lt; trusted_object  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the user being checked.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="trusted_state"></a>&lt; trusted_state  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">username</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the user being checked</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uid</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user's ID</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">password</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the encrypted version of the user's password</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">account_owner</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The Account owner for pseudo-users</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">boot_auth</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Boot authorization</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">audit_id</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">getprpwaid uses the audit ID rather than the UID</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">audit_flag</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_change_min</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Minimum time between password changes</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_max_size</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Maximum password length in characters</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_expiration</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Password expiration time in seconds</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_life</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Trusted lifetime, after which the account is locked</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_change_s</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Time of last successful password change</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_change_u</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Time of last unsuccessful password change</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">acct_expire</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Absolute account lifetime in seconds</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">max_llogin</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Maximum time allowed between logins before the account is locked</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exp_warning</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The time in seconds before expiration when a warning will appear</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">usr_chg_pw</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Who can change this user's password</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gen_pw</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Allows user to use system-generated passwords</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_restrict</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Whether a triviality check is performed on user-generated passwords</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_null</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Determines if null passwords are allowed for this account</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_gen_char</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Allows password generator to use random printable ASCII characters</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_gen_let</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Allows password generator to use random letters</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">login_time</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Specifies the times when the user may login to this account</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pw_changer</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The user ID of the user who last changed the password on the user's account, if it was not the account owner</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">login_time_s</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The time of the last successful login using this account</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">login_time_u</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The time of the last unsuccessful login using this account</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">login_tty_s</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The terminal or remote host associated with the last successful login to the account</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">login_tty_u</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The terminal or remote hosts associated with the last unsuccessful login to the account</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">num_u_logins</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The number of unsuccessful login attempts since that last successful login</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">max_u_logins</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The maximum number of unsuccessful login attempts before the account is locked</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">lock_flag</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBoolType">oval-def:EntityStateBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Indicates whether the administrative lock on the account is set</td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

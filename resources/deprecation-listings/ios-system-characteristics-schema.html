@@ -1,0 +1,77 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL IOS System Characteristics Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: IOS System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="version_item"></a><a href="../documentation/ios-system-characteristics-schema.html#version_item">&lt; version_item  &gt;</a></h3>
+      <p class="documentation">The version_item holds information about the version of the IOS operating system. It extends the standard ItemType as defined
+         in the oval-system-characteristics schema and one should refer to the ItemType description for more information.
+      </p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>major_release
+                  <p class="documentation">The major_release is a combination of train and rebuild information and is used by Cisco advisories to identify major releases.</p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Additional IOS version components were added to the version_state in order to support a wider range of IOS version strings.
+                     Also, the major_release entity was removed from the version_state element resulting in its deprecation.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td>train_number
+                  <p class="documentation">The train number is the dotted version that starts a version string. For example the version string 12.2(3)T has a train number
+                     of 12.2.
+                  </p>
+               </td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Additional IOS version components were added to the version_state in order to support a wider range of IOS version strings.
+                     Also, the train_number entity was removed from the version_state element resulting in its deprecation.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br></body>
+</html>

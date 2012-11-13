@@ -1,0 +1,100 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL UNIX Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: UNIX Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="FileBehaviors"></a><a href="../documentation/unix-definitions-schema.html#FileBehaviors">== FileBehaviors ==</a></h3>
+      <p class="documentation">The FileBehaviors complex type defines a number of behaviors that allow a more detailed definition of the file_object being
+         specified.  Note that using these behaviors may result in some unique results.  For example, a double negative type condition
+         might be created where an object entity says include everything except a specific item, but a behavior is used that might
+         then add that item back in.
+      </p>
+      <p class="documentation">It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to
+         the 'filepath' element, only to the 'path' and 'filename' elements.  This is because the 'filepath' element represents an
+         absolute path to a particular file and it is not possible to recurse over a file.
+      </p>
+      <hr class="thick">
+      <h3><a name="process_test"></a><a href="../documentation/unix-definitions-schema.html#process_test">&lt; process_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>The process_test has been deprecated and replaced by the process58_test. The command line of a process cannot be used to uniquely
+         identify a process. As a result, the pid entity was added to the process58_object. Please see the process58_test for additional
+         information.<br></div>
+      <p class="documentation">The process test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps
+         command. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description
+         for more information. The required object element references a process_object and the optional state element specifies the
+         process information to check.
+      </p><br><hr class="thick">
+      <h3><a name="process_object"></a><a href="../documentation/unix-definitions-schema.html#process_object">&lt; process_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>The process_object has been deprecated and replaced by the process58_object. The command line of a process cannot be used
+         to uniquely identify a process. As a result, the pid entity was added to the process58_object. Please see the process58_object
+         for additional information.<br></div>
+      <p class="documentation">The process_object element is used by a process test to define the specific process(es) to be evaluated. Each object extends
+         the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more
+         information. The common set element allows complex objects to be created using filters and set logic. Again, please refer
+         to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p class="documentation">A process object defines the command line used to start the process(es).</p><br><hr class="thick">
+      <h3><a name="process_state"></a><a href="../documentation/unix-definitions-schema.html#process_state">&lt; process_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.8<br><strong>Reason: </strong>The process_state has been deprecated and replaced by the process58_state. The command line of a process cannot be used to
+         uniquely identify a process. As a result, the pid entity was added to the process58_object. Please see the process58_state
+         for additional information.<br></div>
+      <p class="documentation">The process_state element defines the different metadata associated with a UNIX process. This includes the command line, pid,
+         ppid, priority, and user id. Please refer to the individual elements in the schema for more details about what each represents.
+      </p><br><hr class="thick">
+      <h3><a name="sccs_test"></a><a href="../documentation/unix-definitions-schema.html#sccs_test">&lt; sccs_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The sccs_test has been deprecated because the Source Code Control System (SCCS) is obsolete.  The sccs_test may be removed
+         in a future version of the language.<br></div>
+      <p class="documentation"></p><br><hr class="thick">
+      <h3><a name="sccs_object"></a><a href="../documentation/unix-definitions-schema.html#sccs_object">&lt; sccs_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The sccs_object has been deprecated because the Source Code Control System (SCCS) is obsolete.  The sccs_object may be removed
+         in a future version of the language.<br></div>
+      <p class="documentation">The set of files to be evaluated may be identified with either a complete filepath or a path and filename. Only one of these
+         options may be selected.
+      </p>
+      <p class="documentation">It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to
+         the 'filepath' element, only to the 'path' and 'filename' elements.  This is because the 'filepath' element represents an
+         absolute path to a particular file and it is not possible to recurse over a file.
+      </p><br><hr class="thick">
+      <h3><a name="sccs_state"></a><a href="../documentation/unix-definitions-schema.html#sccs_state">&lt; sccs_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The sccs_state has been deprecated because the Source Code Control System (SCCS) is obsolete.  The sccs_state may be removed
+         in a future version of the language.<br></div>
+      <p class="documentation"></p><br></body>
+</html>

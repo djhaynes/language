@@ -1,0 +1,1494 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Solaris Definition Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: Solaris Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the Solaris specific tests found in Open
+         Vulnerability and Assessment Language (OVAL). Each test is an extension of the standard test element defined in the Core Definition
+         Schema. Through extension, each test inherits a set of elements and attributes that are shared amongst all OVAL tests. Each
+         test is described in detail and should provide the information necessary to understand what each element and attribute represents.
+         This document is intended for developers and assumes some familiarity with XML. A high level description of the interaction
+         between the different tests and their relationship to the Core Definition Schema is not outlined here.
+      </p>
+      <p align="justify">The OVAL Schema is maintained by The MITRE Corporation and developed by the public OVAL Community. For more information, including
+         how to get involved in the project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="isainfo_test"></a>&lt; isainfo_test  &gt;
+      </h3>
+      <p align="justify">The isainfo test reveals information about the instruction set architectures. This information can be retrieved by the isainfo
+         command. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description
+         for more information. The required object element references an isainfo_object and the optional state element specifies the
+         metadata to check.
+      </p>
+      <p align="justify">The isainfo_test was originally developed by Robert L. Hollis at ThreatGuard, Inc. Many thanks for their support of the OVAL
+         project.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="isainfo_object"></a>&lt; isainfo_object  &gt;
+      </h3>
+      <p align="justify">The isainfo_object element is used by an isainfo test to define those objects to evaluated based on a specified state. There
+         is actually only one object relating to isainfo and this is the system as a whole. Therefore, there are no child entities
+         defined. Any OVAL Test written to check isainfo will reference the same isainfo_object which is basically an empty object
+         element.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p><br><h3><a name="isainfo_state"></a>&lt; isainfo_state  &gt;
+      </h3>
+      <p align="justify">The isainfo_state element defines the information about the instruction set architectures. Please refer to the individual
+         elements in the schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">bits</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the number of bits in the address space of the native instruction set (isainfo -b).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">kernel_isa</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the instruction set used by kernel components (isainfo -k).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">application_isa</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the name of the instruction set used by portable applications (isainfo -n).</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="ndd_test"></a>&lt; ndd_test  &gt;
+      </h3>
+      <p align="justify">From /usr/bin/ndd. See ndd manpage for specific fields</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="ndd_object"></a>&lt; ndd_object  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">device</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the device to examine. If multiple instances of this device exist on the system, an item for each instance will
+                  be collected.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">parameter</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the parameter, For example, ip_forwarding.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="ndd_state"></a>&lt; ndd_state  &gt;
+      </h3>
+      <p align="justify"></p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">device</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the device to examine.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">instance</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The instance of the device to examine. Certain devices may have multiple instances on a system. If multiple instances exist,
+                  an item for each instance will be collected and will have this entity populated with its respective instance value. If only
+                  a single instance exists, this entity will not be collected.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">parameter</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name of the parameter, For example, ip_forwarding.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateAnySimpleType">oval-def:EntityStateAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value of the named parameter.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="package_test"></a>&lt; package_test  &gt;
+      </h3>
+      <p align="justify">The package test is used to check information associated with different packages installed on the system. The information
+         used by this test is modeled after the /usr/bin/pkginfo command. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references an inetd_object
+         and the optional state element specifies the information to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="package_object"></a>&lt; package_object  &gt;
+      </h3>
+      <p align="justify">The package_object element is used by a package test to define the packages to be evaluated. Each object extends the standard
+         ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more information.
+         The common set element allows complex objects to be created using filters and set logic. Again, please refer to the description
+         of the set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A package object consists of a single pkginst entity that identifies the package to be used.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pkginst</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pkginst entity is a string that represents a package designation by its instance. An instance can be the package abbreviation
+                  or a specific instance (for example, inst.1 or inst.2).
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="package_state"></a>&lt; package_state  &gt;
+      </h3>
+      <p align="justify">The package_state element defines the different information associated with packages installed on the system. Please refer
+         to the individual elements in the schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pkginst</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pkginst entity is a string that represents a package designation by its instance. An instance can be the package abbreviation
+                  or a specific instance (for example, inst.1 or inst.2).
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The name entity is a text string that specifies a full package name.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">category</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The category entity is a string in the form of a comma-separated list of categories under which a package may be displayed.
+                  Note that a package must at least belong to the system or application category. Categories are case-insensitive and may contain
+                  only alphanumerics. Each category is limited in length to 16 characters.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The version entity is a text string that specifies the current version associated with the software package. The maximum length
+                  is 256 ASCII characters and the first character cannot be a left parenthesis. Current Solaris software practice is to assign
+                  this parameter monotonically increasing Dewey decimal values of the form: major_revision.minor_revision[.micro_revision] where
+                  all the revision fields are integers. The versioning fields can be extended to an arbitrary string of numbers in Dewey-decimal
+                  format, if necessary.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">vendor</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The vendor entity is a string used to identify the vendor that holds the software copyright (maximum length of 256 ASCII characters).</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">description</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The description entity is a string that represents a more in-depth description of a package.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="packagecheck_test"></a>&lt; packagecheck_test  &gt;
+      </h3>
+      <p align="justify">The packagecheck_test is used to verify the integrity of an installed Solaris package.  The information used by this test
+         is modeled after the pkgchk command. For more information, see pkgchk(1M). It extends the standard TestType as defined in
+         the oval-definitions-schema and one should refer to the TestType description for more information. The required object element
+         references a packagecheck_object and the optional packagecheck_state element specifies the data to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="packagecheck_object"></a>&lt; packagecheck_object  &gt;
+      </h3>
+      <p align="justify">The packagecheck_object element is used by a packagecheck_test to define the packages to be verified. Each object extends
+         the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more
+         information. The common set element allows complex objects to be created using filters and set logic. Again, please refer
+         to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">behaviors</td>
+               <td style="font-size: 90%"><a href="#PackageCheckBehaviors">sol-def:PackageCheckBehaviors</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pkginst</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pkginst entity is a string that represents a package designation by its instance. An instance can be the package abbreviation
+                  or a specific instance (for example, inst.1 or inst.2).
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The filepath element specifies the absolute path for a file or directory in the specified package.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="packagecheck_state"></a>&lt; packagecheck_state  &gt;
+      </h3>
+      <p align="justify">The package_state element defines the different verification information associated with packages installed on the system.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">pkginst</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The pkginst entity is a string that represents a package designation by its instance. An instance can be the package abbreviation
+                  or a specific instance (for example, inst.1 or inst.2).
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">filepath</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The filepath element specifies the absolute path for a file or directory in the specified package.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">checksum_differs</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBoolType">oval-def:EntityStateBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the file's checksum changed? A value of true indicates that the file's checksum has changed. A value of false indicates
+                  that the file's checksum has not changed.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">size_differs</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBoolType">oval-def:EntityStateBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the file's size changed? A value of true indicates that the file's size has changed. A value of false indicates that the
+                  file's size has not changed.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">mtime_differs</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBoolType">oval-def:EntityStateBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the file's modified time changed? A value of true indicates that the file's modified time has changed. A value of false
+                  indicates that the file's modified time has not changed.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uread</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user read permission changed from the expected user read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uwrite</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user write permission changed from the expected user write permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">uexec</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual user exec permission changed from the expected user exec permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gread</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group read permission changed from the expected group read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gwrite</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group write permission changed from the expected group write permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">gexec</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual group exec permission changed from the expected group exec permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oread</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others read permission changed from the expected others read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">owrite</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others read permission changed from the expected others read permission?</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">oexec</td>
+               <td style="font-size: 90%"><a href="#EntityStatePermissionCompareType">sol-def:EntityStatePermissionCompareType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">Has the actual others read permission changed from the expected others read permission?</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="PackageCheckBehaviors"></a>== PackageCheckBehaviors ==
+      </h3>
+      <p align="justify">The PackageCheckBehaviors complex type defines a set of behaviors that for controlling how installed packages are checked.
+         These behaviors align with the options of the pkgchk command (specifically '-a', '-c', and '-n').
+      </p>
+      <blockquote>
+         <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="6">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <td colspan="6"><b>Attributes:</b></td>
+            </tr>
+            <tr>
+               <td colspan="6">
+                  <hr>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">fileattributes_only</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td>(optional -- default='false')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">'fileattributes_only' when true this behavior means only check the file attributes and do not check file contents. When false,
+                  both file attributes and contents will be checked. This aligns with the pkgchk option '-a'.
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">filecontents_only</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td>(optional -- default='false')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">'filecontents_only' when true this behavior means only check the file contents and do not check file attributes. When false,
+                  both file attributes and contents will be checked. This aligns with the pkgchk option '-c'.
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">no_volatileeditable</td>
+               <td width="30"></td>
+               <td>xsd:boolean</td>
+               <td width="30"></td>
+               <td>(optional -- default='false')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">'no_volatileeditable' when true this behavior means do not check volatile or editable files' contents. When false, volatile
+                  and editable files' contents will be checked. This aligns with the pkgchk option '-n'.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="patch54_test"></a>&lt; patch54_test  &gt;
+      </h3>
+      <p align="justify">The patch test is used to check information associated with different patches installed on the system. The information being
+         tested is based off the /usr/bin/showrev -p command. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references an inetd_object
+         and the optional state element specifies the information to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="patch_test"></a>&lt; <span style="text-decoration: line-through;">patch_test</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.4<br><b>Reason: </b>Replaced by the patch54_test. The new test includes additional functionality that allows the object element to match both
+                  the original patch and any superseding patches. As a result of this new functionality, the patch_object was also expanded
+                  to include behaviors and version entities. See the patch54_test.<br><b>Comment: </b>This test has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The patch test is used to check information associated with different patches installed on the system. The information being
+         tested is based off the /usr/bin/showrev -p command. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references an inetd_object
+         and the optional state element specifies the information to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch54_object"></a>&lt; patch54_object  &gt;
+      </h3>
+      <p align="justify">The patch54_object element is used by a patch test to define the specific patch to be evaluated. Patches are identified by
+         unique alphanumeric strings, with the patch base code first, a hyphen, and a number that represents the patch revision number.
+         Each object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType
+         description for more information. The common set element allows complex objects to be created using filters and set logic.
+         Again, please refer to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A patch object consists of a base entity that identifies the patch to be used, and a version entity that represent the patch
+         revision number.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">behaviors</td>
+               <td style="font-size: 90%"><a href="#PatchBehaviors">sol-def:PatchBehaviors</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">base</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectIntType">oval-def:EntityObjectIntType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The base entity represents a patch base code found before the hyphen.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectIntType">oval-def:EntityObjectIntType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The version entity represents a patch version number found after the hyphen.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch_object"></a>&lt; <span style="text-decoration: line-through;">patch_object</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.4<br><b>Reason: </b>Replaced by the patch54_object. Due to the additional functionality that allows the object element to match both the original
+                  patch and any superseding patches, a new object was created that includes behaviors and version entities. See the patch54_object.<br><b>Comment: </b>This object has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The patch_object element is used by a patch test to define the specific patch to be evaluated. Patches are identified by unique
+         alphanumeric strings, with the patch base code first, a hyphen, and a number that represents the patch revision number. Each
+         object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A patch object consists of a single base entity that identifies the patch to be used.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">base</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectIntType">oval-def:EntityObjectIntType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The base entity reresents a patch base code found before the hyphen.</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch_state"></a>&lt; patch_state  &gt;
+      </h3>
+      <p align="justify">The patch_state element defines the different information associated with a specific patch installed on the system. Patches
+         are identified by unique alphanumeric strings, with the patch base code first, a hyphen, and a number that represents the
+         patch revision number. Please refer to the individual elements in the schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">base</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The base entity reresents a patch base code found before the hyphen.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">version</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The version entity represents a patch version number found after the hyphen.</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="PatchBehaviors"></a>== PatchBehaviors ==
+      </h3>
+      <p align="justify">The PatchBehaviors complex type defines a number of behaviors that allow a more detailed definition of the patch_object being
+         specified.  Note that using these behaviors may result in some unique results.  For example, a double negative type condition
+         might be created where an object entity says include everything except a specific item, but a behavior is used that might
+         then add that item back in.
+      </p>
+      <blockquote>
+         <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="6">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <td colspan="6"><b>Attributes:</b></td>
+            </tr>
+            <tr>
+               <td colspan="6">
+                  <hr>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">supersedence</td>
+               <td width="30"></td>
+               <td>Restriction of xsd:boolean</td>
+               <td width="30"></td>
+               <td>(optional -- default='false')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">'supersedence' specifies that the object should also match any superseding patches to the one being specified. In Solaris,
+                  a patch can be superseded in two ways. The first way is implicitly when a new revision of a patch is released (e.g. patch
+                  12345-02 supersedes patch 12345-01). The second way is explicitly where a new patch contains the complete functionality of
+                  another patch. If set to 'true', the resulting object set would be the original patch specified plus any superseding patches.
+                  The default value is 'false' meaning the object should only match the specified patch.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="smf_test"></a>&lt; smf_test  &gt;
+      </h3>
+      <p align="justify">The smf_test is used to check service management facility controlled services including traditional unix rc level start/kill
+         scrips and inetd daemon services. It extends the standard TestType as defined in the oval-definitions-schema and one should
+         refer to the TestType description for more information. The required object element references a smf_object and the optional
+         state element specifies the information to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="smf_object"></a>&lt; smf_object  &gt;
+      </h3>
+      <p align="justify">The smf_object element is used by a smf_test to define the specific service instance to be evaluated. Each object extends
+         the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more
+         information. The common set element allows complex objects to be created using filters and set logic. Again, please refer
+         to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A smf_object consists of a fmri entity that represents the Fault Management Resource Identifier (FMRI) which uniquely identifies
+         a service.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">fmri</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The FMRI (Fault Managed Resource Identifier) entity is used to identify system objects for which advanced fault and resource
+                  management capabilities are provided. Services managed by SMF are assigned FMRI URIs prefixed with the scheme name "svc".
+                  FMRIs used by SMF can be expressed in three ways: first as an absolute path including a location path such as "localhost"
+                  (eg svc://localhost/system/system-log:default), second as a path relative to the local machine (eg svc:/system/system-log:default),
+                  and third as simply the service identifier with the string prefixes implied (eg system/system-log:default). For OVAL, the
+                  absolute path version (first choice) should be used.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="smf_state"></a>&lt; smf_state  &gt;
+      </h3>
+      <p align="justify">The smf_state element defines the different information associated with a specific smf controlled service. Please refer to
+         the individual elements in the schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">fmri</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The FMRI (Fault Managed Resource Identifier) entity describes a possible identifier associated with a service. Services managed
+                  by SMF are assigned FMRI URIs prefixed with the scheme name "svc". FMRIs used by SMF can be expressed in three ways: first
+                  as an absolute path including a location path such as "localhost" (eg svc://localhost/system/system-log:default), second as
+                  a path relative to the local machine (eg svc:/system/system-log:default), and third as simply the service identifier with
+                  the string prefixes implied (eg system/system-log:default). For OVAL, the absolute path version (first choice) should be used.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">service_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The service_name entity is usually an abbreviated form of the FMRI. In the example svc://localhost/system/system-log:default,
+                  the name would be system-log.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">service_state</td>
+               <td style="font-size: 90%"><a href="#EntityStateSmfServiceStateType">sol-def:EntityStateSmfServiceStateType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The service_state entity describes a possible state that the service may be in. Each service instance is always in a well-defined
+                  state based on its dependencies, the results of the execution of its methods, and its potential receipt of events from the
+                  contracts filesystem. The service_state values are UNINITIALIZED, OFFLINE, ONLINE, DEGRADED, MAINTENANCE, DISABLED, and LEGACY-RUN.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">protocol</td>
+               <td style="font-size: 90%"><a href="#EntityStateSmfProtocolType">sol-def:EntityStateSmfProtocolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The protocol entity describes a possible protocol supported by the service. Possible values are tcp, tcp6, tcp6only, udp,
+                  udp6, and udp6only
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server_executable</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The entity server_executable is a string representing the listening daemon on the server side. An example being 'svcprop ftp'
+                  which might show 'inetd/start/exec astring /usr/sbin/in.ftpd\ -a'
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">server_arguements</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The server_arguments entity describes possible parameters that are passed to the service.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">exec_as_user</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The exec_as_user entity is a string pulled from svcprop in the following format: inetd_start/user astring root</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityStatePermissionCompareType"></a>== EntityStatePermissionCompareType ==
+      </h3>
+      <p align="justify">The EntityStatePermissionCompareType complex type restricts a string value to more, less, or same which specifies if an actual
+         permission is different than the expected permission (more or less restrictive) or if the permission is the same. The empty
+         string is also allowed to support empty elements associated with variable references. Note that when using pattern matches
+         and variables care must be taken to ensure that the regular expression and variable values align with the enumerated values.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>more&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is more restrictive than the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>less&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is less restrictive than the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>same&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The actual permission is the same as the expected permission.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for empty elements associated with variable references.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityStateSmfProtocolType"></a>== EntityStateSmfProtocolType ==
+      </h3>
+      <p align="justify">The EntityStateSmfProtocolType complex type defines the different values that are valid for the protocol entity of a smf_state.
+         The empty string is also allowed as a valid value to support an empty element that is found when a variable reference is used
+         within the type entity. Note that when using pattern matches and variables care must be taken to ensure that the regular expression
+         and variable values align with the enumerated values.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>tcp&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>tcp6&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>tcp6only&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Request that service listen only for and pass on true IPv6 requests (not IPv4 mapped ones).</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>udp&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>udp6&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p></p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>udp6only&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Request that service listen only for and pass on true IPv6 requests (not IPv4 mapped ones).</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for empty elements associated with variable references.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityStateSmfServiceStateType"></a>== EntityStateSmfServiceStateType ==
+      </h3>
+      <p align="justify">The EntityStateSmfServiceStateType complex type defines the different values that are valid for the service_state entity of
+         a smf_state. The empty string is also allowed as a valid value to support an empty element that is found when a variable reference
+         is used within the type entity.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DEGRADED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled and running or available to run. The instance, however, is functioning at a limited capacity in comparison
+                     to normal operation.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>DISABLED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is disabled.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>MAINTENANCE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled, but not able to run. Administrative action is required to restore the instance to offline and subsequent
+                     states.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>LEGACY-RUN&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This state represents a legacy instance that is not managed by the service management facility. Instances in this state have
+                     been started at some point, but might or might not be running.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>OFFLINE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled, but not yet running or available to run.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>ONLINE&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The instance is enabled and running or is available to run.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>UNINITIALIZED&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>This is the initial state for all service instances.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string value is permitted here to allow for empty elements associated with variable references.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

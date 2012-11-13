@@ -1,0 +1,79 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL CatOS System Characteristics Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: CatOS System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="version_item"></a><a href="../documentation/catos-system-characteristics-schema.html#version_item">&lt; version_item  &gt;</a></h3>
+      <p class="documentation">Stores results from SHOW VERSION command.</p>
+      <div class="inset_table">
+         <table style="background-color:#F9F9F9; table-layout:fixed;" border="1" cellpadding="5" cellspacing="0" width="88%">
+            <tr style="background-color:#F0F0F0;">
+               <th>Child Elements</th>
+               <th>Deprecation Info</th>
+            </tr>
+            <tr>
+               <td>catos_major_release</td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Due to the fact it's not clear on how to separate the CatOS version, it was decided that the catos_major_release, catos_individual_release,
+                     and catos_version_id entities would be combined into a new single entity catos_release. Therefore, the catos_major_release
+                     entity is no longer needed.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td>catos_individual_release</td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Due to the fact it's not clear on how to separate the CatOS version, it was decided that the catos_major_release, catos_individual_release,
+                     and catos_version_id entities would be combined into a new single entity catos_release. Therefore, the catos_individual_release
+                     entity is no longer needed.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+            <tr>
+               <td>catos_version_id</td>
+               <td>
+                  <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Due to the fact it's not clear on how to separate the CatOS version, it was decided that the catos_major_release, catos_individual_release,
+                     and catos_version_id entities would be combined into a new single entity catos_release. Therefore, the catos_version_id entity
+                     is no longer needed.<br><strong>Comment: </strong>This entity has been deprecated and will be removed in version 6.0 of the language.<br></div>
+               </td>
+            </tr>
+         </table>
+      </div><br></body>
+</html>

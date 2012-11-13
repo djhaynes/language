@@ -1,0 +1,50 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Linux System Characteristics Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: Linux System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="rpmverify_item"></a><a href="../documentation/linux-system-characteristics-schema.html#rpmverify_item">&lt; rpmverify_item  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>Replaced by the rpmverifyfile_item and rpmverifypackage_item. The rpmverify_item was split into two items to distinguish between
+         the verification of the files in an rpm and the verification of an rpm as a whole. By making this distinction, content authoring
+         is simplified and information is no longer duplicated across items. See the rpmverifyfile_item and rpmverifypackage_item.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">This item stores rpm verification results similar to what is produced by the rpm -V command.</p><br></body>
+</html>

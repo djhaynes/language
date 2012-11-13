@@ -1,0 +1,901 @@
+<html xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL VMware ESX server Definition Schema Element Dictionary</title>
+   </head>
+   <body bgcolor="#ffffff">
+      <h1 align="center">- Open Vulnerability and Assessment Language -<br>Element Dictionary
+      </h1>
+      <ul>
+         <li>Schema: VMware ESX server Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <p align="justify">The following is a description of the elements, types, and attributes that compose the VMware ESX server specific tests found
+         in Open Vulnerability and Assessment Language (OVAL). Each test is an extension of the standard test element defined in the
+         Core Definition Schema. Through extension, each test inherits a set of elements and attributes that are shared amongst all
+         OVAL tests. Each test is described in detail and should provide the information necessary to understand what each element
+         and attribute represents. This document is intended for developers and assumes some familiarity with XML. A high level description
+         of the interaction between the different tests and their relationship to the Core Definition Schema is not outlined here.
+      </p>
+      <p align="justify">This schema was originally developed by Yuzheng Zhou and Todd Dolinsky at Hewlett-Packard. The OVAL Schema is maintained by
+         The MITRE Corporation and developed by the public OVAL Community. For more information, including how to get involved in the
+         project and how to submit change requests, please visit the OVAL website at http://oval.mitre.org.
+      </p>
+      <hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="patch56_test"></a>&lt; patch56_test  &gt;
+      </h3>
+      <p align="justify">The patch56_test reveals the installation status of a specific patch or patches in VMware ESX Server. This information can
+         be retrieved by the "esxupdate query" command. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references a patch56_object
+         and the optional state element referencing a patch56_state specifies the metadata to check.
+      </p>
+      <p align="justify">Note that different from previous versions, ESX Server 3.0.3 and ESX Server 3.5 use the following patch naming convention:
+         {ProductName}{VersionNumber}-{BundleID}-{Classification}{SupportLevel}. Please refer to http://www.vmware.com/pdf/vi3_35/esx_3/r35/vi3_35_25_esxupdate.pdf
+         for more detailed information.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch56_object"></a>&lt; patch56_object  &gt;
+      </h3>
+      <p align="justify">The patch56_object element is used by a patch56_test to define those objects to be evaluated against a specified state. Each
+         object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A patch56_object consists of a single patch_name entity that identifies the patch to be checked.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">behaviors</td>
+               <td style="font-size: 90%"><a href="#Patch56Behaviors">esx-def:Patch56Behaviors</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The patch name entity indetifies a specific patch or set of patches to be checked on the system.  For example: ESX-200603
+                  or ESX350-200904401-BG.  The value of this entity should correspond to the values returned under the "name" column of the
+                  "esxupdate query" command.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch56_state"></a>&lt; patch56_state  &gt;
+      </h3>
+      <p align="justify">The patch56_state element defines the different information that can be used to evaluate the specified VMware ESX Serer patch.
+         Please refer to the individual elements in the schema for more details about what each represents.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_name</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The patch_name entity indetifies the name of a patch to test for.  For example: ESX-200603 or ESX350-200904401-BG.  The value
+                  of this entity should correspond to the values returned under the "name" column of the "esxupdate query" command.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">knowledge_base_id</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The knowledge_base_id entity specifies a given knowledge base article identifier number.  This entity is valid for ESX versions
+                  3.0.2 and earlier.  It is comprised of the numerical string at the end of the patch name. For example, the patch ESX-200603
+                  would have a knowledge base identifier of 200603.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">bundle_id</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The bundle_id entity specifies a unique ID for the patch.  This entity is valid for ESX version 3.0.3 and version 3.5 and
+                  is comprised of the year and month the bundle was released and a 3-digit unique ID. It is in the format YYYYMM###. For example,
+                  the first patch released in January 2008 might have a BundleID of 200801001.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">classification</td>
+               <td style="font-size: 90%"><a href="#EntityStateClassificationType">esx-def:EntityStateClassificationType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The classification entity specifies the type of patch.  It can be one of: B - bug, U - update, S - security, or R - roll-up.
+                  This entity is valid for ESX version 3.0.3 and later.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">support_level</td>
+               <td style="font-size: 90%"><a href="#EntityStateSupportLevelType">esx-def:EntityStateSupportLevelType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The support_level entity specifies a support level to test for.  If can be one of: G - GA patch, H - hot patch, D - debugging
+                  patch, or C - custom patch.  This entity is valid for ESX version 3.0.3 and later.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">status</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBoolType">oval-def:EntityStateBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The status entity specifies an installation status of a patch to test for.  A value of 'true' is used to signify that a given
+                  patch is intalled.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="Patch56Behaviors"></a>== Patch56Behaviors ==
+      </h3>
+      <p align="justify">The Patch56Behaviors complex type defines a number of behaviors that allow a more detailed definition of the patch56_object
+         being specified. Note that using these behaviors may result in some unique results. For example, a double negative type condition
+         might be created where an object entity says include everything except a specific item, but a behavior is used that might
+         then add that item back in.
+      </p>
+      <blockquote>
+         <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="6">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <td colspan="6"><b>Attributes:</b></td>
+            </tr>
+            <tr>
+               <td colspan="6">
+                  <hr>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">supersedence</td>
+               <td width="30"></td>
+               <td>Restriction of xsd:boolean</td>
+               <td width="30"></td>
+               <td>(optional -- default='false')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">'supersedence' specifies that the object should also match any superseding patches to the one being specified. In other words,
+                  if set to True the resulting object set would be the original patch specified plus any superseding patches. The default value
+                  is 'false' meaning the object should only match the specified patch.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="patch_test"></a>&lt; <span style="text-decoration: line-through;">patch_test</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.6<br><b>Reason: </b>Replaced by the patch56_test. The deprecated patch_test has a bug where the patch name entity is defined as a string in the
+                  object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><b>Comment: </b>This test has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The patch test reveals the installation status of a specific patch in the VMware ESX server. This information can be retrieved
+         by the "esxupdate query | grep ESX-xxxxxxx" command. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references a patch_object
+         and the optional state element specifies the metadata to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch_object"></a>&lt; <span style="text-decoration: line-through;">patch_object</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.6<br><b>Reason: </b>Replaced by the patch56_object. The deprecated patch_test has a bug where the patch name entity is defined as a string in
+                  the object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><b>Comment: </b>This object has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The patch_object element is used by a patch test to define those objects to be evaluated based on a specified state. Each
+         object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p align="justify">A patch_object consists of a single patch_number entity that identifies the patch to be checked.</p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">behaviors</td>
+               <td style="font-size: 90%"><a href="#PatchBehaviors">esx-def:PatchBehaviors</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_number</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The patch_number entity identifies the patch to be checked. Many of the security bulletins for VMWARE ESX Server contain non-numerical
+                  characters in the patch number, therefore this entity has a datatype of string.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="patch_state"></a>&lt; <span style="text-decoration: line-through;">patch_state</span>  &gt;
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.6<br><b>Reason: </b>Replaced by the patch56_state. The deprecated patch_test has a bug where the patch name entity is defined as a string in the
+                  object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><b>Comment: </b>This object has been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The patch_state element defines the information about a specific patch. The patch_number element identifies this patch, and
+         the status element reveals the installation status of this patch in the VMware ESX server. For instance, after the "esxupdate
+         query | grep ESX-2559638" command is run, the result is either a string similar to "ESX-2559638 15:27:17 04/05/07 Update info
+         rpm for ESX 3.0.1." or empty.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">patch_number</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the patch number of a specific patch which will be checked in current VMware ESX server. Many of the security bulletins
+                  for VMWARE ESX Server contain non-numerical characters in the patch nubmer, therefore this entity has a datatype of string.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">status</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateBoolType">oval-def:EntityStateBoolType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the installation status of a specific patch in current VMware ESX server.</td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="PatchBehaviors"></a>== <span style="text-decoration: line-through;">PatchBehaviors</span> ==
+      </h3>
+      <p>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+               <td><b>Deprecated As Of Version: </b>5.6<br><b>Reason: </b>Replaced by Patch56Behaviors. The deprecated patch_test has a bug where the patch name entity is defined as a string in the
+                  object yet is defined as an int in the state.  Additional state entities have also been added to the new patch56_test.<br><b>Comment: </b>These behaviors have been deprecated and will be removed in version 6.0 of the language.<br></td>
+            </tr>
+         </table>
+      </p>
+      <p align="justify">The PatchBehaviors complex type defines a number of behaviors that allow a more detailed definition of the patch_object being
+         specified. Note that using these behaviors may result in some unique results. For example, a double negative type condition
+         might be created where an object entity says include everything except a specific item, but a behavior is used that might
+         then add that item back in.
+      </p>
+      <blockquote>
+         <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="6">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <td colspan="6"><b>Attributes:</b></td>
+            </tr>
+            <tr>
+               <td colspan="6">
+                  <hr>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">supersedence</td>
+               <td width="30"></td>
+               <td>Restriction of xsd:boolean</td>
+               <td width="30"></td>
+               <td>(optional -- default='false')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">'supersedence' specifies that the object should also match any superseding patches to the one being specified. In other words,
+                  if set to True the resulting object set would be the original patch specified plus any superseding patches. The default value
+                  is 'false' meaning the object should only match the specified patch.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="version_test"></a>&lt; version_test  &gt;
+      </h3>
+      <p align="justify">The version test reveals information about the release and build version of the VMware ESX server. This information can be
+         retrieved by the "vmware -v" command or by checking the /proc/vmware/version file. It extends the standard TestType as defined
+         in the oval-definitions-schema and one should refer to the TestType description for more information. The required object
+         element references a version_object and the optional state element specifies the metadata to check.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="version_object"></a>&lt; version_object  &gt;
+      </h3>
+      <p align="justify">The version_object element is used by a version test to define those objects to be evaluated based on a specified state. There
+         is actually only one object relating to version and this is the ESX server as a whole. Therefore, there are no child entities
+         defined. Any OVAL Test written to check version will reference the same version_object which is basically an empty object
+         element.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p><br><h3><a name="version_state"></a>&lt; version_state  &gt;
+      </h3>
+      <p align="justify">The version_state element defines the information about the release and build version. The release and build elements specify
+         the release and build information of the VMware ESX server respectively. For instance, if the output of "vmware -v" command
+         is "VMware ESX Server 3.0.1 build-39823", then release is equal to "3.0.1" and build is equal to "39823".
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">release</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateVersionType">oval-def:EntityStateVersionType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the release version of current VMware ESX server.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">build</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateIntType">oval-def:EntityStateIntType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">This is the build version of current VMware ESX server.</td>
+            </tr>
+         </table>
+      </blockquote><br><hr noshade="true" size="5" width="100%">
+      <hr noshade="true" size="5" width="100%">
+      <h3><a name="visdkmanagedobject_test"></a>&lt; visdkmanagedobject_test  &gt;
+      </h3>
+      <p align="justify">The visdkmanagedobject_test is used to check information about Managed Objects in the VMware Infrastructure.  This test extends
+         the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more
+         information. The required object element references a visdkmanagedobject _object and the optional state element specifies
+         the metadata to check.
+      </p>
+      <p align="justify">This test has been introduced to enable standardized automated assessments of configuration settings in cloud computing components.
+         All aspects of the VMware cloud can be considered in this test due to the VMware Infrastructure.  Whether it is a Virutal
+         Machine, a Host System, or even a Data Center, properties are defined in ways that can be enumerated in a common methodology.
+         The VI SDK Programming Guide located at http://www.vmware.com/support/developer/vc-sdk/visdk400pubs/sdk40programmingguide.pdf
+         serves as a great resource.  Chapter 3 discusses the Managed Entities enumerated in the behaviors.
+      </p>
+      <p align="justify">There are several Managed Entities in the VMware Infrastructure which have been enumerated in ViSdkManagedEntityBehaviors
+         to enable interpreters to execute efficient interrogations.  This test is designed for an interpreter to access Managed Entity
+         properties (settings) via the VI SDK webservice.  An example use case is to interrogate all virtual machines to ensure that
+         a particular security setting is enabled.  Some properties serve to configure the Virtual Machine, while others can be used
+         to identify.  For example, sets and filters can be used to create a set of all Virtual Machines where bridged networking is
+         employed, and then perform an OVAL state evaluation against each of those Virtual Machines.  This concept applies to all properties
+         across all Managed Entities.  Use the ViSdkManagedEntityBehaviors to avoid enumerating all Managed Objects when only one type
+         should be considered.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#TestType">oval-def:TestType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">object</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#ObjectRefType">oval-def:ObjectRefType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">state</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#StateRefType">oval-def:StateRefType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="visdkmanagedobject_object"></a>&lt; visdkmanagedobject_object  &gt;
+      </h3>
+      <p align="justify">The visdkmanagedobject_object element is used by the visdkmanagedobject_test to define those objects to be evaluated based
+         on a specified state.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#ObjectType">oval-def:ObjectType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">behaviors</td>
+               <td style="font-size: 90%"><a href="#ViSdkManagedEntityBehaviors">esx-def:ViSdkManagedEntityBehaviors</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">property</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityObjectStringType">oval-def:EntityObjectStringType</a></td>
+               <td align="center" style="font-size: 90%">1</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The property entity holds a string that represents the object path path and name of a particular setting for the Managed Entity.
+                  In the VMware Infrastructure SDK, property names are case-sensitive and thus case must be correct relative to the properties
+                  in the SDK.  For example, a Virtual Machine might have ethernet0.connectionType of 'bridged'.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;"><a href="oval-definitions-schema.html#filter">oval-def:filter</a></td>
+               <td style="font-size: 90%">n/a</td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">unbounded</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;"></td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="visdkmanagedobject_state"></a>&lt; visdkmanagedobject_state  &gt;
+      </h3>
+      <p align="justify">The visdkmanagedobject_state elements enumerates the different properties a Managed Entity might have.  Managed Entities have
+         the same object structure.  However, fields within that object structure will be blank (null) if they do not apply to that
+         Managed Entity.
+      </p>
+      <p><span style="font-weight:bold">Extends: </span><a href="oval-definitions-schema.html#StateType">oval-def:StateType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="88%">
+            <colgroup span="4">
+               <col width="200">
+               <col width="*">
+               <col width="80">
+               <col width="80">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Child Elements</b></td>
+               <td><b>Type</b></td>
+               <td align="center"><b><font size="-1">MinOccurs</font></b></td>
+               <td align="center"><b><font size="-1">MaxOccurs</font></b></td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">property</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The property entity holds a string that represents the object path and name of a particular setting for the Managed Entity.
+                  In the VMware Infrastructure SDK, property names are case-sensitive and thus case must be correct relative to the properties
+                  in the SDK.  For example, a Virtual Machine might have ethernet0.connectionType of 'bridged'.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" style="vertical-align: top;">value</td>
+               <td style="font-size: 90%"><a href="oval-definitions-schema.html#EntityStateAnySimpleType">oval-def:EntityStateAnySimpleType</a></td>
+               <td align="center" style="font-size: 90%">0</td>
+               <td align="center" style="font-size: 90%">1</td>
+            </tr>
+            <tr>
+               <td colspan="3" style="font-size: 90%; text-align: justify;">The value entity holds a string that represents a value that's associated with the specified setting for the Managed Entity.
+                  Some properties will return an array of values.  In such cases consider each value individually and then make final evaluation
+                  based on the entity_check attribute.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="ViSdkManagedEntityBehaviors"></a>== ViSdkManagedEntityBehaviors ==
+      </h3>
+      <p align="justify">The ViSdkManagedEntityBehaviors complex type defines a number of behaviors that allow a more detailed definition of the visdkmanagedobject_object
+         being specified.  Note that using these behaviors is *highly* encouraged because enumerating all Managed Objects in an inventory
+         hierarchy could cause performance problems.  Interpreters should enumerate only the entities specified by the behavior prior
+         to set/filter logic and evaluation.
+      </p>
+      <blockquote>
+         <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+            <colgroup span="6">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+               <col width="30">
+               <col width="*">
+            </colgroup>
+            <tr>
+               <td colspan="6"><b>Attributes:</b></td>
+            </tr>
+            <tr>
+               <td colspan="6">
+                  <hr>
+               </td>
+            </tr>
+            <tr>
+               <td align="center" width="30">-</td>
+               <td style="font-weight:bold">managed_entity_type</td>
+               <td width="30"></td>
+               <td>Restriction of xsd:string</td>
+               <td width="30"></td>
+               <td>(optional -- default='VirtualMachine')('ClusterComputerResource', 'ComputeResource', 'Datacenter', 'Datastore', 'DistributedVirtualPortgroup', 'DistributedVirtualSwitch', 'Folder', 'HostSystem', 'Network', 'ResourcePool', 'VirtualApp', 'VirtualMachine')</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td colspan="5" style="padding-bottom: 10px; font-size: 90%;">The ViSdkManagedEntityBehaviors complex type defines a number of behaviors that allow a more detailed definition of the visdkmanagedobject_object
+                  being specified.  Note that using these behaviors is *highly* encouraged because enumerating all Managed Objects in an inventory
+                  hierarchy could cause performance problems.  Interpreters should enumerate only the entities specified by the behavior prior
+                  to set/filter logic and evaluation.
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityStateClassificationType"></a>== EntityStateClassificationType ==
+      </h3>
+      <p align="justify">The EntityStateClassificationType complex type restricts a string value to a specific set of values that describe the classification
+         of a given ESX Server patch. The empty string is also allowed to support an empty element associated with variable references.
+         Note that when using pattern matches and variables care must be taken to ensure that the regular expression and variable values
+         align with the enumerated values.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>B&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Bug patches fix minor flaws that affect product functionality or behavior. Bug patches are optional. Before they are applied,
+                     one should determine whether they are necessary for your environment.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>R&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Roll‐up patches contain any number of bundles for ESX Server 3.0.3 or ESX Server 3.5 hosts. They can contain bug patches,
+                     update patches, and security patches. They do not contain upgrade bundles for minor releases or update bundles for maintenance
+                     releases.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>S&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Security patches fix one or more potential security vulnerabilities in the product. They should be implemented immediately
+                     to prevent the vulnerabilities from being exploited.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>U&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Update patches can contain new driver updates and small non‐intrusive enhancements. Before they are applied, one should determine
+                     whether they are necessary for your environment.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string is also allowed to support an empty element associated with variable references.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br><h3><a name="EntityStateSupportLevelType"></a>== EntityStateSupportLevelType ==
+      </h3>
+      <p align="justify">The EntityStateSupportLevelType complex type restricts a string value to a specific set of values that describe the support
+         level of a given ESX Server patch. The empty string is also allowed to support an empty element associated with variable references.
+         Note that when using pattern matches and variables care must be taken to ensure that the regular expression and variable values
+         align with the enumerated values.
+      </p>
+      <p><span style="font-weight:bold">Restricts: </span><a href="oval-definitions-schema.html#EntityStateStringType">oval-def:EntityStateStringType</a></p>
+      <blockquote>
+         <table bgcolor="#F9F9F9" border="1" cellpadding="5" cellspacing="0" style="table-layout:fixed" width="95%">
+            <colgroup span="2">
+               <col width="250">
+               <col width="*">
+            </colgroup>
+            <tr bgcolor="#F0F0F0">
+               <td><b>Value</b></td>
+               <td><b>Description</b></td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>C&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Custom patches are special fixes provided to a customer. They are usually specific to customer's environment, and are most
+                     likely not required by  customers not reporting the issue. Custom patches have been tested in the customer's environment.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>D&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Debugging patches are released to all customers and are used by VMware to troubleshoot complex product issues. They can contain
+                     debug messages and code, and drivers. Debugging patches usually require VMware assistance to install.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>G&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>GA patches are released to all customers and have been thoroughly tested. They contain fixes for ESX Server 3 software issues.</p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>H&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>Hot patches are released to specific customers for solving critical problems specific to their environment. They contain fixes
+                     for security issues or problems that can potentially cause data loss or severe service disruptions. Hot patches should be
+                     implemented immediately.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <p>&nbsp;&#xD;
+                     					
+                  </p>
+               </td>
+               <td>
+                  <p>The empty string is also allowed to support an empty element associated with variable references.</p>
+               </td>
+            </tr>
+         </table>
+      </blockquote><br></body>
+</html>

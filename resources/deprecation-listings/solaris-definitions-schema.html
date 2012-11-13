@@ -1,0 +1,64 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL Solaris Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: Solaris Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="patch_test"></a><a href="../documentation/solaris-definitions-schema.html#patch_test">&lt; patch_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.4<br><strong>Reason: </strong>Replaced by the patch54_test. The new test includes additional functionality that allows the object element to match both
+         the original patch and any superseding patches. As a result of this new functionality, the patch_object was also expanded
+         to include behaviors and version entities. See the patch54_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The patch test is used to check information associated with different patches installed on the system. The information being
+         tested is based off the /usr/bin/showrev -p command. It extends the standard TestType as defined in the oval-definitions-schema
+         and one should refer to the TestType description for more information. The required object element references an inetd_object
+         and the optional state element specifies the information to check.
+      </p><br><hr class="thick">
+      <h3><a name="patch_object"></a><a href="../documentation/solaris-definitions-schema.html#patch_object">&lt; patch_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.4<br><strong>Reason: </strong>Replaced by the patch54_object. Due to the additional functionality that allows the object element to match both the original
+         patch and any superseding patches, a new object was created that includes behaviors and version entities. See the patch54_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The patch_object element is used by a patch test to define the specific patch to be evaluated. Patches are identified by unique
+         alphanumeric strings, with the patch base code first, a hyphen, and a number that represents the patch revision number. Each
+         object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description
+         for more information. The common set element allows complex objects to be created using filters and set logic. Again, please
+         refer to the description of the set element in the oval-definitions-schema.
+      </p>
+      <p class="documentation">A patch object consists of a single base entity that identifies the patch to be used.</p><br></body>
+</html>

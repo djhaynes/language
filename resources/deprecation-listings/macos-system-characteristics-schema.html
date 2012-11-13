@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL MacOS System Characteristics Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: MacOS System Characteristics</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="inetlisteningserver_item"></a><a href="../documentation/macos-system-characteristics-schema.html#inetlisteningserver_item">&lt; inetlisteningserver_item  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.10<br><strong>Reason: </strong>The inetlisteningserver_item has been deprecated and replaced by the inetlisteningserver510_item. The name of an application
+         cannot be used to uniquely identify an application that is listening on the network. As a result, the inetlisteningserver510_object
+         utilizes the protocol, local_address, and local_port entities to uniquely identify an application listening on the network.
+         Please see the inetlisteningserver510_item for additional information.<br></div>
+      <p class="documentation">An inet listening server item stores the results of checking for network servers currently active on a system.</p><br><hr class="thick">
+      <h3><a name="pwpolicy_item"></a><a href="../documentation/macos-system-characteristics-schema.html#pwpolicy_item">&lt; pwpolicy_item  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.9<br><strong>Reason: </strong>Replaced by the pwpolicy59_item. The username, userpass, and directory_node entities in the pwpolicy_item were underspecified
+         and as a result their meaning was uncertain. A new item was created to resolve this issue. See the pwpolicy59_item.<br><strong>Comment: </strong>This item has been deprecated and may be removed in a future version of the language.<br></div>
+      <p class="documentation">Output of 'pwpolicy -getpolicy'. Please see the 'pwpolicy' man page for additional information.</p><br></body>
+</html>

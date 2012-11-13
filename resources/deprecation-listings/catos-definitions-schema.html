@@ -1,0 +1,75 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL CatOS Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: CatOS Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="version_test"></a><a href="../documentation/catos-definitions-schema.html#version_test">&lt; version_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the version55_test. Due to the fact it's not clear on how to separate the CatOS version, it was decided that the
+         catos_major_release, catos_individual_release, and catos_version_id entities would be combined into a new single entity catos_release.
+         A new test was created to reflect these changes. See the version55_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The version test is used to check the version of the Cisco CatOS operating system. It extends the standard TestType as defined
+         in the oval-definitions-schema and one should refer to the TestType description for more information. The required object
+         element references a version_object and the optional state element specifies the data to check.
+      </p>
+      <p class="documentation">The required information of version_test can be got via a SHOW VERSION command. The separated version_test enables an evaluation
+         based on OVAL without having interactive command access to the device.
+      </p><br><hr class="thick">
+      <h3><a name="version_object"></a><a href="../documentation/catos-definitions-schema.html#version_object">&lt; version_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the version55_object. Due to the fact it's not clear on how to separate the CatOS version, it was decided that
+         the catos_major_release, catos_individual_release, and catos_version_id entities would be combined into a new single entity
+         catos_release. A new object was created to reflect these changes. See the version55_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The version_object element is used by a version test to define the different version information associated with a Cisco CatOS
+         system. There is actually only one object relating to version and this is the system as a whole. Therefore, there are no child
+         entities defined. Any OVAL Test written to check version will reference the same version_object which is basically an empty
+         object element.
+      </p><br><hr class="thick">
+      <h3><a name="version_state"></a><a href="../documentation/catos-definitions-schema.html#version_state">&lt; version_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the version55_state. Due to the fact it's not clear on how to separate the CatOS version, it was decided that
+         the catos_major_release, catos_individual_release, and catos_version_id entities would be combined into a new single entity
+         catos_release. A new state was created to reflect these changes. See the version55_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The version_state element defines the version information held within a Cisco CatOS software release. The swtich_series element
+         specifies the Catalyst switch series. The image_name element specifies the name of the CatOS image. The catos_major_release,
+         catos_individual_release and catos_version_id elements specify the software version information of the module. For instance,
+         if the CatOS version is 8.5(4c)GLX, then catos_major_release is 8.5GLX, catos_individual_release is 4 and catos_version_id
+         is c.
+      </p><br></body>
+</html>

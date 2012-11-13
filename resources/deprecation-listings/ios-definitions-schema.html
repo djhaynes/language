@@ -1,0 +1,79 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OVAL IOS Definition Schema Deprecation Report</title><style type="text/css">
+                h1 { 
+                    text-align: center;
+                }
+                
+                hr.thick { 
+                    height: 5px; width: 100%; color: #AAA; background-color: #AAA;
+               }
+                
+                td {
+                    vertical-align: top;
+                }
+                
+                p.documentation {
+                    text-align: justify;
+                    margin: 1em 1em 1em 1em;
+                }
+                
+                .deprecation_info {
+                    background-color: #F9F9F9;
+                    border: 2px solid #444;
+                    padding: 5px;
+                }  
+                
+                .smaller {
+                    font-size: smaller;
+                }
+                
+                .inset_table {
+                    padding: 1em 2em 1em 2em; 
+                }
+            </style></head>
+   <body>
+      <h1>- Open Vulnerability and Assessment Language -<br>Deprecation Report
+      </h1>
+      <ul>
+         <li>Schema: IOS Definition</li>
+         <li>Version: 5.11 Draft 1</li>
+         <li>Release Date: 11/14/2012 8:00:00 AM</li>
+      </ul>
+      <hr class="thick">
+      <h3><a name="version_test"></a><a href="../documentation/ios-definitions-schema.html#version_test">&lt; version_test  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the version55_test. Additional IOS version components were added to the version_state in order to support a wider
+         range of IOS version strings. Also, the major_release and train_number entities were removed from the version_state element.
+         A new test was created to reflect these changes. See the version55_test.<br><strong>Comment: </strong>This test has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The version test is used to check the version of the IOS operating system. It extends the standard TestType as defined in
+         the oval-definitions-schema and one should refer to the TestType description for more information. The required object element
+         references a version_object and the optional state element specifies the data to check.
+      </p><br><hr class="thick">
+      <h3><a name="version_object"></a><a href="../documentation/ios-definitions-schema.html#version_object">&lt; version_object  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the version55_object. Additional IOS version components were added to the version_state in order to support a
+         wider range of IOS version strings.  Also, the major_release and train_number entities were removed from the version_state
+         element. A new object was created to reflect these changes. See the version55_object.<br><strong>Comment: </strong>This object has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The version_object element is used by a version test to define the different version information associated with an IOS system.
+         There is actually only one object relating to version and this is the system as a whole. Therefore, there are no child entities
+         defined. Any OVAL Test written to check version will reference the same version_object which is basically an empty object
+         element.
+      </p><br><hr class="thick">
+      <h3><a name="version_state"></a><a href="../documentation/ios-definitions-schema.html#version_state">&lt; version_state  &gt;</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Replaced by the version55_state. Additional IOS version components were added to the version_state in order to support a wider
+         range of IOS version strings.  Also, the major_release and train_number entities were removed from this version_state element.
+         A new state was created to reflect these changes. See the version55_state.<br><strong>Comment: </strong>This state has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The version_state element defines the version information held within a Cisco IOS Train. A Cisco IOS train is a vehicle for
+         delivering releases that evolve from a common code base.
+      </p><br><hr class="thick">
+      <h3><a name="EntityStateTrainIdentifierType"></a><a href="../documentation/ios-definitions-schema.html#EntityStateTrainIdentifierType">== EntityStateTrainIdentifierType ==</a></h3>
+      <div class="deprecation_info"><strong>Deprecated As Of Version: </strong>5.5<br><strong>Reason: </strong>Additional IOS version components were added to the version_state in order to support a wider range of IOS version strings.
+         Also, the train_number entity, which uses this enumeration, was removed from the version_state element. As a result, this
+         enumeration is no longer needed.<br><strong>Comment: </strong>This enumeration has been deprecated and will be removed in version 6.0 of the language.<br></div>
+      <p class="documentation">The EntityStateTrainIdentifierType complex type restricts a string value to a specific set of values. These values describe
+         the possible types of trains in a Cisco IOS release. The empty string is also allowed to support empty element associated
+         with variable references. Note that when using pattern matches and variables care must be taken to ensure that the regular
+         expression and variable values align with the enumerated values.
+      </p>
+   </body>
+</html>
