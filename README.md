@@ -1,6 +1,6 @@
 ## OVAL Language
 
-OVAL® International in scope and free for public use, OVAL is an information security community effort to standardize how to assess and report upon the machine state of computer systems. OVAL includes a language to encode system details, and an assortment of content repositories held throughout the community. 
+OVAL® International in scope and free for public use, OVAL is an information security community effort to standardize how to assess and report upon the machine state of computer systems. OVAL includes a language to encode system details, and an assortment of content repositories held throughout the community.
 
 This github project hosts the OVAL Language Schemas and Specifications during development to improve transparency and the community's ability to track changes before an official release.
 
