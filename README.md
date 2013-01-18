@@ -2,7 +2,7 @@
 
 International in scope and free for public use, OVAL is an information security community effort to standardize how to assess and report upon the machine state of computer systems. OVAL includes a language to encode system details, and an assortment of content repositories held throughout the community.
 
-This github project hosts the OVAL Language Schemas and Specifications during development to improve transparency and the community's ability to track changes before an official release.
+This GitHub project hosts the OVAL Language Schemas and Specifications during development to improve transparency and the community's ability to track changes before an official release. Official releases will still be published on the OVAL Web Site.
 
 Development: [OVAL 5.11] (https://github.com/djhaynes/language)<br>
 Official: [OVAL 5.10.1] (http://oval.mitre.org/language/version5.10.1/)<br>
